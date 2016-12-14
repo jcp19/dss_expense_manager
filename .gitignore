@@ -1,4 +1,5 @@
 *.bak*
 *.vux
 *.lck
+*.DS_Store
 
