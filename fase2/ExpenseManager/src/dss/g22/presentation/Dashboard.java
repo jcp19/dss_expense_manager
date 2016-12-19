@@ -1,19 +1,18 @@
-package dss.g22.presentation;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package dss.g22.presentation;
 
 /**
  *
- * @author joaop
+ * @author joao
  */
 public class Dashboard extends javax.swing.JFrame {
 
     /**
-     * Creates new form Dashboard
+     * Creates new form DashboardV2
      */
     public Dashboard() {
         initComponents();
@@ -29,128 +28,912 @@ public class Dashboard extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        dialogRegistarDespesa = new javax.swing.JDialog();
+        labelNomeDespesa = new javax.swing.JLabel();
+        campoNomeDespesa = new javax.swing.JTextField();
+        labelDescricaoDespesa = new javax.swing.JLabel();
+        scrollDescricaoDespesa = new javax.swing.JScrollPane();
+        areaTextoDescricao = new javax.swing.JTextArea();
+        botaoAdicionarConta = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        butaoCancelarRegistoDespesa = new javax.swing.JButton();
+        butaoConfirmarRegistoDespesa = new javax.swing.JButton();
+        iconeDespesa = new javax.swing.JLabel();
+        dialogRegistarConta = new javax.swing.JDialog();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jButton6 = new javax.swing.JButton();
+        jTable1 = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        dialogGestaoContaMorador = new javax.swing.JDialog();
+        painelGestaoContaMorador = new javax.swing.JPanel();
+        labelNomeMorador = new javax.swing.JLabel();
+        labelEmailMorador = new javax.swing.JLabel();
+        botaoAlterarEmail = new javax.swing.JButton();
+        botaoAlterarPassword = new javax.swing.JButton();
+        nomeMoradorGestaoConta = new javax.swing.JLabel();
+        emailGestaoConta = new javax.swing.JLabel();
+        botaoEliminarConta = new javax.swing.JButton();
+        imagemMoradorGestaoConta = new javax.swing.JButton();
+        dialogAlterarEmail = new javax.swing.JDialog();
+        labelNovoEmail = new javax.swing.JLabel();
+        campoNovoEmail = new javax.swing.JTextField();
+        botaoOkNovoEmail = new javax.swing.JButton();
+        labelErroEmail = new javax.swing.JLabel();
+        labelIcon = new javax.swing.JLabel();
+        butaoRegistarDespesa = new javax.swing.JButton();
+        butaoRegistarContaPaga = new javax.swing.JButton();
+        butaoRegistarTransferencia = new javax.swing.JButton();
+        painelTabs = new javax.swing.JTabbedPane();
+        painelHistorico = new javax.swing.JPanel();
+        scrollHistorico = new javax.swing.JScrollPane();
+        listaHistorico = new javax.swing.JList<>();
+        painelCC = new javax.swing.JPanel();
+        scrollPainelCC = new javax.swing.JScrollPane();
+        listaCC = new javax.swing.JList<>();
+        painelPesquisaCC = new javax.swing.JPanel();
+        labelTermoPesquisaCC = new javax.swing.JLabel();
+        campoTermoPesquisaCC = new javax.swing.JTextField();
+        labelDataInicioCC = new javax.swing.JLabel();
+        selecionadorDataInicioCC = new com.github.lgooddatepicker.components.DatePicker();
+        labelDataFimCC = new javax.swing.JLabel();
+        selecionadorDataFimCC = new com.github.lgooddatepicker.components.DatePicker();
+        jButton2 = new javax.swing.JButton();
+        painelDespesas = new javax.swing.JPanel();
+        scrollPainelDespesas = new javax.swing.JScrollPane();
+        listaDespesas = new javax.swing.JList<>();
+        painelPesquisaDespesa = new javax.swing.JPanel();
+        labelTermoPesquisaDespesa = new javax.swing.JLabel();
+        campoTermoPesquisaDespesa = new javax.swing.JTextField();
+        labelDataInicioDespesa = new javax.swing.JLabel();
+        selecionadorDataInicioDespesa = new com.github.lgooddatepicker.components.DatePicker();
+        labelDataFimDespesa = new javax.swing.JLabel();
+        selecionadorDataFimCC1 = new com.github.lgooddatepicker.components.DatePicker();
+        butaoPesquisaDespesa = new javax.swing.JButton();
+        painelMoradores = new javax.swing.JPanel();
+        labelMoradores = new javax.swing.JLabel();
+        scrollListaLateralMoradores = new javax.swing.JScrollPane();
+        listaLateralMoradores = new javax.swing.JList<>();
+        painelMoradorAutenticado = new javax.swing.JPanel();
+        botaoTerminarSessao = new javax.swing.JButton();
+        imagemMoradorAutenticado = new javax.swing.JButton();
+        nomeMoradorAutenticado = new javax.swing.JLabel();
+        labelSaldo = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridBagLayout());
+        dialogRegistarDespesa.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        dialogRegistarDespesa.setTitle("Registar despesa");
+        dialogRegistarDespesa.setMinimumSize(new java.awt.Dimension(435, 500));
+        dialogRegistarDespesa.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
+        dialogRegistarDespesa.setName("registoDespesa"); // NOI18N
+        dialogRegistarDespesa.setPreferredSize(new java.awt.Dimension(435, 500));
+        dialogRegistarDespesa.setResizable(false);
+        dialogRegistarDespesa.setSize(new java.awt.Dimension(435, 500));
+        dialogRegistarDespesa.getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jButton1.setFont(new java.awt.Font("Lucida Grande", 0, 22)); // NOI18N
-        jButton1.setText("Conta corrente");
-        jButton1.setToolTipText("Consultar as entradas e saídas de dinheiro da sua conta corrente");
-        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton1.setPreferredSize(new java.awt.Dimension(218, 75));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        labelNomeDespesa.setText("Nome:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogRegistarDespesa.getContentPane().add(labelNomeDespesa, gridBagConstraints);
+
+        campoNomeDespesa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                campoNomeDespesaActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(6, 3, 0, 0);
+        dialogRegistarDespesa.getContentPane().add(campoNomeDespesa, gridBagConstraints);
+
+        labelDescricaoDespesa.setText("Descrição:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogRegistarDespesa.getContentPane().add(labelDescricaoDespesa, gridBagConstraints);
+
+        areaTextoDescricao.setColumns(30);
+        areaTextoDescricao.setRows(8);
+        scrollDescricaoDespesa.setViewportView(areaTextoDescricao);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(6, 7, 0, 4);
+        dialogRegistarDespesa.getContentPane().add(scrollDescricaoDespesa, gridBagConstraints);
+
+        botaoAdicionarConta.setText("Adicionar conta paga...");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
+        dialogRegistarDespesa.getContentPane().add(botaoAdicionarConta, gridBagConstraints);
+
+        jPanel2.setLayout(new java.awt.GridBagLayout());
+
+        butaoCancelarRegistoDespesa.setText("Cancelar");
+        butaoCancelarRegistoDespesa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butaoCancelarRegistoDespesaActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        getContentPane().add(jButton1, gridBagConstraints);
+        jPanel2.add(butaoCancelarRegistoDespesa, gridBagConstraints);
 
-        jButton2.setFont(new java.awt.Font("Lucida Grande", 0, 22)); // NOI18N
-        jButton2.setText("Despesas");
-        jButton2.setToolTipText("Consultar e registar despesas");
-        jButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton2.setPreferredSize(new java.awt.Dimension(218, 75));
+        butaoConfirmarRegistoDespesa.setText("Registar");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        jPanel2.add(butaoConfirmarRegistoDespesa, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
+        dialogRegistarDespesa.getContentPane().add(jPanel2, gridBagConstraints);
+
+        iconeDespesa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/ExpenseIcon.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
+        dialogRegistarDespesa.getContentPane().add(iconeDespesa, gridBagConstraints);
+
+        dialogRegistarConta.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        dialogRegistarConta.setTitle("Registar conta paga");
+        dialogRegistarConta.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
+        dialogRegistarConta.getContentPane().setLayout(new java.awt.GridBagLayout());
+
+        jLabel1.setText("Como foi dividido o pagamento da conta?");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogRegistarConta.getContentPane().add(jLabel1, gridBagConstraints);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogRegistarConta.getContentPane().add(jScrollPane1, gridBagConstraints);
+
+        jLabel2.setText("Como deve ser dividido o pagamento?");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(6, 30, 0, 0);
+        dialogRegistarConta.getContentPane().add(jLabel2, gridBagConstraints);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogRegistarConta.getContentPane().add(jComboBox1, gridBagConstraints);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.insets = new java.awt.Insets(6, 30, 0, 0);
+        dialogRegistarConta.getContentPane().add(jScrollPane2, gridBagConstraints);
+
+        jLabel3.setText("Valor total:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogRegistarConta.getContentPane().add(jLabel3, gridBagConstraints);
+
+        jTextField1.setMinimumSize(new java.awt.Dimension(150, 26));
+        jTextField1.setPreferredSize(new java.awt.Dimension(150, 26));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        getContentPane().add(jButton2, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 10, 0);
+        dialogRegistarConta.getContentPane().add(jTextField1, gridBagConstraints);
 
-        jButton3.setFont(new java.awt.Font("Lucida Grande", 0, 22)); // NOI18N
-        jButton3.setText("Moradores");
-        jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton3.setPreferredSize(new java.awt.Dimension(218, 75));
+        dialogGestaoContaMorador.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        dialogGestaoContaMorador.setTitle("Conta de morador");
+        dialogGestaoContaMorador.setMinimumSize(new java.awt.Dimension(415, 415));
+        dialogGestaoContaMorador.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
+        dialogGestaoContaMorador.setPreferredSize(new java.awt.Dimension(415, 415));
+        dialogGestaoContaMorador.setResizable(false);
+        dialogGestaoContaMorador.getContentPane().setLayout(new java.awt.GridBagLayout());
+
+        painelGestaoContaMorador.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        painelGestaoContaMorador.setLayout(new java.awt.GridBagLayout());
+
+        labelNomeMorador.setText("Nome:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 6, 0, 0);
+        painelGestaoContaMorador.add(labelNomeMorador, gridBagConstraints);
+
+        labelEmailMorador.setText("E-mail:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 6, 0, 0);
+        painelGestaoContaMorador.add(labelEmailMorador, gridBagConstraints);
+
+        botaoAlterarEmail.setText("Alterar e-mail...");
+        botaoAlterarEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoAlterarEmailActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        getContentPane().add(jButton3, gridBagConstraints);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 0);
+        painelGestaoContaMorador.add(botaoAlterarEmail, gridBagConstraints);
 
-        jButton5.setText("Registar conta paga");
+        botaoAlterarPassword.setText("Alterar password...");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 6, 0);
+        painelGestaoContaMorador.add(botaoAlterarPassword, gridBagConstraints);
+
+        nomeMoradorGestaoConta.setText("<pôr nome do morador aqui>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(10, 6, 0, 0);
+        painelGestaoContaMorador.add(nomeMoradorGestaoConta, gridBagConstraints);
+
+        emailGestaoConta.setText("<pôr e-mail do morador aqui>");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(10, 6, 0, 0);
+        painelGestaoContaMorador.add(emailGestaoConta, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogGestaoContaMorador.getContentPane().add(painelGestaoContaMorador, gridBagConstraints);
+
+        botaoEliminarConta.setText("Eliminar conta");
+        botaoEliminarConta.setForeground(new java.awt.Color(204, 0, 0));
+        botaoEliminarConta.setOpaque(true);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
+        dialogGestaoContaMorador.getContentPane().add(botaoEliminarConta, gridBagConstraints);
+
+        imagemMoradorGestaoConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/NoImage.jpeg"))); // NOI18N
+        imagemMoradorGestaoConta.setBorder(null);
+        imagemMoradorGestaoConta.setToolTipText("Clique na imagem para a alterar");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 20, 0);
+        dialogGestaoContaMorador.getContentPane().add(imagemMoradorGestaoConta, gridBagConstraints);
+
+        dialogAlterarEmail.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        dialogAlterarEmail.setTitle("Alterar e-mail");
+        dialogAlterarEmail.setMinimumSize(new java.awt.Dimension(395, 100));
+        dialogAlterarEmail.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
+        dialogAlterarEmail.setName("dialogAlterarEmail"); // NOI18N
+        dialogAlterarEmail.setPreferredSize(new java.awt.Dimension(395, 10));
+        dialogAlterarEmail.getContentPane().setLayout(new java.awt.GridBagLayout());
+
+        labelNovoEmail.setText("Novo e-mail:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogAlterarEmail.getContentPane().add(labelNovoEmail, gridBagConstraints);
+
+        campoNovoEmail.setPreferredSize(new java.awt.Dimension(256, 26));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogAlterarEmail.getContentPane().add(campoNovoEmail, gridBagConstraints);
+
+        botaoOkNovoEmail.setText("Ok");
+        botaoOkNovoEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoOkNovoEmailActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogAlterarEmail.getContentPane().add(botaoOkNovoEmail, gridBagConstraints);
+
+        labelErroEmail.setForeground(javax.swing.UIManager.getDefaults().getColor("nb.errorForeground"));
+        labelErroEmail.setIcon(javax.swing.UIManager.getIcon("OptionPane.errorIcon"));
+        labelErroEmail.setText("O e-mail escolhido está a ser utilizado por outro morador");
+        labelErroEmail.setVisible(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogAlterarEmail.getContentPane().add(labelErroEmail, gridBagConstraints);
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Dashboard");
+        setMinimumSize(new java.awt.Dimension(980, 565));
+        setPreferredSize(new java.awt.Dimension(980, 565));
+        getContentPane().setLayout(new java.awt.GridBagLayout());
+
+        labelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/ExpenseManagerLogo.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.insets = new java.awt.Insets(15, 6, 0, 0);
+        getContentPane().add(labelIcon, gridBagConstraints);
+
+        butaoRegistarDespesa.setText("Registar despesa");
+        butaoRegistarDespesa.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        butaoRegistarDespesa.setPreferredSize(new java.awt.Dimension(170, 57));
+        butaoRegistarDespesa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butaoRegistarDespesaActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(15, 5, 0, 0);
+        getContentPane().add(butaoRegistarDespesa, gridBagConstraints);
+
+        butaoRegistarContaPaga.setText("Registar conta paga");
+        butaoRegistarContaPaga.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        butaoRegistarContaPaga.setPreferredSize(new java.awt.Dimension(170, 57));
+        butaoRegistarContaPaga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butaoRegistarContaPagaActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        getContentPane().add(butaoRegistarContaPaga, gridBagConstraints);
+
+        butaoRegistarTransferencia.setText("Registar transferência");
+        butaoRegistarTransferencia.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        butaoRegistarTransferencia.setPreferredSize(new java.awt.Dimension(170, 57));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
-        getContentPane().add(jButton5, gridBagConstraints);
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        getContentPane().add(butaoRegistarTransferencia, gridBagConstraints);
 
-        jList1.setVisibleRowCount(10);
-        jScrollPane1.setViewportView(jList1);
+        painelTabs.setPreferredSize(new java.awt.Dimension(500, 460));
 
+        listaHistorico.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        scrollHistorico.setViewportView(listaHistorico);
+
+        javax.swing.GroupLayout painelHistoricoLayout = new javax.swing.GroupLayout(painelHistorico);
+        painelHistorico.setLayout(painelHistoricoLayout);
+        painelHistoricoLayout.setHorizontalGroup(
+            painelHistoricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelHistoricoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(scrollHistorico, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        painelHistoricoLayout.setVerticalGroup(
+            painelHistoricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelHistoricoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(scrollHistorico, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        painelTabs.addTab("Histórico", painelHistorico);
+
+        listaCC.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Movimento 1", "Movimento 2", "Movimento 3", "Movimento 4", "Movimento 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaCC.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        scrollPainelCC.setViewportView(listaCC);
+
+        painelPesquisaCC.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        painelPesquisaCC.setLayout(new java.awt.GridBagLayout());
+
+        labelTermoPesquisaCC.setText("Termo de pesquisa:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        painelPesquisaCC.add(labelTermoPesquisaCC, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 2, 0, 2);
+        painelPesquisaCC.add(campoTermoPesquisaCC, gridBagConstraints);
+
+        labelDataInicioCC.setText("Data de início:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        painelPesquisaCC.add(labelDataInicioCC, gridBagConstraints);
+
+        selecionadorDataInicioCC.setToolTipText("Data de início");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        painelPesquisaCC.add(selecionadorDataInicioCC, gridBagConstraints);
+
+        labelDataFimCC.setText("Data de fim:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        painelPesquisaCC.add(labelDataFimCC, gridBagConstraints);
+
+        selecionadorDataFimCC.setToolTipText("Data de fim");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        painelPesquisaCC.add(selecionadorDataFimCC, gridBagConstraints);
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/SearchIcon.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 0);
+        painelPesquisaCC.add(jButton2, gridBagConstraints);
+
+        javax.swing.GroupLayout painelCCLayout = new javax.swing.GroupLayout(painelCC);
+        painelCC.setLayout(painelCCLayout);
+        painelCCLayout.setHorizontalGroup(
+            painelCCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelCCLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(painelCCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scrollPainelCC)
+                    .addComponent(painelPesquisaCC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        painelCCLayout.setVerticalGroup(
+            painelCCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelCCLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(scrollPainelCC, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(painelPesquisaCC, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        painelTabs.addTab("Conta corrente", painelCC);
+
+        listaDespesas.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Despesa 1", "Despesa 2", "Despesa 3", "Despesa 4", "Despesa 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaDespesas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        scrollPainelDespesas.setViewportView(listaDespesas);
+
+        painelPesquisaDespesa.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        painelPesquisaDespesa.setLayout(new java.awt.GridBagLayout());
+
+        labelTermoPesquisaDespesa.setText("Termo de pesquisa:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        painelPesquisaDespesa.add(labelTermoPesquisaDespesa, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 2, 0, 2);
+        painelPesquisaDespesa.add(campoTermoPesquisaDespesa, gridBagConstraints);
+
+        labelDataInicioDespesa.setText("Data de início:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        painelPesquisaDespesa.add(labelDataInicioDespesa, gridBagConstraints);
+
+        selecionadorDataInicioDespesa.setToolTipText("Data de início");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        painelPesquisaDespesa.add(selecionadorDataInicioDespesa, gridBagConstraints);
+
+        labelDataFimDespesa.setText("Data de fim:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        painelPesquisaDespesa.add(labelDataFimDespesa, gridBagConstraints);
+
+        selecionadorDataFimCC1.setToolTipText("Data de fim");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        painelPesquisaDespesa.add(selecionadorDataFimCC1, gridBagConstraints);
+
+        butaoPesquisaDespesa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/SearchIcon.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 0);
+        painelPesquisaDespesa.add(butaoPesquisaDespesa, gridBagConstraints);
+
+        javax.swing.GroupLayout painelDespesasLayout = new javax.swing.GroupLayout(painelDespesas);
+        painelDespesas.setLayout(painelDespesasLayout);
+        painelDespesasLayout.setHorizontalGroup(
+            painelDespesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelDespesasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(painelDespesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(painelPesquisaDespesa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scrollPainelDespesas))
+                .addContainerGap())
+        );
+        painelDespesasLayout.setVerticalGroup(
+            painelDespesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelDespesasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(scrollPainelDespesas, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(painelPesquisaDespesa, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        painelTabs.addTab("Despesas", painelDespesas);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 0;
         gridBagConstraints.gridheight = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        getContentPane().add(jScrollPane1, gridBagConstraints);
+        getContentPane().add(painelTabs, gridBagConstraints);
 
-        jButton6.setText("Registar transferência");
+        painelMoradores.setPreferredSize(new java.awt.Dimension(200, 400));
+
+        labelMoradores.setText("Moradores:");
+        labelMoradores.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+
+        listaLateralMoradores.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Morador 1", "Morador 2", "Morador 3", "Morador 4", "Morador 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaLateralMoradores.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        scrollListaLateralMoradores.setViewportView(listaLateralMoradores);
+
+        javax.swing.GroupLayout painelMoradoresLayout = new javax.swing.GroupLayout(painelMoradores);
+        painelMoradores.setLayout(painelMoradoresLayout);
+        painelMoradoresLayout.setHorizontalGroup(
+            painelMoradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelMoradoresLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(painelMoradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(scrollListaLateralMoradores)
+                    .addComponent(labelMoradores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        painelMoradoresLayout.setVerticalGroup(
+            painelMoradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelMoradoresLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelMoradores)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scrollListaLateralMoradores, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 4, 0);
+        getContentPane().add(painelMoradores, gridBagConstraints);
+
+        painelMoradorAutenticado.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        painelMoradorAutenticado.setPreferredSize(new java.awt.Dimension(215, 105));
+
+        botaoTerminarSessao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/LogoutIcon.png"))); // NOI18N
+        botaoTerminarSessao.setBorder(null);
+        botaoTerminarSessao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoTerminarSessao.setToolTipText("Terminar sessão");
+
+        imagemMoradorAutenticado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/NoImageSmall.jpeg"))); // NOI18N
+        imagemMoradorAutenticado.setBorder(null);
+        imagemMoradorAutenticado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        imagemMoradorAutenticado.setToolTipText("Clique aqui para aceder à gestão da sua conta de morador");
+        imagemMoradorAutenticado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                imagemMoradorAutenticadoActionPerformed(evt);
+            }
+        });
+
+        nomeMoradorAutenticado.setText("João Luís Martins");
+        nomeMoradorAutenticado.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        nomeMoradorAutenticado.setMaximumSize(new java.awt.Dimension(140, 16));
+        nomeMoradorAutenticado.setPreferredSize(new java.awt.Dimension(140, 16));
+
+        labelSaldo.setText("Saldo:");
+        labelSaldo.setFont(new java.awt.Font("Lucida Grande", 1, 12)); // NOI18N
+
+        jLabel10.setText("1000");
+        jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 12)); // NOI18N
+        jLabel10.setMaximumSize(new java.awt.Dimension(97, 15));
+
+        javax.swing.GroupLayout painelMoradorAutenticadoLayout = new javax.swing.GroupLayout(painelMoradorAutenticado);
+        painelMoradorAutenticado.setLayout(painelMoradorAutenticadoLayout);
+        painelMoradorAutenticadoLayout.setHorizontalGroup(
+            painelMoradorAutenticadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelMoradorAutenticadoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(painelMoradorAutenticadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botaoTerminarSessao)
+                    .addGroup(painelMoradorAutenticadoLayout.createSequentialGroup()
+                        .addComponent(imagemMoradorAutenticado)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(painelMoradorAutenticadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(painelMoradorAutenticadoLayout.createSequentialGroup()
+                                .addComponent(labelSaldo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(nomeMoradorAutenticado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(83, 83, 83))
+        );
+        painelMoradorAutenticadoLayout.setVerticalGroup(
+            painelMoradorAutenticadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelMoradorAutenticadoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(painelMoradorAutenticadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imagemMoradorAutenticado)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelMoradorAutenticadoLayout.createSequentialGroup()
+                        .addComponent(nomeMoradorAutenticado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(painelMoradorAutenticadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelSaldo)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botaoTerminarSessao)
+                .addContainerGap())
+        );
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        getContentPane().add(jButton6, gridBagConstraints);
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_END;
+        gridBagConstraints.insets = new java.awt.Insets(6, 8, 10, 0);
+        getContentPane().add(painelMoradorAutenticado, gridBagConstraints);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void butaoRegistarContaPagaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoRegistarContaPagaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_butaoRegistarContaPagaActionPerformed
+
+    private void campoNomeDespesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeDespesaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoNomeDespesaActionPerformed
+
+    private void butaoCancelarRegistoDespesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoCancelarRegistoDespesaActionPerformed
+        dialogRegistarDespesa.setVisible(false);
+    }//GEN-LAST:event_butaoCancelarRegistoDespesaActionPerformed
+
+    private void butaoRegistarDespesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoRegistarDespesaActionPerformed
+        dialogRegistarDespesa.setLocationRelativeTo(this);
+        dialogRegistarDespesa.setVisible(true);
+    }//GEN-LAST:event_butaoRegistarDespesaActionPerformed
+
+    private void imagemMoradorAutenticadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imagemMoradorAutenticadoActionPerformed
+        dialogGestaoContaMorador.setLocationRelativeTo(this);
+        dialogGestaoContaMorador.setVisible(true);
+    }//GEN-LAST:event_imagemMoradorAutenticadoActionPerformed
+
+    private void botaoAlterarEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAlterarEmailActionPerformed
+        dialogAlterarEmail.setLocationRelativeTo(this);
+        dialogAlterarEmail.setVisible(true);
+    }//GEN-LAST:event_botaoAlterarEmailActionPerformed
+
+    private void botaoOkNovoEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoOkNovoEmailActionPerformed
+
+    }//GEN-LAST:event_botaoOkNovoEmailActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Dashboard().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Dashboard().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextArea areaTextoDescricao;
+    private javax.swing.JButton botaoAdicionarConta;
+    private javax.swing.JButton botaoAlterarEmail;
+    private javax.swing.JButton botaoAlterarPassword;
+    private javax.swing.JButton botaoEliminarConta;
+    private javax.swing.JButton botaoOkNovoEmail;
+    private javax.swing.JButton botaoTerminarSessao;
+    private javax.swing.JButton butaoCancelarRegistoDespesa;
+    private javax.swing.JButton butaoConfirmarRegistoDespesa;
+    private javax.swing.JButton butaoPesquisaDespesa;
+    private javax.swing.JButton butaoRegistarContaPaga;
+    private javax.swing.JButton butaoRegistarDespesa;
+    private javax.swing.JButton butaoRegistarTransferencia;
+    private javax.swing.JTextField campoNomeDespesa;
+    private javax.swing.JTextField campoNovoEmail;
+    private javax.swing.JTextField campoTermoPesquisaCC;
+    private javax.swing.JTextField campoTermoPesquisaDespesa;
+    private javax.swing.JDialog dialogAlterarEmail;
+    private javax.swing.JDialog dialogGestaoContaMorador;
+    private javax.swing.JDialog dialogRegistarConta;
+    private javax.swing.JDialog dialogRegistarDespesa;
+    private javax.swing.JLabel emailGestaoConta;
+    private javax.swing.JLabel iconeDespesa;
+    private javax.swing.JButton imagemMoradorAutenticado;
+    private javax.swing.JButton imagemMoradorGestaoConta;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JList<String> jList1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel labelDataFimCC;
+    private javax.swing.JLabel labelDataFimDespesa;
+    private javax.swing.JLabel labelDataInicioCC;
+    private javax.swing.JLabel labelDataInicioDespesa;
+    private javax.swing.JLabel labelDescricaoDespesa;
+    private javax.swing.JLabel labelEmailMorador;
+    private javax.swing.JLabel labelErroEmail;
+    private javax.swing.JLabel labelIcon;
+    private javax.swing.JLabel labelMoradores;
+    private javax.swing.JLabel labelNomeDespesa;
+    private javax.swing.JLabel labelNomeMorador;
+    private javax.swing.JLabel labelNovoEmail;
+    private javax.swing.JLabel labelSaldo;
+    private javax.swing.JLabel labelTermoPesquisaCC;
+    private javax.swing.JLabel labelTermoPesquisaDespesa;
+    private javax.swing.JList<String> listaCC;
+    private javax.swing.JList<String> listaDespesas;
+    private javax.swing.JList<String> listaHistorico;
+    private javax.swing.JList<String> listaLateralMoradores;
+    private javax.swing.JLabel nomeMoradorAutenticado;
+    private javax.swing.JLabel nomeMoradorGestaoConta;
+    private javax.swing.JPanel painelCC;
+    private javax.swing.JPanel painelDespesas;
+    private javax.swing.JPanel painelGestaoContaMorador;
+    private javax.swing.JPanel painelHistorico;
+    private javax.swing.JPanel painelMoradorAutenticado;
+    private javax.swing.JPanel painelMoradores;
+    private javax.swing.JPanel painelPesquisaCC;
+    private javax.swing.JPanel painelPesquisaDespesa;
+    private javax.swing.JTabbedPane painelTabs;
+    private javax.swing.JScrollPane scrollDescricaoDespesa;
+    private javax.swing.JScrollPane scrollHistorico;
+    private javax.swing.JScrollPane scrollListaLateralMoradores;
+    private javax.swing.JScrollPane scrollPainelCC;
+    private javax.swing.JScrollPane scrollPainelDespesas;
+    private com.github.lgooddatepicker.components.DatePicker selecionadorDataFimCC;
+    private com.github.lgooddatepicker.components.DatePicker selecionadorDataFimCC1;
+    private com.github.lgooddatepicker.components.DatePicker selecionadorDataInicioCC;
+    private com.github.lgooddatepicker.components.DatePicker selecionadorDataInicioDespesa;
     // End of variables declaration//GEN-END:variables
 }
