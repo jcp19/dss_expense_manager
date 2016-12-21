@@ -87,7 +87,6 @@ public class Login extends javax.swing.JFrame {
         dialogRegisto.setMinimumSize(new java.awt.Dimension(515, 310));
         dialogRegisto.setModal(true);
         dialogRegisto.setName("dialogRegisto"); // NOI18N
-        dialogRegisto.setPreferredSize(new java.awt.Dimension(515, 310));
         dialogRegisto.setResizable(false);
         dialogRegisto.getContentPane().setLayout(new java.awt.GridBagLayout());
 
@@ -202,6 +201,7 @@ public class Login extends javax.swing.JFrame {
 
         selecionadorImagem.setAcceptAllFileFilterUsed(false);
         selecionadorImagem.setCurrentDirectory(null);
+        selecionadorImagem.setDialogTitle("Selecionar imagem");
         selecionadorImagem.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter(
             "Imagens", javax.imageio.ImageIO.getReaderFileSuffixes()));
 

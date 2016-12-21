@@ -34,11 +34,23 @@ public class Dashboard extends javax.swing.JFrame {
         labelDescricaoDespesa = new javax.swing.JLabel();
         scrollDescricaoDespesa = new javax.swing.JScrollPane();
         areaTextoDescricao = new javax.swing.JTextArea();
-        botaoAdicionarConta = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        painelBotoesRegistoDespesa = new javax.swing.JPanel();
         butaoCancelarRegistoDespesa = new javax.swing.JButton();
         butaoConfirmarRegistoDespesa = new javax.swing.JButton();
         iconeDespesa = new javax.swing.JLabel();
+        opcoesPeriodicidade = new javax.swing.JComboBox<>();
+        labelOcorre = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jComboBox2 = new javax.swing.JComboBox<>();
         dialogRegistarConta = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -64,36 +76,30 @@ public class Dashboard extends javax.swing.JFrame {
         campoNovoEmail = new javax.swing.JTextField();
         botaoOkNovoEmail = new javax.swing.JButton();
         labelErroEmail = new javax.swing.JLabel();
+        dialogRegistarTransferencia = new javax.swing.JDialog();
+        labelQuemTransferiu = new javax.swing.JLabel();
+        labelQuemRecebeu = new javax.swing.JLabel();
+        labelQuantia = new javax.swing.JLabel();
+        labelDescricaoTransferencia = new javax.swing.JLabel();
+        comboBoxQuemTransferiu = new javax.swing.JComboBox<>();
+        comboBoxQuemRecebeu = new javax.swing.JComboBox<>();
+        campoQuantiaTransferida = new javax.swing.JTextField();
+        scrollDescricaoTransferencia = new javax.swing.JScrollPane();
+        descricaoTransferencia = new javax.swing.JTextArea();
+        jPanel1 = new javax.swing.JPanel();
+        botaoCancelarRegistoTransferencia = new javax.swing.JButton();
+        botaoConfirmarRegistoTransferencia = new javax.swing.JButton();
+        dialogPesquisaDespesa = new javax.swing.JDialog();
+        painelPesquisaDespesa = new dss.g22.presentation.PainelDespesas();
+        jLabel4 = new javax.swing.JLabel();
         labelIcon = new javax.swing.JLabel();
         butaoRegistarDespesa = new javax.swing.JButton();
         butaoRegistarContaPaga = new javax.swing.JButton();
         butaoRegistarTransferencia = new javax.swing.JButton();
         painelTabs = new javax.swing.JTabbedPane();
-        painelHistorico = new javax.swing.JPanel();
-        scrollHistorico = new javax.swing.JScrollPane();
-        listaHistorico = new javax.swing.JList<>();
-        painelCC = new javax.swing.JPanel();
-        scrollPainelCC = new javax.swing.JScrollPane();
-        listaCC = new javax.swing.JList<>();
-        painelPesquisaCC = new javax.swing.JPanel();
-        labelTermoPesquisaCC = new javax.swing.JLabel();
-        campoTermoPesquisaCC = new javax.swing.JTextField();
-        labelDataInicioCC = new javax.swing.JLabel();
-        selecionadorDataInicioCC = new com.github.lgooddatepicker.components.DatePicker();
-        labelDataFimCC = new javax.swing.JLabel();
-        selecionadorDataFimCC = new com.github.lgooddatepicker.components.DatePicker();
-        jButton2 = new javax.swing.JButton();
-        painelDespesas = new javax.swing.JPanel();
-        scrollPainelDespesas = new javax.swing.JScrollPane();
-        listaDespesas = new javax.swing.JList<>();
-        painelPesquisaDespesa = new javax.swing.JPanel();
-        labelTermoPesquisaDespesa = new javax.swing.JLabel();
-        campoTermoPesquisaDespesa = new javax.swing.JTextField();
-        labelDataInicioDespesa = new javax.swing.JLabel();
-        selecionadorDataInicioDespesa = new com.github.lgooddatepicker.components.DatePicker();
-        labelDataFimDespesa = new javax.swing.JLabel();
-        selecionadorDataFimCC1 = new com.github.lgooddatepicker.components.DatePicker();
-        butaoPesquisaDespesa = new javax.swing.JButton();
+        tabGeral = new dss.g22.presentation.PainelGeral();
+        tabContaCorrente = new dss.g22.presentation.PainelContaCorrente();
+        painelDespesas = new dss.g22.presentation.PainelDespesas();
         painelMoradores = new javax.swing.JPanel();
         labelMoradores = new javax.swing.JLabel();
         scrollListaLateralMoradores = new javax.swing.JScrollPane();
@@ -110,8 +116,6 @@ public class Dashboard extends javax.swing.JFrame {
         dialogRegistarDespesa.setMinimumSize(new java.awt.Dimension(435, 500));
         dialogRegistarDespesa.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
         dialogRegistarDespesa.setName("registoDespesa"); // NOI18N
-        dialogRegistarDespesa.setPreferredSize(new java.awt.Dimension(435, 500));
-        dialogRegistarDespesa.setResizable(false);
         dialogRegistarDespesa.setSize(new java.awt.Dimension(435, 500));
         dialogRegistarDespesa.getContentPane().setLayout(new java.awt.GridBagLayout());
 
@@ -156,14 +160,7 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(6, 7, 0, 4);
         dialogRegistarDespesa.getContentPane().add(scrollDescricaoDespesa, gridBagConstraints);
 
-        botaoAdicionarConta.setText("Adicionar conta paga...");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
-        dialogRegistarDespesa.getContentPane().add(botaoAdicionarConta, gridBagConstraints);
-
-        jPanel2.setLayout(new java.awt.GridBagLayout());
+        painelBotoesRegistoDespesa.setLayout(new java.awt.GridBagLayout());
 
         butaoCancelarRegistoDespesa.setText("Cancelar");
         butaoCancelarRegistoDespesa.addActionListener(new java.awt.event.ActionListener() {
@@ -174,21 +171,20 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        jPanel2.add(butaoCancelarRegistoDespesa, gridBagConstraints);
+        painelBotoesRegistoDespesa.add(butaoCancelarRegistoDespesa, gridBagConstraints);
 
         butaoConfirmarRegistoDespesa.setText("Registar");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        jPanel2.add(butaoConfirmarRegistoDespesa, gridBagConstraints);
+        painelBotoesRegistoDespesa.add(butaoConfirmarRegistoDespesa, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
-        dialogRegistarDespesa.getContentPane().add(jPanel2, gridBagConstraints);
+        dialogRegistarDespesa.getContentPane().add(painelBotoesRegistoDespesa, gridBagConstraints);
 
         iconeDespesa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/ExpenseIcon.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -197,6 +193,141 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
         dialogRegistarDespesa.getContentPane().add(iconeDespesa, gridBagConstraints);
+
+        opcoesPeriodicidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pontualmente", "Diariamente", "Semanalmente", "Quinzenalmente", "Mensalmente" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_START;
+        gridBagConstraints.insets = new java.awt.Insets(6, 2, 0, 0);
+        dialogRegistarDespesa.getContentPane().add(opcoesPeriodicidade, gridBagConstraints);
+
+        labelOcorre.setText("Ocorre:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogRegistarDespesa.getContentPane().add(labelOcorre, gridBagConstraints);
+
+        jPanel3.setLayout(new java.awt.CardLayout());
+
+        jLabel5.setText("Valor total:");
+
+        jLabel6.setText("Como foi dividido o valor total?");
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Morador", "Participou", "Pagou"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Boolean.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(jTable3);
+        if (jTable3.getColumnModel().getColumnCount() > 0) {
+            jTable3.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        jLabel7.setText("Como deve ser dividido o valor total?");
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Morador", "Percentagem (%)"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(jTable4);
+        if (jTable4.getColumnModel().getColumnCount() > 0) {
+            jTable4.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Igualmente", "Desigualmente", "Percentagens" }));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel3.add(jPanel2, "card2");
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 6;
+        gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 0);
+        dialogRegistarDespesa.getContentPane().add(jPanel3, gridBagConstraints);
 
         dialogRegistarConta.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         dialogRegistarConta.setTitle("Registar conta paga");
@@ -286,7 +417,6 @@ public class Dashboard extends javax.swing.JFrame {
         dialogGestaoContaMorador.setTitle("Conta de morador");
         dialogGestaoContaMorador.setMinimumSize(new java.awt.Dimension(415, 415));
         dialogGestaoContaMorador.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
-        dialogGestaoContaMorador.setPreferredSize(new java.awt.Dimension(415, 415));
         dialogGestaoContaMorador.setResizable(false);
         dialogGestaoContaMorador.getContentPane().setLayout(new java.awt.GridBagLayout());
 
@@ -375,50 +505,169 @@ public class Dashboard extends javax.swing.JFrame {
 
         dialogAlterarEmail.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         dialogAlterarEmail.setTitle("Alterar e-mail");
-        dialogAlterarEmail.setMinimumSize(new java.awt.Dimension(395, 100));
+        dialogAlterarEmail.setMinimumSize(new java.awt.Dimension(380, 110));
         dialogAlterarEmail.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
         dialogAlterarEmail.setName("dialogAlterarEmail"); // NOI18N
-        dialogAlterarEmail.setPreferredSize(new java.awt.Dimension(395, 10));
-        dialogAlterarEmail.getContentPane().setLayout(new java.awt.GridBagLayout());
+        dialogAlterarEmail.setResizable(false);
 
         labelNovoEmail.setText("Novo e-mail:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogAlterarEmail.getContentPane().add(labelNovoEmail, gridBagConstraints);
 
         campoNovoEmail.setPreferredSize(new java.awt.Dimension(256, 26));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogAlterarEmail.getContentPane().add(campoNovoEmail, gridBagConstraints);
 
-        botaoOkNovoEmail.setText("Ok");
+        botaoOkNovoEmail.setText("Confirmar");
         botaoOkNovoEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoOkNovoEmailActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogAlterarEmail.getContentPane().add(botaoOkNovoEmail, gridBagConstraints);
 
         labelErroEmail.setForeground(javax.swing.UIManager.getDefaults().getColor("nb.errorForeground"));
-        labelErroEmail.setIcon(javax.swing.UIManager.getIcon("OptionPane.errorIcon"));
         labelErroEmail.setText("O e-mail escolhido está a ser utilizado por outro morador");
+        labelErroEmail.setOpaque(true);
         labelErroEmail.setVisible(false);
+
+        javax.swing.GroupLayout dialogAlterarEmailLayout = new javax.swing.GroupLayout(dialogAlterarEmail.getContentPane());
+        dialogAlterarEmail.getContentPane().setLayout(dialogAlterarEmailLayout);
+        dialogAlterarEmailLayout.setHorizontalGroup(
+            dialogAlterarEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dialogAlterarEmailLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(dialogAlterarEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dialogAlterarEmailLayout.createSequentialGroup()
+                        .addComponent(campoNovoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botaoOkNovoEmail))
+                    .addComponent(labelNovoEmail)
+                    .addComponent(labelErroEmail))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        dialogAlterarEmailLayout.setVerticalGroup(
+            dialogAlterarEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dialogAlterarEmailLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelNovoEmail)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(dialogAlterarEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(campoNovoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoOkNovoEmail))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelErroEmail)
+                .addContainerGap())
+        );
+
+        dialogRegistarTransferencia.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        dialogRegistarTransferencia.setTitle("Registar transferência");
+        dialogRegistarTransferencia.setMinimumSize(new java.awt.Dimension(445, 265));
+        dialogRegistarTransferencia.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
+        dialogRegistarTransferencia.setName("registarTransferencia"); // NOI18N
+        dialogRegistarTransferencia.setResizable(false);
+        dialogRegistarTransferencia.getContentPane().setLayout(new java.awt.GridBagLayout());
+
+        labelQuemTransferiu.setText("Quem transferiu:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogRegistarTransferencia.getContentPane().add(labelQuemTransferiu, gridBagConstraints);
+
+        labelQuemRecebeu.setText("Quem recebeu:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogRegistarTransferencia.getContentPane().add(labelQuemRecebeu, gridBagConstraints);
+
+        labelQuantia.setText("Quantia:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogAlterarEmail.getContentPane().add(labelErroEmail, gridBagConstraints);
+        dialogRegistarTransferencia.getContentPane().add(labelQuantia, gridBagConstraints);
+
+        labelDescricaoTransferencia.setText("Descrição:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.FIRST_LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogRegistarTransferencia.getContentPane().add(labelDescricaoTransferencia, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogRegistarTransferencia.getContentPane().add(comboBoxQuemTransferiu, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogRegistarTransferencia.getContentPane().add(comboBoxQuemRecebeu, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(6, 7, 0, 2);
+        dialogRegistarTransferencia.getContentPane().add(campoQuantiaTransferida, gridBagConstraints);
+
+        descricaoTransferencia.setColumns(20);
+        descricaoTransferencia.setRows(5);
+        scrollDescricaoTransferencia.setViewportView(descricaoTransferencia);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 0, 6);
+        dialogRegistarTransferencia.getContentPane().add(scrollDescricaoTransferencia, gridBagConstraints);
+
+        jPanel1.setLayout(new java.awt.GridBagLayout());
+
+        botaoCancelarRegistoTransferencia.setText("Cancelar");
+        botaoCancelarRegistoTransferencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCancelarRegistoTransferenciaActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        jPanel1.add(botaoCancelarRegistoTransferencia, gridBagConstraints);
+
+        botaoConfirmarRegistoTransferencia.setText("Confirmar");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        jPanel1.add(botaoConfirmarRegistoTransferencia, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
+        dialogRegistarTransferencia.getContentPane().add(jPanel1, gridBagConstraints);
+
+        dialogPesquisaDespesa.getContentPane().setLayout(new java.awt.GridBagLayout());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        dialogPesquisaDespesa.getContentPane().add(painelPesquisaDespesa, gridBagConstraints);
+
+        jLabel4.setText("Pesquise e selecione a despesa a que pretende associar uma conta");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 0);
+        dialogPesquisaDespesa.getContentPane().add(jLabel4, gridBagConstraints);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dashboard");
@@ -466,9 +715,14 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
         getContentPane().add(butaoRegistarContaPaga, gridBagConstraints);
 
-        butaoRegistarTransferencia.setText("Registar transferência");
         butaoRegistarTransferencia.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        butaoRegistarTransferencia.setText("Registar transferência");
         butaoRegistarTransferencia.setPreferredSize(new java.awt.Dimension(170, 57));
+        butaoRegistarTransferencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butaoRegistarTransferenciaActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
@@ -478,215 +732,8 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(butaoRegistarTransferencia, gridBagConstraints);
 
         painelTabs.setPreferredSize(new java.awt.Dimension(500, 460));
-
-        listaHistorico.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        scrollHistorico.setViewportView(listaHistorico);
-
-        javax.swing.GroupLayout painelHistoricoLayout = new javax.swing.GroupLayout(painelHistorico);
-        painelHistorico.setLayout(painelHistoricoLayout);
-        painelHistoricoLayout.setHorizontalGroup(
-            painelHistoricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelHistoricoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scrollHistorico, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        painelHistoricoLayout.setVerticalGroup(
-            painelHistoricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelHistoricoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scrollHistorico, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        painelTabs.addTab("Histórico", painelHistorico);
-
-        listaCC.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Movimento 1", "Movimento 2", "Movimento 3", "Movimento 4", "Movimento 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        listaCC.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        scrollPainelCC.setViewportView(listaCC);
-
-        painelPesquisaCC.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        painelPesquisaCC.setLayout(new java.awt.GridBagLayout());
-
-        labelTermoPesquisaCC.setText("Termo de pesquisa:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        painelPesquisaCC.add(labelTermoPesquisaCC, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 2, 0, 2);
-        painelPesquisaCC.add(campoTermoPesquisaCC, gridBagConstraints);
-
-        labelDataInicioCC.setText("Data de início:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        painelPesquisaCC.add(labelDataInicioCC, gridBagConstraints);
-
-        selecionadorDataInicioCC.setToolTipText("Data de início");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        painelPesquisaCC.add(selecionadorDataInicioCC, gridBagConstraints);
-
-        labelDataFimCC.setText("Data de fim:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        painelPesquisaCC.add(labelDataFimCC, gridBagConstraints);
-
-        selecionadorDataFimCC.setToolTipText("Data de fim");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        painelPesquisaCC.add(selecionadorDataFimCC, gridBagConstraints);
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/SearchIcon.png"))); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
-        gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 0);
-        painelPesquisaCC.add(jButton2, gridBagConstraints);
-
-        javax.swing.GroupLayout painelCCLayout = new javax.swing.GroupLayout(painelCC);
-        painelCC.setLayout(painelCCLayout);
-        painelCCLayout.setHorizontalGroup(
-            painelCCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelCCLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(painelCCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollPainelCC)
-                    .addComponent(painelPesquisaCC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        painelCCLayout.setVerticalGroup(
-            painelCCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelCCLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scrollPainelCC, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(painelPesquisaCC, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        painelTabs.addTab("Conta corrente", painelCC);
-
-        listaDespesas.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Despesa 1", "Despesa 2", "Despesa 3", "Despesa 4", "Despesa 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        listaDespesas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        scrollPainelDespesas.setViewportView(listaDespesas);
-
-        painelPesquisaDespesa.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        painelPesquisaDespesa.setLayout(new java.awt.GridBagLayout());
-
-        labelTermoPesquisaDespesa.setText("Termo de pesquisa:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        painelPesquisaDespesa.add(labelTermoPesquisaDespesa, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 2, 0, 2);
-        painelPesquisaDespesa.add(campoTermoPesquisaDespesa, gridBagConstraints);
-
-        labelDataInicioDespesa.setText("Data de início:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        painelPesquisaDespesa.add(labelDataInicioDespesa, gridBagConstraints);
-
-        selecionadorDataInicioDespesa.setToolTipText("Data de início");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        painelPesquisaDespesa.add(selecionadorDataInicioDespesa, gridBagConstraints);
-
-        labelDataFimDespesa.setText("Data de fim:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        painelPesquisaDespesa.add(labelDataFimDespesa, gridBagConstraints);
-
-        selecionadorDataFimCC1.setToolTipText("Data de fim");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        painelPesquisaDespesa.add(selecionadorDataFimCC1, gridBagConstraints);
-
-        butaoPesquisaDespesa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/SearchIcon.png"))); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
-        gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 0);
-        painelPesquisaDespesa.add(butaoPesquisaDespesa, gridBagConstraints);
-
-        javax.swing.GroupLayout painelDespesasLayout = new javax.swing.GroupLayout(painelDespesas);
-        painelDespesas.setLayout(painelDespesasLayout);
-        painelDespesasLayout.setHorizontalGroup(
-            painelDespesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelDespesasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(painelDespesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(painelPesquisaDespesa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollPainelDespesas))
-                .addContainerGap())
-        );
-        painelDespesasLayout.setVerticalGroup(
-            painelDespesasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelDespesasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(scrollPainelDespesas, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(painelPesquisaDespesa, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
+        painelTabs.addTab("Geral", tabGeral);
+        painelTabs.addTab("Conta corrente", tabContaCorrente);
         painelTabs.addTab("Despesas", painelDespesas);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -698,8 +745,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         painelMoradores.setPreferredSize(new java.awt.Dimension(200, 400));
 
-        labelMoradores.setText("Moradores:");
         labelMoradores.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        labelMoradores.setText("Moradores:");
 
         listaLateralMoradores.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Morador 1", "Morador 2", "Morador 3", "Morador 4", "Morador 5" };
@@ -742,30 +789,35 @@ public class Dashboard extends javax.swing.JFrame {
         painelMoradorAutenticado.setPreferredSize(new java.awt.Dimension(215, 105));
 
         botaoTerminarSessao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/LogoutIcon.png"))); // NOI18N
+        botaoTerminarSessao.setToolTipText("Terminar sessão");
         botaoTerminarSessao.setBorder(null);
         botaoTerminarSessao.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botaoTerminarSessao.setToolTipText("Terminar sessão");
+        botaoTerminarSessao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoTerminarSessaoActionPerformed(evt);
+            }
+        });
 
         imagemMoradorAutenticado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/NoImageSmall.jpeg"))); // NOI18N
+        imagemMoradorAutenticado.setToolTipText("Clique aqui para aceder à gestão da sua conta de morador");
         imagemMoradorAutenticado.setBorder(null);
         imagemMoradorAutenticado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        imagemMoradorAutenticado.setToolTipText("Clique aqui para aceder à gestão da sua conta de morador");
         imagemMoradorAutenticado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 imagemMoradorAutenticadoActionPerformed(evt);
             }
         });
 
-        nomeMoradorAutenticado.setText("João Luís Martins");
         nomeMoradorAutenticado.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        nomeMoradorAutenticado.setText("João Luís Martins");
         nomeMoradorAutenticado.setMaximumSize(new java.awt.Dimension(140, 16));
         nomeMoradorAutenticado.setPreferredSize(new java.awt.Dimension(140, 16));
 
-        labelSaldo.setText("Saldo:");
         labelSaldo.setFont(new java.awt.Font("Lucida Grande", 1, 12)); // NOI18N
+        labelSaldo.setText("Saldo:");
 
-        jLabel10.setText("1000");
         jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 12)); // NOI18N
+        jLabel10.setText("1000");
         jLabel10.setMaximumSize(new java.awt.Dimension(97, 15));
 
         javax.swing.GroupLayout painelMoradorAutenticadoLayout = new javax.swing.GroupLayout(painelMoradorAutenticado);
@@ -841,12 +893,26 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void botaoAlterarEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAlterarEmailActionPerformed
         dialogAlterarEmail.setLocationRelativeTo(this);
+        labelErroEmail.setVisible(false);
         dialogAlterarEmail.setVisible(true);
     }//GEN-LAST:event_botaoAlterarEmailActionPerformed
 
     private void botaoOkNovoEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoOkNovoEmailActionPerformed
-
+        labelErroEmail.setVisible(true);
     }//GEN-LAST:event_botaoOkNovoEmailActionPerformed
+
+    private void butaoRegistarTransferenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoRegistarTransferenciaActionPerformed
+        dialogRegistarTransferencia.setLocationRelativeTo(this);
+        dialogRegistarTransferencia.setVisible(true);
+    }//GEN-LAST:event_butaoRegistarTransferenciaActionPerformed
+
+    private void botaoCancelarRegistoTransferenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCancelarRegistoTransferenciaActionPerformed
+        dialogRegistarTransferencia.dispose();
+    }//GEN-LAST:event_botaoCancelarRegistoTransferenciaActionPerformed
+
+    private void botaoTerminarSessaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTerminarSessaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoTerminarSessaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -860,47 +926,59 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaTextoDescricao;
-    private javax.swing.JButton botaoAdicionarConta;
     private javax.swing.JButton botaoAlterarEmail;
     private javax.swing.JButton botaoAlterarPassword;
+    private javax.swing.JButton botaoCancelarRegistoTransferencia;
+    private javax.swing.JButton botaoConfirmarRegistoTransferencia;
     private javax.swing.JButton botaoEliminarConta;
     private javax.swing.JButton botaoOkNovoEmail;
     private javax.swing.JButton botaoTerminarSessao;
     private javax.swing.JButton butaoCancelarRegistoDespesa;
     private javax.swing.JButton butaoConfirmarRegistoDespesa;
-    private javax.swing.JButton butaoPesquisaDespesa;
     private javax.swing.JButton butaoRegistarContaPaga;
     private javax.swing.JButton butaoRegistarDespesa;
     private javax.swing.JButton butaoRegistarTransferencia;
     private javax.swing.JTextField campoNomeDespesa;
     private javax.swing.JTextField campoNovoEmail;
-    private javax.swing.JTextField campoTermoPesquisaCC;
-    private javax.swing.JTextField campoTermoPesquisaDespesa;
+    private javax.swing.JTextField campoQuantiaTransferida;
+    private javax.swing.JComboBox<String> comboBoxQuemRecebeu;
+    private javax.swing.JComboBox<String> comboBoxQuemTransferiu;
+    private javax.swing.JTextArea descricaoTransferencia;
     private javax.swing.JDialog dialogAlterarEmail;
     private javax.swing.JDialog dialogGestaoContaMorador;
+    private javax.swing.JDialog dialogPesquisaDespesa;
     private javax.swing.JDialog dialogRegistarConta;
     private javax.swing.JDialog dialogRegistarDespesa;
+    private javax.swing.JDialog dialogRegistarTransferencia;
     private javax.swing.JLabel emailGestaoConta;
     private javax.swing.JLabel iconeDespesa;
     private javax.swing.JButton imagemMoradorAutenticado;
     private javax.swing.JButton imagemMoradorGestaoConta;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel labelDataFimCC;
-    private javax.swing.JLabel labelDataFimDespesa;
-    private javax.swing.JLabel labelDataInicioCC;
-    private javax.swing.JLabel labelDataInicioDespesa;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel labelDescricaoDespesa;
+    private javax.swing.JLabel labelDescricaoTransferencia;
     private javax.swing.JLabel labelEmailMorador;
     private javax.swing.JLabel labelErroEmail;
     private javax.swing.JLabel labelIcon;
@@ -908,32 +986,26 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel labelNomeDespesa;
     private javax.swing.JLabel labelNomeMorador;
     private javax.swing.JLabel labelNovoEmail;
+    private javax.swing.JLabel labelOcorre;
+    private javax.swing.JLabel labelQuantia;
+    private javax.swing.JLabel labelQuemRecebeu;
+    private javax.swing.JLabel labelQuemTransferiu;
     private javax.swing.JLabel labelSaldo;
-    private javax.swing.JLabel labelTermoPesquisaCC;
-    private javax.swing.JLabel labelTermoPesquisaDespesa;
-    private javax.swing.JList<String> listaCC;
-    private javax.swing.JList<String> listaDespesas;
-    private javax.swing.JList<String> listaHistorico;
     private javax.swing.JList<String> listaLateralMoradores;
     private javax.swing.JLabel nomeMoradorAutenticado;
     private javax.swing.JLabel nomeMoradorGestaoConta;
-    private javax.swing.JPanel painelCC;
-    private javax.swing.JPanel painelDespesas;
+    private javax.swing.JComboBox<String> opcoesPeriodicidade;
+    private javax.swing.JPanel painelBotoesRegistoDespesa;
+    private dss.g22.presentation.PainelDespesas painelDespesas;
     private javax.swing.JPanel painelGestaoContaMorador;
-    private javax.swing.JPanel painelHistorico;
     private javax.swing.JPanel painelMoradorAutenticado;
     private javax.swing.JPanel painelMoradores;
-    private javax.swing.JPanel painelPesquisaCC;
-    private javax.swing.JPanel painelPesquisaDespesa;
+    private dss.g22.presentation.PainelDespesas painelPesquisaDespesa;
     private javax.swing.JTabbedPane painelTabs;
     private javax.swing.JScrollPane scrollDescricaoDespesa;
-    private javax.swing.JScrollPane scrollHistorico;
+    private javax.swing.JScrollPane scrollDescricaoTransferencia;
     private javax.swing.JScrollPane scrollListaLateralMoradores;
-    private javax.swing.JScrollPane scrollPainelCC;
-    private javax.swing.JScrollPane scrollPainelDespesas;
-    private com.github.lgooddatepicker.components.DatePicker selecionadorDataFimCC;
-    private com.github.lgooddatepicker.components.DatePicker selecionadorDataFimCC1;
-    private com.github.lgooddatepicker.components.DatePicker selecionadorDataInicioCC;
-    private com.github.lgooddatepicker.components.DatePicker selecionadorDataInicioDespesa;
+    private dss.g22.presentation.PainelContaCorrente tabContaCorrente;
+    private dss.g22.presentation.PainelGeral tabGeral;
     // End of variables declaration//GEN-END:variables
 }
