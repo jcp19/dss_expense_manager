@@ -10,7 +10,12 @@ package dss.g22.presentation;
  * @author joao
  */
 public class Dashboard extends javax.swing.JFrame {
-
+    
+    private DialogRegistarDespesa dialogRegistarDespesa;
+    private DialogGestaoContaMorador dialogGestaoContaMorador;
+    private DialogPesquisarDespesa dialogPesquisarDespesa;
+    private DialogRegistarTransferencia dialogRegistarTransferencia;
+    
     /**
      * Creates new form DashboardV2
      */
@@ -28,70 +33,6 @@ public class Dashboard extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        dialogRegistarDespesa = new javax.swing.JDialog();
-        labelNomeDespesa = new javax.swing.JLabel();
-        campoNomeDespesa = new javax.swing.JTextField();
-        labelDescricaoDespesa = new javax.swing.JLabel();
-        scrollDescricaoDespesa = new javax.swing.JScrollPane();
-        areaTextoDescricao = new javax.swing.JTextArea();
-        painelBotoesRegistoDespesa = new javax.swing.JPanel();
-        butaoCancelarRegistoDespesa = new javax.swing.JButton();
-        butaoConfirmarRegistoDespesa = new javax.swing.JButton();
-        iconeDespesa = new javax.swing.JLabel();
-        opcoesPeriodicidade = new javax.swing.JComboBox<>();
-        labelOcorre = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        jLabel7 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        dialogRegistarConta = new javax.swing.JDialog();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        dialogGestaoContaMorador = new javax.swing.JDialog();
-        painelGestaoContaMorador = new javax.swing.JPanel();
-        labelNomeMorador = new javax.swing.JLabel();
-        labelEmailMorador = new javax.swing.JLabel();
-        botaoAlterarEmail = new javax.swing.JButton();
-        botaoAlterarPassword = new javax.swing.JButton();
-        nomeMoradorGestaoConta = new javax.swing.JLabel();
-        emailGestaoConta = new javax.swing.JLabel();
-        botaoEliminarConta = new javax.swing.JButton();
-        imagemMoradorGestaoConta = new javax.swing.JButton();
-        dialogAlterarEmail = new javax.swing.JDialog();
-        labelNovoEmail = new javax.swing.JLabel();
-        campoNovoEmail = new javax.swing.JTextField();
-        botaoOkNovoEmail = new javax.swing.JButton();
-        labelErroEmail = new javax.swing.JLabel();
-        dialogRegistarTransferencia = new javax.swing.JDialog();
-        labelQuemTransferiu = new javax.swing.JLabel();
-        labelQuemRecebeu = new javax.swing.JLabel();
-        labelQuantia = new javax.swing.JLabel();
-        labelDescricaoTransferencia = new javax.swing.JLabel();
-        comboBoxQuemTransferiu = new javax.swing.JComboBox<>();
-        comboBoxQuemRecebeu = new javax.swing.JComboBox<>();
-        campoQuantiaTransferida = new javax.swing.JTextField();
-        scrollDescricaoTransferencia = new javax.swing.JScrollPane();
-        descricaoTransferencia = new javax.swing.JTextArea();
-        jPanel1 = new javax.swing.JPanel();
-        botaoCancelarRegistoTransferencia = new javax.swing.JButton();
-        botaoConfirmarRegistoTransferencia = new javax.swing.JButton();
-        dialogPesquisaDespesa = new javax.swing.JDialog();
-        painelPesquisaDespesa = new dss.g22.presentation.PainelDespesas();
-        jLabel4 = new javax.swing.JLabel();
         labelIcon = new javax.swing.JLabel();
         butaoRegistarDespesa = new javax.swing.JButton();
         butaoRegistarContaPaga = new javax.swing.JButton();
@@ -111,564 +52,6 @@ public class Dashboard extends javax.swing.JFrame {
         labelSaldo = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
 
-        dialogRegistarDespesa.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        dialogRegistarDespesa.setTitle("Registar despesa");
-        dialogRegistarDespesa.setMinimumSize(new java.awt.Dimension(435, 500));
-        dialogRegistarDespesa.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
-        dialogRegistarDespesa.setName("registoDespesa"); // NOI18N
-        dialogRegistarDespesa.setSize(new java.awt.Dimension(435, 500));
-        dialogRegistarDespesa.getContentPane().setLayout(new java.awt.GridBagLayout());
-
-        labelNomeDespesa.setText("Nome:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogRegistarDespesa.getContentPane().add(labelNomeDespesa, gridBagConstraints);
-
-        campoNomeDespesa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoNomeDespesaActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(6, 3, 0, 0);
-        dialogRegistarDespesa.getContentPane().add(campoNomeDespesa, gridBagConstraints);
-
-        labelDescricaoDespesa.setText("Descrição:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogRegistarDespesa.getContentPane().add(labelDescricaoDespesa, gridBagConstraints);
-
-        areaTextoDescricao.setColumns(30);
-        areaTextoDescricao.setRows(8);
-        scrollDescricaoDespesa.setViewportView(areaTextoDescricao);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(6, 7, 0, 4);
-        dialogRegistarDespesa.getContentPane().add(scrollDescricaoDespesa, gridBagConstraints);
-
-        painelBotoesRegistoDespesa.setLayout(new java.awt.GridBagLayout());
-
-        butaoCancelarRegistoDespesa.setText("Cancelar");
-        butaoCancelarRegistoDespesa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butaoCancelarRegistoDespesaActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        painelBotoesRegistoDespesa.add(butaoCancelarRegistoDespesa, gridBagConstraints);
-
-        butaoConfirmarRegistoDespesa.setText("Registar");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        painelBotoesRegistoDespesa.add(butaoConfirmarRegistoDespesa, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
-        dialogRegistarDespesa.getContentPane().add(painelBotoesRegistoDespesa, gridBagConstraints);
-
-        iconeDespesa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/ExpenseIcon.png"))); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
-        dialogRegistarDespesa.getContentPane().add(iconeDespesa, gridBagConstraints);
-
-        opcoesPeriodicidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pontualmente", "Diariamente", "Semanalmente", "Quinzenalmente", "Mensalmente" }));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_START;
-        gridBagConstraints.insets = new java.awt.Insets(6, 2, 0, 0);
-        dialogRegistarDespesa.getContentPane().add(opcoesPeriodicidade, gridBagConstraints);
-
-        labelOcorre.setText("Ocorre:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogRegistarDespesa.getContentPane().add(labelOcorre, gridBagConstraints);
-
-        jPanel3.setLayout(new java.awt.CardLayout());
-
-        jLabel5.setText("Valor total:");
-
-        jLabel6.setText("Como foi dividido o valor total?");
-
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Morador", "Participou", "Pagou"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Boolean.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane3.setViewportView(jTable3);
-        if (jTable3.getColumnModel().getColumnCount() > 0) {
-            jTable3.getColumnModel().getColumn(1).setResizable(false);
-        }
-
-        jLabel7.setText("Como deve ser dividido o valor total?");
-
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Morador", "Percentagem (%)"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane4.setViewportView(jTable4);
-        if (jTable4.getColumnModel().getColumnCount() > 0) {
-            jTable4.getColumnModel().getColumn(1).setResizable(false);
-        }
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Igualmente", "Desigualmente", "Percentagens" }));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel3.add(jPanel2, "card2");
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridheight = 6;
-        gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 0);
-        dialogRegistarDespesa.getContentPane().add(jPanel3, gridBagConstraints);
-
-        dialogRegistarConta.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        dialogRegistarConta.setTitle("Registar conta paga");
-        dialogRegistarConta.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
-        dialogRegistarConta.getContentPane().setLayout(new java.awt.GridBagLayout());
-
-        jLabel1.setText("Como foi dividido o pagamento da conta?");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogRegistarConta.getContentPane().add(jLabel1, gridBagConstraints);
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogRegistarConta.getContentPane().add(jScrollPane1, gridBagConstraints);
-
-        jLabel2.setText("Como deve ser dividido o pagamento?");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(6, 30, 0, 0);
-        dialogRegistarConta.getContentPane().add(jLabel2, gridBagConstraints);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogRegistarConta.getContentPane().add(jComboBox1, gridBagConstraints);
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable2);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.insets = new java.awt.Insets(6, 30, 0, 0);
-        dialogRegistarConta.getContentPane().add(jScrollPane2, gridBagConstraints);
-
-        jLabel3.setText("Valor total:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogRegistarConta.getContentPane().add(jLabel3, gridBagConstraints);
-
-        jTextField1.setMinimumSize(new java.awt.Dimension(150, 26));
-        jTextField1.setPreferredSize(new java.awt.Dimension(150, 26));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 10, 0);
-        dialogRegistarConta.getContentPane().add(jTextField1, gridBagConstraints);
-
-        dialogGestaoContaMorador.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        dialogGestaoContaMorador.setTitle("Conta de morador");
-        dialogGestaoContaMorador.setMinimumSize(new java.awt.Dimension(415, 415));
-        dialogGestaoContaMorador.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
-        dialogGestaoContaMorador.setResizable(false);
-        dialogGestaoContaMorador.getContentPane().setLayout(new java.awt.GridBagLayout());
-
-        painelGestaoContaMorador.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        painelGestaoContaMorador.setLayout(new java.awt.GridBagLayout());
-
-        labelNomeMorador.setText("Nome:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 6, 0, 0);
-        painelGestaoContaMorador.add(labelNomeMorador, gridBagConstraints);
-
-        labelEmailMorador.setText("E-mail:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 6, 0, 0);
-        painelGestaoContaMorador.add(labelEmailMorador, gridBagConstraints);
-
-        botaoAlterarEmail.setText("Alterar e-mail...");
-        botaoAlterarEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoAlterarEmailActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 0);
-        painelGestaoContaMorador.add(botaoAlterarEmail, gridBagConstraints);
-
-        botaoAlterarPassword.setText("Alterar password...");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 6, 0);
-        painelGestaoContaMorador.add(botaoAlterarPassword, gridBagConstraints);
-
-        nomeMoradorGestaoConta.setText("<pôr nome do morador aqui>");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(10, 6, 0, 0);
-        painelGestaoContaMorador.add(nomeMoradorGestaoConta, gridBagConstraints);
-
-        emailGestaoConta.setText("<pôr e-mail do morador aqui>");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(10, 6, 0, 0);
-        painelGestaoContaMorador.add(emailGestaoConta, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogGestaoContaMorador.getContentPane().add(painelGestaoContaMorador, gridBagConstraints);
-
-        botaoEliminarConta.setText("Eliminar conta");
-        botaoEliminarConta.setForeground(new java.awt.Color(204, 0, 0));
-        botaoEliminarConta.setOpaque(true);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
-        dialogGestaoContaMorador.getContentPane().add(botaoEliminarConta, gridBagConstraints);
-
-        imagemMoradorGestaoConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/NoImage.jpeg"))); // NOI18N
-        imagemMoradorGestaoConta.setBorder(null);
-        imagemMoradorGestaoConta.setToolTipText("Clique na imagem para a alterar");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 20, 0);
-        dialogGestaoContaMorador.getContentPane().add(imagemMoradorGestaoConta, gridBagConstraints);
-
-        dialogAlterarEmail.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        dialogAlterarEmail.setTitle("Alterar e-mail");
-        dialogAlterarEmail.setMinimumSize(new java.awt.Dimension(380, 110));
-        dialogAlterarEmail.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
-        dialogAlterarEmail.setName("dialogAlterarEmail"); // NOI18N
-        dialogAlterarEmail.setResizable(false);
-
-        labelNovoEmail.setText("Novo e-mail:");
-
-        campoNovoEmail.setPreferredSize(new java.awt.Dimension(256, 26));
-
-        botaoOkNovoEmail.setText("Confirmar");
-        botaoOkNovoEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoOkNovoEmailActionPerformed(evt);
-            }
-        });
-
-        labelErroEmail.setForeground(javax.swing.UIManager.getDefaults().getColor("nb.errorForeground"));
-        labelErroEmail.setText("O e-mail escolhido está a ser utilizado por outro morador");
-        labelErroEmail.setOpaque(true);
-        labelErroEmail.setVisible(false);
-
-        javax.swing.GroupLayout dialogAlterarEmailLayout = new javax.swing.GroupLayout(dialogAlterarEmail.getContentPane());
-        dialogAlterarEmail.getContentPane().setLayout(dialogAlterarEmailLayout);
-        dialogAlterarEmailLayout.setHorizontalGroup(
-            dialogAlterarEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dialogAlterarEmailLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(dialogAlterarEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(dialogAlterarEmailLayout.createSequentialGroup()
-                        .addComponent(campoNovoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botaoOkNovoEmail))
-                    .addComponent(labelNovoEmail)
-                    .addComponent(labelErroEmail))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        dialogAlterarEmailLayout.setVerticalGroup(
-            dialogAlterarEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dialogAlterarEmailLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(labelNovoEmail)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(dialogAlterarEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoNovoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botaoOkNovoEmail))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelErroEmail)
-                .addContainerGap())
-        );
-
-        dialogRegistarTransferencia.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        dialogRegistarTransferencia.setTitle("Registar transferência");
-        dialogRegistarTransferencia.setMinimumSize(new java.awt.Dimension(445, 265));
-        dialogRegistarTransferencia.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
-        dialogRegistarTransferencia.setName("registarTransferencia"); // NOI18N
-        dialogRegistarTransferencia.setResizable(false);
-        dialogRegistarTransferencia.getContentPane().setLayout(new java.awt.GridBagLayout());
-
-        labelQuemTransferiu.setText("Quem transferiu:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogRegistarTransferencia.getContentPane().add(labelQuemTransferiu, gridBagConstraints);
-
-        labelQuemRecebeu.setText("Quem recebeu:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogRegistarTransferencia.getContentPane().add(labelQuemRecebeu, gridBagConstraints);
-
-        labelQuantia.setText("Quantia:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogRegistarTransferencia.getContentPane().add(labelQuantia, gridBagConstraints);
-
-        labelDescricaoTransferencia.setText("Descrição:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.FIRST_LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogRegistarTransferencia.getContentPane().add(labelDescricaoTransferencia, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogRegistarTransferencia.getContentPane().add(comboBoxQuemTransferiu, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogRegistarTransferencia.getContentPane().add(comboBoxQuemRecebeu, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(6, 7, 0, 2);
-        dialogRegistarTransferencia.getContentPane().add(campoQuantiaTransferida, gridBagConstraints);
-
-        descricaoTransferencia.setColumns(20);
-        descricaoTransferencia.setRows(5);
-        scrollDescricaoTransferencia.setViewportView(descricaoTransferencia);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.insets = new java.awt.Insets(6, 10, 0, 6);
-        dialogRegistarTransferencia.getContentPane().add(scrollDescricaoTransferencia, gridBagConstraints);
-
-        jPanel1.setLayout(new java.awt.GridBagLayout());
-
-        botaoCancelarRegistoTransferencia.setText("Cancelar");
-        botaoCancelarRegistoTransferencia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoCancelarRegistoTransferenciaActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        jPanel1.add(botaoCancelarRegistoTransferencia, gridBagConstraints);
-
-        botaoConfirmarRegistoTransferencia.setText("Confirmar");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        jPanel1.add(botaoConfirmarRegistoTransferencia, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
-        dialogRegistarTransferencia.getContentPane().add(jPanel1, gridBagConstraints);
-
-        dialogPesquisaDespesa.getContentPane().setLayout(new java.awt.GridBagLayout());
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        dialogPesquisaDespesa.getContentPane().add(painelPesquisaDespesa, gridBagConstraints);
-
-        jLabel4.setText("Pesquise e selecione a despesa a que pretende associar uma conta");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 0);
-        dialogPesquisaDespesa.getContentPane().add(jLabel4, gridBagConstraints);
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dashboard");
         setMinimumSize(new java.awt.Dimension(980, 565));
@@ -683,8 +66,8 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(15, 6, 0, 0);
         getContentPane().add(labelIcon, gridBagConstraints);
 
-        butaoRegistarDespesa.setText("Registar despesa");
         butaoRegistarDespesa.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        butaoRegistarDespesa.setText("Registar despesa");
         butaoRegistarDespesa.setPreferredSize(new java.awt.Dimension(170, 57));
         butaoRegistarDespesa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -699,8 +82,8 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(15, 5, 0, 0);
         getContentPane().add(butaoRegistarDespesa, gridBagConstraints);
 
-        butaoRegistarContaPaga.setText("Registar conta paga");
         butaoRegistarContaPaga.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        butaoRegistarContaPaga.setText("Registar conta paga");
         butaoRegistarContaPaga.setPreferredSize(new java.awt.Dimension(170, 57));
         butaoRegistarContaPaga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -870,48 +253,32 @@ public class Dashboard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void butaoRegistarContaPagaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoRegistarContaPagaActionPerformed
-        // TODO add your handling code here:
+        dialogPesquisarDespesa = new DialogPesquisarDespesa(this, true);
+        dialogPesquisarDespesa.setLocationRelativeTo(this);
+        dialogPesquisarDespesa.setVisible(true);
     }//GEN-LAST:event_butaoRegistarContaPagaActionPerformed
 
-    private void campoNomeDespesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeDespesaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoNomeDespesaActionPerformed
-
-    private void butaoCancelarRegistoDespesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoCancelarRegistoDespesaActionPerformed
-        dialogRegistarDespesa.setVisible(false);
-    }//GEN-LAST:event_butaoCancelarRegistoDespesaActionPerformed
-
     private void butaoRegistarDespesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoRegistarDespesaActionPerformed
+        dialogRegistarDespesa = new DialogRegistarDespesa(this, true);   
         dialogRegistarDespesa.setLocationRelativeTo(this);
         dialogRegistarDespesa.setVisible(true);
     }//GEN-LAST:event_butaoRegistarDespesaActionPerformed
 
     private void imagemMoradorAutenticadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imagemMoradorAutenticadoActionPerformed
-        dialogGestaoContaMorador.setLocationRelativeTo(this);
+        dialogGestaoContaMorador = new DialogGestaoContaMorador(this, true);
+        dialogGestaoContaMorador.setLocationRelativeTo(null);
         dialogGestaoContaMorador.setVisible(true);
     }//GEN-LAST:event_imagemMoradorAutenticadoActionPerformed
 
-    private void botaoAlterarEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAlterarEmailActionPerformed
-        dialogAlterarEmail.setLocationRelativeTo(this);
-        labelErroEmail.setVisible(false);
-        dialogAlterarEmail.setVisible(true);
-    }//GEN-LAST:event_botaoAlterarEmailActionPerformed
-
-    private void botaoOkNovoEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoOkNovoEmailActionPerformed
-        labelErroEmail.setVisible(true);
-    }//GEN-LAST:event_botaoOkNovoEmailActionPerformed
-
     private void butaoRegistarTransferenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoRegistarTransferenciaActionPerformed
+        dialogRegistarTransferencia = new DialogRegistarTransferencia(this, true);
         dialogRegistarTransferencia.setLocationRelativeTo(this);
         dialogRegistarTransferencia.setVisible(true);
     }//GEN-LAST:event_butaoRegistarTransferenciaActionPerformed
 
-    private void botaoCancelarRegistoTransferenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCancelarRegistoTransferenciaActionPerformed
-        dialogRegistarTransferencia.dispose();
-    }//GEN-LAST:event_botaoCancelarRegistoTransferenciaActionPerformed
-
     private void botaoTerminarSessaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTerminarSessaoActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        new Login().setVisible(true);
     }//GEN-LAST:event_botaoTerminarSessaoActionPerformed
 
     /**
@@ -925,85 +292,21 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea areaTextoDescricao;
-    private javax.swing.JButton botaoAlterarEmail;
-    private javax.swing.JButton botaoAlterarPassword;
-    private javax.swing.JButton botaoCancelarRegistoTransferencia;
-    private javax.swing.JButton botaoConfirmarRegistoTransferencia;
-    private javax.swing.JButton botaoEliminarConta;
-    private javax.swing.JButton botaoOkNovoEmail;
     private javax.swing.JButton botaoTerminarSessao;
-    private javax.swing.JButton butaoCancelarRegistoDespesa;
-    private javax.swing.JButton butaoConfirmarRegistoDespesa;
     private javax.swing.JButton butaoRegistarContaPaga;
     private javax.swing.JButton butaoRegistarDespesa;
     private javax.swing.JButton butaoRegistarTransferencia;
-    private javax.swing.JTextField campoNomeDespesa;
-    private javax.swing.JTextField campoNovoEmail;
-    private javax.swing.JTextField campoQuantiaTransferida;
-    private javax.swing.JComboBox<String> comboBoxQuemRecebeu;
-    private javax.swing.JComboBox<String> comboBoxQuemTransferiu;
-    private javax.swing.JTextArea descricaoTransferencia;
-    private javax.swing.JDialog dialogAlterarEmail;
-    private javax.swing.JDialog dialogGestaoContaMorador;
-    private javax.swing.JDialog dialogPesquisaDespesa;
-    private javax.swing.JDialog dialogRegistarConta;
-    private javax.swing.JDialog dialogRegistarDespesa;
-    private javax.swing.JDialog dialogRegistarTransferencia;
-    private javax.swing.JLabel emailGestaoConta;
-    private javax.swing.JLabel iconeDespesa;
     private javax.swing.JButton imagemMoradorAutenticado;
-    private javax.swing.JButton imagemMoradorGestaoConta;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JLabel labelDescricaoDespesa;
-    private javax.swing.JLabel labelDescricaoTransferencia;
-    private javax.swing.JLabel labelEmailMorador;
-    private javax.swing.JLabel labelErroEmail;
     private javax.swing.JLabel labelIcon;
     private javax.swing.JLabel labelMoradores;
-    private javax.swing.JLabel labelNomeDespesa;
-    private javax.swing.JLabel labelNomeMorador;
-    private javax.swing.JLabel labelNovoEmail;
-    private javax.swing.JLabel labelOcorre;
-    private javax.swing.JLabel labelQuantia;
-    private javax.swing.JLabel labelQuemRecebeu;
-    private javax.swing.JLabel labelQuemTransferiu;
     private javax.swing.JLabel labelSaldo;
     private javax.swing.JList<String> listaLateralMoradores;
     private javax.swing.JLabel nomeMoradorAutenticado;
-    private javax.swing.JLabel nomeMoradorGestaoConta;
-    private javax.swing.JComboBox<String> opcoesPeriodicidade;
-    private javax.swing.JPanel painelBotoesRegistoDespesa;
     private dss.g22.presentation.PainelDespesas painelDespesas;
-    private javax.swing.JPanel painelGestaoContaMorador;
     private javax.swing.JPanel painelMoradorAutenticado;
     private javax.swing.JPanel painelMoradores;
-    private dss.g22.presentation.PainelDespesas painelPesquisaDespesa;
     private javax.swing.JTabbedPane painelTabs;
-    private javax.swing.JScrollPane scrollDescricaoDespesa;
-    private javax.swing.JScrollPane scrollDescricaoTransferencia;
     private javax.swing.JScrollPane scrollListaLateralMoradores;
     private dss.g22.presentation.PainelContaCorrente tabContaCorrente;
     private dss.g22.presentation.PainelGeral tabGeral;
