@@ -33,14 +33,17 @@ public class DialogPesquisarDespesa extends javax.swing.JDialog {
         painelPesquisaDespesa = new dss.g22.presentation.PainelDespesas();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(490, 510));
+        setPreferredSize(new java.awt.Dimension(490, 510));
+        setResizable(false);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        labelIndicaoPesquisa.setText("Pesquise e selecione a despesa a que pretende associar uma conta");
+        labelIndicaoPesquisa.setText("Selecione a despesa a que pretende associar uma fatura:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(0, 12, 0, 0);
         getContentPane().add(labelIndicaoPesquisa, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;

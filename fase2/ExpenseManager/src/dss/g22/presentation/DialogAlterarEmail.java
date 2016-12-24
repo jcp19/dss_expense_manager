@@ -35,55 +35,90 @@ public class DialogAlterarEmail extends javax.swing.JDialog {
 
         labelNovoEmail = new javax.swing.JLabel();
         campoNovoEmail = new javax.swing.JTextField();
-        botaoConfirmar = new javax.swing.JButton();
         labelErroEmailExiste = new javax.swing.JLabel();
+        painelCancelarConfirmar = new javax.swing.JPanel();
+        botaoCancelar = new javax.swing.JButton();
+        botaoConfirmar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Alterar e-mail");
-        setMinimumSize(new java.awt.Dimension(410, 135));
+        setMinimumSize(new java.awt.Dimension(350, 140));
         setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
         setName("alterarEmail"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(405, 145));
+        setPreferredSize(new java.awt.Dimension(350, 140));
         setResizable(false);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         labelNovoEmail.setText("Novo e-mail:");
         gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
         getContentPane().add(labelNovoEmail, gridBagConstraints);
+
+        campoNovoEmail.setPreferredSize(new java.awt.Dimension(305, 26));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 4, 0, 0);
         getContentPane().add(campoNovoEmail, gridBagConstraints);
 
-        botaoConfirmar.setText("Confirmar");
+        labelErroEmailExiste.setForeground(new java.awt.Color(255, 0, 0));
+        labelErroEmailExiste.setText("Já existe um morador com o e-mail introduzido.");
+        labelErroEmailExiste.setOpaque(true);
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        getContentPane().add(botaoConfirmar, gridBagConstraints);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 8, 0, 0);
+        getContentPane().add(labelErroEmailExiste, gridBagConstraints);
 
-        labelErroEmailExiste.setForeground(javax.swing.UIManager.getDefaults().getColor("nb.errorForeground"));
-        labelErroEmailExiste.setText("O e-mail escolhido já está a ser usado por outro morador");
+        painelCancelarConfirmar.setLayout(new javax.swing.BoxLayout(painelCancelarConfirmar, javax.swing.BoxLayout.LINE_AXIS));
+
+        botaoCancelar.setText("Cancelar");
         labelErroEmailExiste.setVisible(false);
+        botaoCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCancelarActionPerformed(evt);
+            }
+        });
+        painelCancelarConfirmar.add(botaoCancelar);
+
+        botaoConfirmar.setText("Confirmar");
+        botaoConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoConfirmarActionPerformed(evt);
+            }
+        });
+        painelCancelarConfirmar.add(botaoConfirmar);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 0);
-        getContentPane().add(labelErroEmailExiste, gridBagConstraints);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 0, 0, 0);
+        getContentPane().add(painelCancelarConfirmar, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botaoCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCancelarActionPerformed
+        dispose();
+    }//GEN-LAST:event_botaoCancelarActionPerformed
+
+    private void botaoConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConfirmarActionPerformed
+        labelErroEmailExiste.setVisible(true);
+    }//GEN-LAST:event_botaoConfirmarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoCancelar;
     private javax.swing.JButton botaoConfirmar;
     private javax.swing.JTextField campoNovoEmail;
     private javax.swing.JLabel labelErroEmailExiste;
     private javax.swing.JLabel labelNovoEmail;
+    private javax.swing.JPanel painelCancelarConfirmar;
     // End of variables declaration//GEN-END:variables
 }

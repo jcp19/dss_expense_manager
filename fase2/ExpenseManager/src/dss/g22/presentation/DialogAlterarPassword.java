@@ -32,98 +32,154 @@ public class DialogAlterarPassword extends javax.swing.JDialog {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         labelPasswordAtual = new javax.swing.JLabel();
         campoPasswordAtual = new javax.swing.JPasswordField();
-        labelNovaPassword = new javax.swing.JLabel();
-        campoNovaPassword = new javax.swing.JTextField();
-        labelErroPassDiferentes = new javax.swing.JLabel();
-        botaoOk = new javax.swing.JButton();
-        labelConfirmarNovaPassword = new javax.swing.JLabel();
-        campoConfirmarNovaPassword = new javax.swing.JTextField();
         labelPasswordInvalida = new javax.swing.JLabel();
         labelPasswordInvalida.setVisible(false);
+        labelNovaPassword = new javax.swing.JLabel();
+        campoNovaPassword = new javax.swing.JPasswordField();
+        labelConfirmarNovaPassword = new javax.swing.JLabel();
+        campoConfirmarNovaPassword = new javax.swing.JPasswordField();
+        labelErroPassDiferentes = new javax.swing.JLabel();
+        painelCancelarConfirmar = new javax.swing.JPanel();
+        butaoCancelar = new javax.swing.JButton();
+        botaoConfirmar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(315, 26));
+        setPreferredSize(new java.awt.Dimension(315, 260));
         setResizable(false);
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         labelPasswordAtual.setText("Password atual:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        getContentPane().add(labelPasswordAtual, gridBagConstraints);
+
+        campoPasswordAtual.setMinimumSize(new java.awt.Dimension(274, 26));
+        campoPasswordAtual.setPreferredSize(new java.awt.Dimension(274, 26));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 0, 0);
+        getContentPane().add(campoPasswordAtual, gridBagConstraints);
+
+        labelPasswordInvalida.setForeground(new java.awt.Color(255, 0, 0));
+        labelPasswordInvalida.setText("Password inválida.");
+        labelPasswordInvalida.setOpaque(true);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 0);
+        getContentPane().add(labelPasswordInvalida, gridBagConstraints);
 
         labelNovaPassword.setText("Nova password:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        getContentPane().add(labelNovaPassword, gridBagConstraints);
 
-        labelErroPassDiferentes.setForeground(javax.swing.UIManager.getDefaults().getColor("nb.errorForeground"));
-        labelErroPassDiferentes.setText("As passwords introduzidas não coincidem");
-        labelErroPassDiferentes.setOpaque(true);
-        labelErroPassDiferentes.setVisible(false);
-
-        botaoOk.setText("Ok");
+        campoNovaPassword.setMinimumSize(new java.awt.Dimension(274, 26));
+        campoNovaPassword.setPreferredSize(new java.awt.Dimension(274, 26));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 0, 0);
+        getContentPane().add(campoNovaPassword, gridBagConstraints);
 
         labelConfirmarNovaPassword.setText("Confirmar nova password:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        getContentPane().add(labelConfirmarNovaPassword, gridBagConstraints);
 
-        labelPasswordInvalida.setForeground(javax.swing.UIManager.getDefaults().getColor("nb.errorForeground"));
-        labelPasswordInvalida.setText("Password inválida");
-        labelPasswordInvalida.setOpaque(true);
+        campoConfirmarNovaPassword.setMinimumSize(new java.awt.Dimension(274, 26));
+        campoConfirmarNovaPassword.setPreferredSize(new java.awt.Dimension(274, 26));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 0, 0);
+        getContentPane().add(campoConfirmarNovaPassword, gridBagConstraints);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(labelPasswordAtual)
-                            .addComponent(campoPasswordAtual)
-                            .addComponent(labelNovaPassword)
-                            .addComponent(campoNovaPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelPasswordInvalida))
-                    .addComponent(labelConfirmarNovaPassword)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(botaoOk)
-                            .addComponent(campoConfirmarNovaPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelErroPassDiferentes)))
-                .addContainerGap(10, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(labelPasswordAtual)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoPasswordAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelPasswordInvalida))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelNovaPassword)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(campoNovaPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelConfirmarNovaPassword)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoConfirmarNovaPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelErroPassDiferentes))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botaoOk)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        labelErroPassDiferentes.setForeground(new java.awt.Color(255, 0, 0));
+        labelErroPassDiferentes.setText("As passwords introduzidas não coincidem.");
+        labelErroPassDiferentes.setOpaque(true);
+        labelErroPassDiferentes.setVisible(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 8, 0, 0);
+        getContentPane().add(labelErroPassDiferentes, gridBagConstraints);
+
+        painelCancelarConfirmar.setLayout(new javax.swing.BoxLayout(painelCancelarConfirmar, javax.swing.BoxLayout.LINE_AXIS));
+
+        butaoCancelar.setText("Cancelar");
+        butaoCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butaoCancelarActionPerformed(evt);
+            }
+        });
+        painelCancelarConfirmar.add(butaoCancelar);
+
+        botaoConfirmar.setText("Confirmar");
+        botaoConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoConfirmarActionPerformed(evt);
+            }
+        });
+        painelCancelarConfirmar.add(botaoConfirmar);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 0, 0, 0);
+        getContentPane().add(painelCancelarConfirmar, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botaoConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConfirmarActionPerformed
+        labelPasswordInvalida.setVisible(true);
+        labelErroPassDiferentes.setVisible(true);
+    }//GEN-LAST:event_botaoConfirmarActionPerformed
+
+    private void butaoCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoCancelarActionPerformed
+        dispose();
+    }//GEN-LAST:event_butaoCancelarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botaoOk;
-    private javax.swing.JTextField campoConfirmarNovaPassword;
-    private javax.swing.JTextField campoNovaPassword;
+    private javax.swing.JButton botaoConfirmar;
+    private javax.swing.JButton butaoCancelar;
+    private javax.swing.JPasswordField campoConfirmarNovaPassword;
+    private javax.swing.JPasswordField campoNovaPassword;
     private javax.swing.JPasswordField campoPasswordAtual;
     private javax.swing.JLabel labelConfirmarNovaPassword;
     private javax.swing.JLabel labelErroPassDiferentes;
     private javax.swing.JLabel labelNovaPassword;
     private javax.swing.JLabel labelPasswordAtual;
     private javax.swing.JLabel labelPasswordInvalida;
+    private javax.swing.JPanel painelCancelarConfirmar;
     // End of variables declaration//GEN-END:variables
 }

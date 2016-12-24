@@ -23,7 +23,7 @@ import javax.swing.JFileChooser;
 public class Login extends javax.swing.JFrame {
     
     private final Facade facade;
-    private DialogRegisto dialogRegisto;
+    private DialogRegistarMorador dialogRegisto;
     
     /**
      * Creates new form Login
@@ -35,16 +35,6 @@ public class Login extends javax.swing.JFrame {
     public Login(Facade f) {
         facade = f;
         initComponents();
-    }
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new Login().setVisible(true);
-        });
     }
 
     /**
@@ -70,8 +60,8 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
         setLocationByPlatform(true);
-        setMinimumSize(new java.awt.Dimension(335, 485));
-        setPreferredSize(new java.awt.Dimension(335, 485));
+        setMinimumSize(new java.awt.Dimension(305, 470));
+        setPreferredSize(new java.awt.Dimension(305, 470));
         setResizable(false);
         setSize(new java.awt.Dimension(335, 485));
         getContentPane().setLayout(new java.awt.GridBagLayout());
@@ -89,15 +79,18 @@ public class Login extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
         getContentPane().add(labelEmail, gridBagConstraints);
+
+        campoEmail.setMinimumSize(new java.awt.Dimension(256, 26));
+        campoEmail.setPreferredSize(new java.awt.Dimension(256, 26));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 0, 0);
         getContentPane().add(campoEmail, gridBagConstraints);
 
         labelPassword.setText("Password:");
@@ -105,14 +98,14 @@ public class Login extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
         getContentPane().add(labelPassword, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 0, 0);
         getContentPane().add(campoPassword, gridBagConstraints);
 
         butaoLogin.setText("Login");
@@ -125,7 +118,7 @@ public class Login extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
         getContentPane().add(butaoLogin, gridBagConstraints);
 
         painelRegistar.setLayout(new java.awt.GridBagLayout());
@@ -152,7 +145,7 @@ public class Login extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.insets = new java.awt.Insets(10, 5, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
         getContentPane().add(painelRegistar, gridBagConstraints);
 
         pack();
@@ -160,7 +153,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoRegistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRegistarActionPerformed
-        dialogRegisto = new DialogRegisto(this, true);
+        dialogRegisto = new DialogRegistarMorador(this, true);
         dialogRegisto.setLocationRelativeTo(this);
         dialogRegisto.setVisible(true);
     }//GEN-LAST:event_botaoRegistarActionPerformed

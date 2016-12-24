@@ -34,9 +34,9 @@ public class Dashboard extends javax.swing.JFrame {
         java.awt.GridBagConstraints gridBagConstraints;
 
         labelIcon = new javax.swing.JLabel();
-        butaoRegistarDespesa = new javax.swing.JButton();
-        butaoRegistarContaPaga = new javax.swing.JButton();
-        butaoRegistarTransferencia = new javax.swing.JButton();
+        botaoRegistarDespesa = new javax.swing.JButton();
+        botaoRegistarFatura = new javax.swing.JButton();
+        botaoRegistarTransferencia = new javax.swing.JButton();
         painelTabs = new javax.swing.JTabbedPane();
         tabGeral = new dss.g22.presentation.PainelGeral();
         tabContaCorrente = new dss.g22.presentation.PainelContaCorrente();
@@ -50,7 +50,7 @@ public class Dashboard extends javax.swing.JFrame {
         imagemMoradorAutenticado = new javax.swing.JButton();
         nomeMoradorAutenticado = new javax.swing.JLabel();
         labelSaldo = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        labelValorSaldo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dashboard");
@@ -63,15 +63,15 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.insets = new java.awt.Insets(15, 6, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(3, 6, 2, 0);
         getContentPane().add(labelIcon, gridBagConstraints);
 
-        butaoRegistarDespesa.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        butaoRegistarDespesa.setText("Registar despesa");
-        butaoRegistarDespesa.setPreferredSize(new java.awt.Dimension(170, 57));
-        butaoRegistarDespesa.addActionListener(new java.awt.event.ActionListener() {
+        botaoRegistarDespesa.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        botaoRegistarDespesa.setText("Registar despesa");
+        botaoRegistarDespesa.setPreferredSize(new java.awt.Dimension(170, 60));
+        botaoRegistarDespesa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butaoRegistarDespesaActionPerformed(evt);
+                botaoRegistarDespesaActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -80,14 +80,14 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.insets = new java.awt.Insets(15, 5, 0, 0);
-        getContentPane().add(butaoRegistarDespesa, gridBagConstraints);
+        getContentPane().add(botaoRegistarDespesa, gridBagConstraints);
 
-        butaoRegistarContaPaga.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        butaoRegistarContaPaga.setText("Registar conta paga");
-        butaoRegistarContaPaga.setPreferredSize(new java.awt.Dimension(170, 57));
-        butaoRegistarContaPaga.addActionListener(new java.awt.event.ActionListener() {
+        botaoRegistarFatura.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        botaoRegistarFatura.setText("Registar fatura");
+        botaoRegistarFatura.setPreferredSize(new java.awt.Dimension(170, 60));
+        botaoRegistarFatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butaoRegistarContaPagaActionPerformed(evt);
+                botaoRegistarFaturaActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -96,14 +96,14 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        getContentPane().add(butaoRegistarContaPaga, gridBagConstraints);
+        getContentPane().add(botaoRegistarFatura, gridBagConstraints);
 
-        butaoRegistarTransferencia.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        butaoRegistarTransferencia.setText("Registar transferência");
-        butaoRegistarTransferencia.setPreferredSize(new java.awt.Dimension(170, 57));
-        butaoRegistarTransferencia.addActionListener(new java.awt.event.ActionListener() {
+        botaoRegistarTransferencia.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        botaoRegistarTransferencia.setText("Registar transferência");
+        botaoRegistarTransferencia.setPreferredSize(new java.awt.Dimension(170, 60));
+        botaoRegistarTransferencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butaoRegistarTransferenciaActionPerformed(evt);
+                botaoRegistarTransferenciaActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -112,7 +112,7 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        getContentPane().add(butaoRegistarTransferencia, gridBagConstraints);
+        getContentPane().add(botaoRegistarTransferencia, gridBagConstraints);
 
         painelTabs.setPreferredSize(new java.awt.Dimension(500, 460));
         painelTabs.addTab("Geral", tabGeral);
@@ -199,9 +199,9 @@ public class Dashboard extends javax.swing.JFrame {
         labelSaldo.setFont(new java.awt.Font("Lucida Grande", 1, 12)); // NOI18N
         labelSaldo.setText("Saldo:");
 
-        jLabel10.setFont(new java.awt.Font("Lucida Grande", 1, 12)); // NOI18N
-        jLabel10.setText("1000");
-        jLabel10.setMaximumSize(new java.awt.Dimension(97, 15));
+        labelValorSaldo.setFont(new java.awt.Font("Lucida Grande", 1, 12)); // NOI18N
+        labelValorSaldo.setText("1000");
+        labelValorSaldo.setMaximumSize(new java.awt.Dimension(97, 15));
 
         javax.swing.GroupLayout painelMoradorAutenticadoLayout = new javax.swing.GroupLayout(painelMoradorAutenticado);
         painelMoradorAutenticado.setLayout(painelMoradorAutenticadoLayout);
@@ -218,7 +218,7 @@ public class Dashboard extends javax.swing.JFrame {
                             .addGroup(painelMoradorAutenticadoLayout.createSequentialGroup()
                                 .addComponent(labelSaldo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(labelValorSaldo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(nomeMoradorAutenticado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(83, 83, 83))
         );
@@ -227,14 +227,14 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelMoradorAutenticadoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(painelMoradorAutenticadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(imagemMoradorAutenticado)
+                    .addComponent(imagemMoradorAutenticado, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelMoradorAutenticadoLayout.createSequentialGroup()
                         .addComponent(nomeMoradorAutenticado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(painelMoradorAutenticadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(labelSaldo)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labelValorSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(botaoTerminarSessao)
                 .addContainerGap())
         );
@@ -245,24 +245,24 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_END;
-        gridBagConstraints.insets = new java.awt.Insets(6, 8, 10, 0);
+        gridBagConstraints.insets = new java.awt.Insets(1, 8, 11, 0);
         getContentPane().add(painelMoradorAutenticado, gridBagConstraints);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void butaoRegistarContaPagaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoRegistarContaPagaActionPerformed
+    private void botaoRegistarFaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRegistarFaturaActionPerformed
         dialogPesquisarDespesa = new DialogPesquisarDespesa(this, true);
         dialogPesquisarDespesa.setLocationRelativeTo(this);
         dialogPesquisarDespesa.setVisible(true);
-    }//GEN-LAST:event_butaoRegistarContaPagaActionPerformed
+    }//GEN-LAST:event_botaoRegistarFaturaActionPerformed
 
-    private void butaoRegistarDespesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoRegistarDespesaActionPerformed
+    private void botaoRegistarDespesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRegistarDespesaActionPerformed
         dialogRegistarDespesa = new DialogRegistarDespesa(this, true);   
         dialogRegistarDespesa.setLocationRelativeTo(this);
         dialogRegistarDespesa.setVisible(true);
-    }//GEN-LAST:event_butaoRegistarDespesaActionPerformed
+    }//GEN-LAST:event_botaoRegistarDespesaActionPerformed
 
     private void imagemMoradorAutenticadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imagemMoradorAutenticadoActionPerformed
         dialogGestaoContaMorador = new DialogGestaoContaMorador(this, true);
@@ -270,37 +270,27 @@ public class Dashboard extends javax.swing.JFrame {
         dialogGestaoContaMorador.setVisible(true);
     }//GEN-LAST:event_imagemMoradorAutenticadoActionPerformed
 
-    private void butaoRegistarTransferenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoRegistarTransferenciaActionPerformed
+    private void botaoRegistarTransferenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRegistarTransferenciaActionPerformed
         dialogRegistarTransferencia = new DialogRegistarTransferencia(this, true);
         dialogRegistarTransferencia.setLocationRelativeTo(this);
         dialogRegistarTransferencia.setVisible(true);
-    }//GEN-LAST:event_butaoRegistarTransferenciaActionPerformed
+    }//GEN-LAST:event_botaoRegistarTransferenciaActionPerformed
 
     private void botaoTerminarSessaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTerminarSessaoActionPerformed
         dispose();
         new Login().setVisible(true);
     }//GEN-LAST:event_botaoTerminarSessaoActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new Dashboard().setVisible(true);
-        });
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoRegistarDespesa;
+    private javax.swing.JButton botaoRegistarFatura;
+    private javax.swing.JButton botaoRegistarTransferencia;
     private javax.swing.JButton botaoTerminarSessao;
-    private javax.swing.JButton butaoRegistarContaPaga;
-    private javax.swing.JButton butaoRegistarDespesa;
-    private javax.swing.JButton butaoRegistarTransferencia;
     private javax.swing.JButton imagemMoradorAutenticado;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel labelIcon;
     private javax.swing.JLabel labelMoradores;
     private javax.swing.JLabel labelSaldo;
+    private javax.swing.JLabel labelValorSaldo;
     private javax.swing.JList<String> listaLateralMoradores;
     private javax.swing.JLabel nomeMoradorAutenticado;
     private dss.g22.presentation.PainelDespesas painelDespesas;

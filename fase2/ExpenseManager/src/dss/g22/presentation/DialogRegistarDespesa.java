@@ -29,272 +29,152 @@ public class DialogRegistarDespesa extends javax.swing.JDialog {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        painelBotoes = new javax.swing.JPanel();
+        botaoCancelar = new javax.swing.JButton();
+        botaoAnterior = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        iconeDespesa = new javax.swing.JLabel();
         labelNomeDespesa = new javax.swing.JLabel();
         campoNomeDespesa = new javax.swing.JTextField();
         labelDescricaoDespesa = new javax.swing.JLabel();
         scrollDescricaoDespesa = new javax.swing.JScrollPane();
         areaTextoDescricao = new javax.swing.JTextArea();
-        painelBotoesRegistoDespesa = new javax.swing.JPanel();
-        butaoCancelarRegistoDespesa = new javax.swing.JButton();
-        butaoConfirmarRegistoDespesa = new javax.swing.JButton();
-        iconeDespesa = new javax.swing.JLabel();
+        labelErroNomeObrigatorio = new javax.swing.JLabel();
         opcoesPeriodicidade = new javax.swing.JComboBox<>();
         labelOcorre = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        jLabel7 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
-        jComboBox2 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Registar despesa");
+        setMinimumSize(new java.awt.Dimension(420, 470));
         setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
         setName("registarDespesa"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(420, 465));
+        setResizable(false);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        labelNomeDespesa.setText("Nome:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        getContentPane().add(labelNomeDespesa, gridBagConstraints);
+        painelBotoes.setLayout(new javax.swing.BoxLayout(painelBotoes, javax.swing.BoxLayout.LINE_AXIS));
 
-        campoNomeDespesa.addActionListener(new java.awt.event.ActionListener() {
+        botaoCancelar.setText("Cancelar");
+        painelBotoes.add(botaoCancelar);
+
+        botaoAnterior.setText("Anterior");
+        botaoAnterior.setEnabled(false);
+        botaoAnterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoNomeDespesaActionPerformed(evt);
+                botaoAnteriorActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(6, 3, 0, 0);
-        getContentPane().add(campoNomeDespesa, gridBagConstraints);
+        painelBotoes.add(botaoAnterior);
 
-        labelDescricaoDespesa.setText("Descrição:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        getContentPane().add(labelDescricaoDespesa, gridBagConstraints);
-
-        areaTextoDescricao.setColumns(30);
-        areaTextoDescricao.setRows(8);
-        scrollDescricaoDespesa.setViewportView(areaTextoDescricao);
+        jButton3.setText("Seguinte");
+        painelBotoes.add(jButton3);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(6, 7, 0, 4);
-        getContentPane().add(scrollDescricaoDespesa, gridBagConstraints);
-
-        painelBotoesRegistoDespesa.setLayout(new java.awt.GridBagLayout());
-
-        butaoCancelarRegistoDespesa.setText("Cancelar");
-        butaoCancelarRegistoDespesa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butaoCancelarRegistoDespesaActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        painelBotoesRegistoDespesa.add(butaoCancelarRegistoDespesa, gridBagConstraints);
-
-        butaoConfirmarRegistoDespesa.setText("Registar");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        painelBotoesRegistoDespesa.add(butaoConfirmarRegistoDespesa, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
-        getContentPane().add(painelBotoesRegistoDespesa, gridBagConstraints);
+        getContentPane().add(painelBotoes, gridBagConstraints);
 
         iconeDespesa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/ExpenseIcon.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
+        gridBagConstraints.insets = new java.awt.Insets(1, 0, 10, 0);
         getContentPane().add(iconeDespesa, gridBagConstraints);
+
+        labelNomeDespesa.setText("Nome:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        getContentPane().add(labelNomeDespesa, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 0, 0);
+        getContentPane().add(campoNomeDespesa, gridBagConstraints);
+
+        labelDescricaoDespesa.setText("Descrição:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        getContentPane().add(labelDescricaoDespesa, gridBagConstraints);
+
+        areaTextoDescricao.setColumns(30);
+        areaTextoDescricao.setLineWrap(true);
+        areaTextoDescricao.setRows(6);
+        areaTextoDescricao.setTabSize(4);
+        areaTextoDescricao.setWrapStyleWord(true);
+        scrollDescricaoDespesa.setViewportView(areaTextoDescricao);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 6, 0, 4);
+        getContentPane().add(scrollDescricaoDespesa, gridBagConstraints);
+
+        labelErroNomeObrigatorio.setForeground(new java.awt.Color(255, 0, 0));
+        labelErroNomeObrigatorio.setText("A despesa tem de ter um nome.");
+        labelErroNomeObrigatorio.setOpaque(true);
+        labelErroNomeObrigatorio.setVisible(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 0);
+        getContentPane().add(labelErroNomeObrigatorio, gridBagConstraints);
 
         opcoesPeriodicidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pontualmente", "Diariamente", "Semanalmente", "Quinzenalmente", "Mensalmente" }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridy = 7;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_START;
-        gridBagConstraints.insets = new java.awt.Insets(6, 2, 0, 0);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(3, 1, 0, 0);
         getContentPane().add(opcoesPeriodicidade, gridBagConstraints);
 
         labelOcorre.setText("Ocorre:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
         getContentPane().add(labelOcorre, gridBagConstraints);
-
-        jPanel3.setLayout(new java.awt.CardLayout());
-
-        jLabel5.setText("Valor total:");
-
-        jLabel6.setText("Como foi dividido o valor total?");
-
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Morador", "Participou", "Pagou"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Boolean.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true, true
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane3.setViewportView(jTable3);
-
-        jLabel7.setText("Como deve ser dividido o valor total?");
-
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Morador", "Percentagem (%)"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane4.setViewportView(jTable4);
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Igualmente", "Desigualmente", "Percentagens" }));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel3.add(jPanel2, "card2");
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridheight = 6;
-        gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 0);
-        getContentPane().add(jPanel3, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void campoNomeDespesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeDespesaActionPerformed
+    private void botaoAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAnteriorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campoNomeDespesaActionPerformed
-
-    private void butaoCancelarRegistoDespesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoCancelarRegistoDespesaActionPerformed
-       dispose();
-    }//GEN-LAST:event_butaoCancelarRegistoDespesaActionPerformed
+    }//GEN-LAST:event_botaoAnteriorActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaTextoDescricao;
-    private javax.swing.JButton butaoCancelarRegistoDespesa;
-    private javax.swing.JButton butaoConfirmarRegistoDespesa;
+    private javax.swing.JButton botaoAnterior;
+    private javax.swing.JButton botaoCancelar;
     private javax.swing.JTextField campoNomeDespesa;
     private javax.swing.JLabel iconeDespesa;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel labelDescricaoDespesa;
+    private javax.swing.JLabel labelErroNomeObrigatorio;
     private javax.swing.JLabel labelNomeDespesa;
     private javax.swing.JLabel labelOcorre;
     private javax.swing.JComboBox<String> opcoesPeriodicidade;
-    private javax.swing.JPanel painelBotoesRegistoDespesa;
+    private javax.swing.JPanel painelBotoes;
     private javax.swing.JScrollPane scrollDescricaoDespesa;
     // End of variables declaration//GEN-END:variables
 }

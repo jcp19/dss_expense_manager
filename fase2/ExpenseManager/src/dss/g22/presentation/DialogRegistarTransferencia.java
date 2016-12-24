@@ -100,14 +100,16 @@ public class DialogRegistarTransferencia extends javax.swing.JDialog {
         getContentPane().add(campoQuantiaTransferida, gridBagConstraints);
 
         descricaoTransferencia.setColumns(20);
+        descricaoTransferencia.setLineWrap(true);
         descricaoTransferencia.setRows(5);
+        descricaoTransferencia.setWrapStyleWord(true);
         scrollDescricaoTransferencia.setViewportView(descricaoTransferencia);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.insets = new java.awt.Insets(6, 10, 0, 6);
+        gridBagConstraints.insets = new java.awt.Insets(6, 11, 0, 6);
         getContentPane().add(scrollDescricaoTransferencia, gridBagConstraints);
 
         jPanel1.setLayout(new java.awt.GridBagLayout());

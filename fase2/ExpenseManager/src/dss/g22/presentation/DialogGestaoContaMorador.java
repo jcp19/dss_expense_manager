@@ -47,10 +47,11 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
         painelGestaoContaMorador = new javax.swing.JPanel();
         labelNomeMorador = new javax.swing.JLabel();
         labelEmailMorador = new javax.swing.JLabel();
-        botaoAlterarEmail = new javax.swing.JButton();
-        botaoAlterarPassword = new javax.swing.JButton();
         nomeMoradorGestaoConta = new javax.swing.JLabel();
         emailGestaoConta = new javax.swing.JLabel();
+        painelAlteracoes = new javax.swing.JPanel();
+        botaoAlterarEmail = new javax.swing.JButton();
+        botaoAlterarPassword = new javax.swing.JButton();
         botaoEliminarConta = new javax.swing.JButton();
         imagemMoradorGestaoConta = new javax.swing.JButton();
 
@@ -62,8 +63,10 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
 
     setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     setTitle("Gestão de conta de morador");
+    setMinimumSize(new java.awt.Dimension(360, 360));
     setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
     setName("gestaoContaMorador"); // NOI18N
+    setPreferredSize(new java.awt.Dimension(360, 360));
     setResizable(false);
     getContentPane().setLayout(new java.awt.GridBagLayout());
 
@@ -73,7 +76,7 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
     labelNomeMorador.setText("Nome:");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 0;
+    gridBagConstraints.gridy = 1;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(10, 6, 0, 0);
     painelGestaoContaMorador.add(labelNomeMorador, gridBagConstraints);
@@ -81,42 +84,15 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
     labelEmailMorador.setText("E-mail:");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 1;
+    gridBagConstraints.gridy = 2;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(10, 6, 0, 0);
     painelGestaoContaMorador.add(labelEmailMorador, gridBagConstraints);
 
-    botaoAlterarEmail.setText("Alterar e-mail...");
-    botaoAlterarEmail.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            botaoAlterarEmailActionPerformed(evt);
-        }
-    });
-    gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 2;
-    gridBagConstraints.gridwidth = 2;
-    gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 0);
-    painelGestaoContaMorador.add(botaoAlterarEmail, gridBagConstraints);
-
-    botaoAlterarPassword.setText("Alterar password...");
-    botaoAlterarPassword.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            botaoAlterarPasswordActionPerformed(evt);
-        }
-    });
-    gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 2;
-    gridBagConstraints.gridy = 2;
-    gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-    gridBagConstraints.insets = new java.awt.Insets(6, 6, 6, 0);
-    painelGestaoContaMorador.add(botaoAlterarPassword, gridBagConstraints);
-
     nomeMoradorGestaoConta.setText("<pôr nome do morador aqui>");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 1;
-    gridBagConstraints.gridy = 0;
+    gridBagConstraints.gridy = 1;
     gridBagConstraints.gridwidth = 2;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
     gridBagConstraints.insets = new java.awt.Insets(10, 6, 0, 0);
@@ -125,11 +101,36 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
     emailGestaoConta.setText("<pôr e-mail do morador aqui>");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 1;
-    gridBagConstraints.gridy = 1;
+    gridBagConstraints.gridy = 2;
     gridBagConstraints.gridwidth = 2;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
     gridBagConstraints.insets = new java.awt.Insets(10, 6, 0, 0);
     painelGestaoContaMorador.add(emailGestaoConta, gridBagConstraints);
+
+    painelAlteracoes.setLayout(new javax.swing.BoxLayout(painelAlteracoes, javax.swing.BoxLayout.LINE_AXIS));
+
+    botaoAlterarEmail.setText("Alterar e-mail");
+    botaoAlterarEmail.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            botaoAlterarEmailActionPerformed(evt);
+        }
+    });
+    painelAlteracoes.add(botaoAlterarEmail);
+
+    botaoAlterarPassword.setText("Alterar password");
+    botaoAlterarPassword.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            botaoAlterarPasswordActionPerformed(evt);
+        }
+    });
+    painelAlteracoes.add(botaoAlterarPassword);
+
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridx = 0;
+    gridBagConstraints.gridy = 3;
+    gridBagConstraints.gridwidth = 3;
+    gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
+    painelGestaoContaMorador.add(painelAlteracoes, gridBagConstraints);
 
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
@@ -137,8 +138,8 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
     gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
     getContentPane().add(painelGestaoContaMorador, gridBagConstraints);
 
-    botaoEliminarConta.setForeground(new java.awt.Color(204, 0, 0));
     botaoEliminarConta.setText("Eliminar conta");
+    botaoEliminarConta.setForeground(new java.awt.Color(204, 0, 0));
     botaoEliminarConta.setOpaque(true);
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
@@ -147,8 +148,8 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
     getContentPane().add(botaoEliminarConta, gridBagConstraints);
 
     imagemMoradorGestaoConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/NoImage.jpeg"))); // NOI18N
-    imagemMoradorGestaoConta.setToolTipText("Clique na imagem para a alterar");
     imagemMoradorGestaoConta.setBorder(null);
+    imagemMoradorGestaoConta.setToolTipText("Clique na imagem para a alterar");
     imagemMoradorGestaoConta.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             imagemMoradorGestaoContaActionPerformed(evt);
@@ -157,7 +158,7 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
     gridBagConstraints.gridy = 0;
-    gridBagConstraints.insets = new java.awt.Insets(6, 6, 20, 0);
+    gridBagConstraints.insets = new java.awt.Insets(6, 6, 10, 0);
     getContentPane().add(imagemMoradorGestaoConta, gridBagConstraints);
 
     pack();
@@ -208,6 +209,7 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
     private javax.swing.JLabel labelEmailMorador;
     private javax.swing.JLabel labelNomeMorador;
     private javax.swing.JLabel nomeMoradorGestaoConta;
+    private javax.swing.JPanel painelAlteracoes;
     private javax.swing.JPanel painelGestaoContaMorador;
     private javax.swing.JFileChooser selecionadorImagem;
     // End of variables declaration//GEN-END:variables
