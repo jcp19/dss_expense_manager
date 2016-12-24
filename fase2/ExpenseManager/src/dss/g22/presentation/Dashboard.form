@@ -199,8 +199,8 @@
               <Properties>
                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                   <StringArray count="5">
-                    <StringItem index="0" value="Morador 1"/>
-                    <StringItem index="1" value="Morador 2"/>
+                    <StringItem index="0" value="&lt;html&gt;Morador 1&lt;br&gt;Saldo: 1000&lt;/html&gt;"/>
+                    <StringItem index="1" value="&lt;html&gt;Morador 2&lt;br&gt;Saldo: 2000&lt;/html&gt;"/>
                     <StringItem index="2" value="Morador 3"/>
                     <StringItem index="3" value="Morador 4"/>
                     <StringItem index="4" value="Morador 5"/>

@@ -132,7 +132,7 @@ public class Dashboard extends javax.swing.JFrame {
         labelMoradores.setText("Moradores:");
 
         listaLateralMoradores.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Morador 1", "Morador 2", "Morador 3", "Morador 4", "Morador 5" };
+            String[] strings = { "<html>Morador 1<br>Saldo: 1000</html>", "<html>Morador 2<br>Saldo: 2000</html>", "Morador 3", "Morador 4", "Morador 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
