@@ -38,7 +38,7 @@ public class DialogPesquisarDespesa extends javax.swing.JDialog {
         setResizable(false);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        labelIndicaoPesquisa.setText("Selecione a despesa a que pretende associar uma fatura:");
+        labelIndicaoPesquisa.setText("Selecione a despesa recorrente a que pretende associar uma fatura:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;

@@ -99,7 +99,7 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(botaoRegistarFatura, gridBagConstraints);
 
         botaoRegistarTransferencia.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        botaoRegistarTransferencia.setText("Registar transferência");
+        botaoRegistarTransferencia.setText("<html><center> Registar transferência<br>entre moradores</center></html>");
         botaoRegistarTransferencia.setPreferredSize(new java.awt.Dimension(170, 60));
         botaoRegistarTransferencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,7 +132,7 @@ public class Dashboard extends javax.swing.JFrame {
         labelMoradores.setText("Moradores:");
 
         listaLateralMoradores.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "<html>Morador 1<br>Saldo: 1000</html>", "<html>Morador 2<br>Saldo: 2000</html>", "Morador 3", "Morador 4", "Morador 5" };
+            String[] strings = { "<html><b>Morador 1<br>Saldo: 1000</b></html>", "<html><b>Morador 2<br>Saldo: 2000</b></html>", " " };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });

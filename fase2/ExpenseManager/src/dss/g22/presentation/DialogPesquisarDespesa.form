@@ -32,7 +32,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="labelIndicaoPesquisa">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Selecione a despesa a que pretende associar uma fatura:"/>
+        <Property name="text" type="java.lang.String" value="Selecione a despesa recorrente a que pretende associar uma fatura:"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">

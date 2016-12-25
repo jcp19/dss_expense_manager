@@ -138,8 +138,8 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
     gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
     getContentPane().add(painelGestaoContaMorador, gridBagConstraints);
 
-    botaoEliminarConta.setText("Eliminar conta");
     botaoEliminarConta.setForeground(new java.awt.Color(204, 0, 0));
+    botaoEliminarConta.setText("Eliminar conta");
     botaoEliminarConta.setOpaque(true);
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
