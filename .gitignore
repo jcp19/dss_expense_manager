@@ -3,4 +3,5 @@
 *.lck
 *.class
 *.DS_Store
-
+fase2/ExpenseManager/build/built-jar.properties
+fase2/ExpenseManager/nbproject/private/private.xml
