@@ -217,7 +217,7 @@ public class DialogRegistarDespesa extends javax.swing.JDialog {
             if(opcaoPeriodicidade.equals("Pontualmente"))
                 cardLayout.show(painelCartoes, "scrollDadosFatura");
             else
-                cardLayout.show(painelCartoes, "painelMetodoDivisaoPorOmissao");
+                cardLayout.show(painelCartoes, "painelMetodoDivisaoOmissao");
             
             
         } else { // MUDAR !!!

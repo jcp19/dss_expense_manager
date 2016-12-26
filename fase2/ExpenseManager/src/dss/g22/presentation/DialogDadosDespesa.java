@@ -283,11 +283,11 @@ public class DialogDadosDespesa extends javax.swing.JDialog {
         jButton1.setText("Eliminar despesa");
         painelBotoesEdicao.add(jButton1);
 
-        botaoSubmeter.setText("Submeter alterações");
+        botaoSubmeter.setText("Guardar alterações");
         botaoSubmeter.setEnabled(false);
         painelBotoesEdicao.add(botaoSubmeter);
 
-        botaoDesfazerAlteracoes.setText("Desfazer alterações");
+        botaoDesfazerAlteracoes.setText("Cancelar");
         botaoDesfazerAlteracoes.setEnabled(false);
         botaoDesfazerAlteracoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

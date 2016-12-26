@@ -38,6 +38,7 @@ public class DialogDadosFatura extends javax.swing.JDialog {
         painelBotoesCancelarConfirmar = new javax.swing.JPanel();
         botaoCancelar = new javax.swing.JButton();
         botaoConfirmar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         painelFatura1 = new dss.g22.presentation.PainelFatura();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -56,14 +57,18 @@ public class DialogDadosFatura extends javax.swing.JDialog {
         });
         painelBotoesCancelarConfirmar.add(botaoCancelar);
 
-        botaoConfirmar.setText("Confirmar");
+        botaoConfirmar.setText("Guardar alterações");
         painelBotoesCancelarConfirmar.add(botaoConfirmar);
+
+        jButton1.setForeground(new java.awt.Color(205, 0, 0));
+        jButton1.setText("Eliminar fatura");
+        painelBotoesCancelarConfirmar.add(jButton1);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 9;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 4);
         getContentPane().add(painelBotoesCancelarConfirmar, gridBagConstraints);
         getContentPane().add(painelFatura1, new java.awt.GridBagConstraints());
 
@@ -77,6 +82,7 @@ public class DialogDadosFatura extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoCancelar;
     private javax.swing.JButton botaoConfirmar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel painelBotoesCancelarConfirmar;
     private dss.g22.presentation.PainelFatura painelFatura1;
     // End of variables declaration//GEN-END:variables
