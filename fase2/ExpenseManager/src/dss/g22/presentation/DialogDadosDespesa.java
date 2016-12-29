@@ -169,13 +169,12 @@ public class DialogDadosDespesa extends javax.swing.JDialog {
 
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        labelAtiva.setText("Ativa:");
+        labelAtiva.setText("Encerrada:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         jPanel1.add(labelAtiva, gridBagConstraints);
 
-        checkboxAtiva.setSelected(true);
         checkboxAtiva.setEnabled(false);
         checkboxAtiva.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         checkboxAtiva.addActionListener(new java.awt.event.ActionListener() {

@@ -1,3 +1,7 @@
+package dss.g22.business;
+
+import java.time.LocalDateTime;
+
 public class LinhaHistorico {
 
 	private Operacao tipoOperacao;

@@ -1,4 +1,7 @@
+package dss.g22.business;
+
 import java.util.*;
+import javax.swing.ImageIcon;
 
 public class Moradores {
 

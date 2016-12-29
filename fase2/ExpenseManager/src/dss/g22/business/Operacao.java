@@ -1,3 +1,5 @@
+package dss.g22.business;
+
 public enum Operacao {
 	REGISTAR_DESPESA,
 	ALTERAR_DESPESA,

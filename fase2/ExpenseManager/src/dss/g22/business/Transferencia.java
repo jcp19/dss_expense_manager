@@ -1,3 +1,5 @@
+package dss.g22.business;
+
 public class Transferencia {
 
 	private int idQuemTransferiu;

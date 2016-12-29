@@ -1,3 +1,8 @@
+package dss.g22.business;
+
+import java.util.List;
+import javax.swing.ImageIcon;
+
 public class Morador {
 
 	private int nome;
@@ -6,7 +11,7 @@ public class Morador {
 	private ImageIcon avatar;
 	private double saldo;
 	private int idMorador;
-	private bool foiEliminado;
+	private boolean foiEliminado;
 
 	/**
 	 * 
@@ -104,7 +109,7 @@ public class Morador {
 		this.idMorador = idMorador;
 	}
 
-	public bool getFoiEliminado() {
+	public boolean getFoiEliminado() {
 		return this.foiEliminado;
 	}
 
@@ -112,7 +117,7 @@ public class Morador {
 	 * 
 	 * @param foiEliminado
 	 */
-	public void setFoiEliminado(bool foiEliminado) {
+	public void setFoiEliminado(boolean foiEliminado) {
 		this.foiEliminado = foiEliminado;
 	}
 

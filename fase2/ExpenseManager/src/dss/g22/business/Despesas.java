@@ -1,3 +1,12 @@
+package dss.g22.business;
+
+import data.DespesaDAO;
+import data.FaturaDAO;
+import data.TransferenciaDAO;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Map;
+
 public class Despesas {
 
 	FaturaDAO faturas;
