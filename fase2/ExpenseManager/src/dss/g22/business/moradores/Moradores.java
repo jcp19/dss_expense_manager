@@ -175,7 +175,10 @@ public class Moradores {
         public void registaMorador(String nome, String email, String password) throws EmailEmUsoException {
 		// TODO - implement Moradores.registaMorador
 		Morador novo = new Morador(nome, email, password);
-                moradores.put(0, novo);
+                Morador m = moradores.put(0, novo);
+                if(m == null) {
+                    throw new EmailEmUsoException();
+                }
 	}
 
 	/**

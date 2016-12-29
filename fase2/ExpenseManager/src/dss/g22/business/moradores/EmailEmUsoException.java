@@ -13,4 +13,8 @@ public class EmailEmUsoException extends Exception {
     public EmailEmUsoException(String str){
         super(str);
     }
+    
+    public EmailEmUsoException(){
+        super("O email introduzido ja se encontra em uso.");
+    }
 }
