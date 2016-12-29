@@ -6,6 +6,7 @@
 package dss.g22.presentation;
 
 import dss.g22.business.Facade;
+import dss.g22.business.moradores.EmailEmUsoException;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -273,11 +274,18 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
         String confirmacaoPassword = new String(campoConfirmarPassword.getPassword());
         
         if(nome.length() == 0 || password.length() == 0 || confirmacaoPassword.length() == 0 || nome.length() == 0) {
-            // MOSTRA AVISO
+            labelCamposObrigatorios.setVisible(true);
         } else if (!password.equals(confirmacaoPassword)){
-            //MOSTRA AVISO
-        } else {        
-            facade.registaMorador(nome, email, password);
+            labelCamposObrigatorios.setVisible(false);
+            labelErroPassDiferentes.setVisible(true);
+        } else {   
+            try {
+                facade.registaMorador(nome, email, password);
+            } catch (EmailEmUsoException e) {
+                labelCamposObrigatorios.setVisible(false);
+                labelErroPassDiferentes.setVisible(false);
+                labelErroEmailEmUso.setVisible(true);
+            }
         }
         
     }//GEN-LAST:event_butaoRegistarActionPerformed

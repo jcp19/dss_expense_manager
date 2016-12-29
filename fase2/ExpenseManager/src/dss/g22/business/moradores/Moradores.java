@@ -1,5 +1,6 @@
 package dss.g22.business.moradores;
 
+import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
 import dss.g22.business.moradores.Morador;
 import dss.g22.business.despesas.Despesa;
 import dss.g22.business.despesas.Fatura;
@@ -171,7 +172,7 @@ public class Moradores {
 		throw new UnsupportedOperationException();
 	}
         
-        public void registaMorador(String nome, String email, String password) {
+        public void registaMorador(String nome, String email, String password) throws EmailEmUsoException {
 		// TODO - implement Moradores.registaMorador
 		Morador novo = new Morador(nome, email, password);
                 moradores.put(0, novo);

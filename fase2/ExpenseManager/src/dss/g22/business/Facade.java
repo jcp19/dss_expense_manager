@@ -6,6 +6,7 @@ import dss.g22.business.despesas.Transferencia;
 import dss.g22.business.despesas.Fatura;
 import dss.g22.business.moradores.Moradores;
 import dss.g22.business.moradores.CredencialInvalidaException;
+import dss.g22.business.moradores.EmailEmUsoException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
@@ -199,7 +200,7 @@ public class Facade {
 		throw new UnsupportedOperationException();
 	}
 
-        public void registaMorador(String nome, String email, String password) {
+        public void registaMorador(String nome, String email, String password) throws EmailEmUsoException {
             moradores.registaMorador(nome, email, password);
 	}
                 
