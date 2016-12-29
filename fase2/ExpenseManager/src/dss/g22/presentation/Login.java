@@ -1,6 +1,7 @@
 package dss.g22.presentation;
 
 import dss.g22.business.Facade;
+import dss.g22.business.moradores.CredencialInvalidaException;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -151,15 +152,19 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoRegistarActionPerformed
 
     private void butaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoLoginActionPerformed
-        // NAO ESQUECER DE FAZER CODIGO DE AUTENTICACAO
-        Dashboard dashboard = new Dashboard();
+        String email, password;
+        email = butaoLogin.getText();
+        password = butaoLogin.getText();
         
-        // if(autentica(campoEmail.getText(), campoPassword.getText())) {
-            dispose();
-            dashboard.setVisible(true);
-        /* } else {
-                Mensagem de "Email e/ou password inválido(s)
-        } */
+        try {
+          facade.login(email, password);
+          Dashboard dashboard = new Dashboard();
+          dispose();
+          dashboard.setVisible(true);
+        } catch(CredencialInvalidaException e) {
+            //APRESENTAR LABEL
+            
+        }
     }//GEN-LAST:event_butaoLoginActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

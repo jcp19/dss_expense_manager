@@ -1,11 +1,15 @@
 package dss.g22.business;
 
+import data.MoradorDAO;
+import dss.g22.business.LinhaHistorico;
+import dss.g22.business.moradores.CredencialInvalidaException;
 import java.util.*;
 import javax.swing.ImageIcon;
 
 public class Moradores {
 
-	private Morador moradores;
+	MoradorDAO moradores;
+        Morador moradorLogado;
 	private Collection<LinhaHistorico> historicoOperacoes;
 
 	/**
@@ -22,9 +26,12 @@ public class Moradores {
 	 * @param email
 	 * @param password
 	 */
-	public void login(String email, String password) {
+	public void login(String email, String password) throws CredencialInvalidaException {
 		// TODO - implement Moradores.login
-		throw new UnsupportedOperationException();
+		moradorLogado = moradores.get(email, password);
+                if(moradorLogado == null){
+                    throw new CredencialInvalidaException("As credenciais introduzidas sao invalidas");
+                }
 	}
 
 	public double getSaldoMoradorAutenticado() {
