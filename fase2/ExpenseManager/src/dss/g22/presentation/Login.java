@@ -171,7 +171,7 @@ public class Login extends javax.swing.JFrame {
         
         try {
             facade.login(email, password);
-            Dashboard dashboard = new Dashboard();
+            Dashboard dashboard = new Dashboard(facade);
             dispose();
             dashboard.setVisible(true);
         } catch(CredencialInvalidaException e) {

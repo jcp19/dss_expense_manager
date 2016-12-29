@@ -166,7 +166,7 @@ public class Facade {
 
 	public void terminarSessao() {
 		// TODO - implement Facade.terminarSessao
-		throw new UnsupportedOperationException();
+		moradores.terminarSessao();
 	}
 
 	/**

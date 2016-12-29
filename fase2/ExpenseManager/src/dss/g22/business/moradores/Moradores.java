@@ -103,7 +103,7 @@ public class Moradores {
 
 	public void terminarSessao() {
 		// TODO - implement Moradores.terminarSessao
-		throw new UnsupportedOperationException();
+		moradorAutenticado = null;
 	}
 
 	/**

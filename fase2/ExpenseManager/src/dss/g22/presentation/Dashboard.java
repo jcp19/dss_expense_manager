@@ -5,6 +5,8 @@
  */
 package dss.g22.presentation;
 
+import dss.g22.business.Facade;
+
 /**
  *
  * @author joao
@@ -15,12 +17,14 @@ public class Dashboard extends javax.swing.JFrame {
     private DialogGestaoContaMorador dialogGestaoContaMorador;
     private DialogPesquisarDespesa dialogPesquisarDespesa;
     private DialogRegistarTransferencia dialogRegistarTransferencia;
+    private Facade facade;
     
     /**
      * Creates new form DashboardV2
      */
-    public Dashboard() {
+    public Dashboard(Facade facade) {
         initComponents();
+        this.facade = facade;
     }
 
     /**
@@ -234,7 +238,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addGroup(painelMoradorAutenticadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(labelSaldo)
                             .addComponent(labelValorSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botaoTerminarSessao)
                 .addContainerGap())
         );
@@ -278,6 +282,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void botaoTerminarSessaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTerminarSessaoActionPerformed
         dispose();
+        facade.terminarSessao();
         new Login().setVisible(true);
     }//GEN-LAST:event_botaoTerminarSessaoActionPerformed
 
