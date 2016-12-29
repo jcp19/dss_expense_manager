@@ -275,9 +275,13 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
         
         if(nome.length() == 0 || password.length() == 0 || confirmacaoPassword.length() == 0 || nome.length() == 0) {
             labelCamposObrigatorios.setVisible(true);
+            labelErroPassDiferentes.setVisible(false);
+            labelErroEmailEmUso.setVisible(false);
+            
         } else if (!password.equals(confirmacaoPassword)){
             labelCamposObrigatorios.setVisible(false);
             labelErroPassDiferentes.setVisible(true);
+            labelCamposObrigatorios.setVisible(false);
         } else {   
             try {
                 facade.registaMorador(nome, email, password);
