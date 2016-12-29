@@ -60,6 +60,7 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
         painelErros = new javax.swing.JPanel();
         labelCamposObrigatorios = new javax.swing.JLabel();
         labelErroPassDiferentes = new javax.swing.JLabel();
+        labelErroEmailEmUso = new javax.swing.JLabel();
 
         selecionadorImagem.setAcceptAllFileFilterUsed(false);
         selecionadorImagem.setCurrentDirectory(null);
@@ -113,7 +114,7 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
     labelPassword.setText("Password:");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 4;
+    gridBagConstraints.gridy = 5;
     gridBagConstraints.gridwidth = 3;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
@@ -123,7 +124,7 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
     campoPassword.setPreferredSize(new java.awt.Dimension(273, 26));
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 5;
+    gridBagConstraints.gridy = 6;
     gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(3, 3, 0, 0);
@@ -132,7 +133,7 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
     labelConfirmarPassword.setText("Confirmar password:");
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 6;
+    gridBagConstraints.gridy = 7;
     gridBagConstraints.gridwidth = 5;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
@@ -142,7 +143,7 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
     campoConfirmarPassword.setPreferredSize(new java.awt.Dimension(273, 26));
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 7;
+    gridBagConstraints.gridy = 8;
     gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(3, 3, 0, 0);
@@ -152,7 +153,7 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 1;
     gridBagConstraints.gridy = 1;
-    gridBagConstraints.gridheight = 7;
+    gridBagConstraints.gridheight = 8;
     gridBagConstraints.ipady = 27;
     gridBagConstraints.insets = new java.awt.Insets(0, 35, 0, 0);
     getContentPane().add(labelImagemMorador, gridBagConstraints);
@@ -165,7 +166,7 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
     });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 1;
-    gridBagConstraints.gridy = 8;
+    gridBagConstraints.gridy = 9;
     gridBagConstraints.gridheight = 2;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_START;
     gridBagConstraints.insets = new java.awt.Insets(0, 35, 0, 0);
@@ -198,7 +199,7 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
 
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 9;
+    gridBagConstraints.gridy = 10;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
     gridBagConstraints.insets = new java.awt.Insets(3, 0, 0, 0);
     getContentPane().add(painelCancelarREgistar, gridBagConstraints);
@@ -218,10 +219,20 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
 
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 8;
+    gridBagConstraints.gridy = 9;
     gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
     gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 0);
     getContentPane().add(painelErros, gridBagConstraints);
+
+    labelErroEmailEmUso.setForeground(new java.awt.Color(255, 0, 0));
+    labelErroEmailEmUso.setText("O e-mail escolhido já está em uso");
+    labelErroEmailEmUso.setVisible(false);
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridx = 0;
+    gridBagConstraints.gridy = 4;
+    gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+    gridBagConstraints.insets = new java.awt.Insets(0, 6, 0, 0);
+    getContentPane().add(labelErroEmailEmUso, gridBagConstraints);
 
     pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -282,6 +293,7 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
     private javax.swing.JLabel labelCamposObrigatorios;
     private javax.swing.JLabel labelConfirmarPassword;
     private javax.swing.JLabel labelEmail;
+    private javax.swing.JLabel labelErroEmailEmUso;
     private javax.swing.JLabel labelErroPassDiferentes;
     private javax.swing.JLabel labelImagemMorador;
     private javax.swing.JLabel labelNome;

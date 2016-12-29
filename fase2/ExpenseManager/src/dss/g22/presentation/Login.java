@@ -170,10 +170,10 @@ public class Login extends javax.swing.JFrame {
         password = new String(campoPassword.getPassword());
         
         try {
-          facade.login(email, password);
-          Dashboard dashboard = new Dashboard();
-          dispose();
-          dashboard.setVisible(true);
+            facade.login(email, password);
+            Dashboard dashboard = new Dashboard();
+            dispose();
+            dashboard.setVisible(true);
         } catch(CredencialInvalidaException e) {
             labelCredenciaisInvalidas.setVisible(true);
         }
