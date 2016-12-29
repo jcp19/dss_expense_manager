@@ -1,8 +1,8 @@
-package dss.g22.business;
+package dss.g22.business.despesas;
 
-import data.DespesaDAO;
-import data.FaturaDAO;
-import data.TransferenciaDAO;
+import dss.g22.data.DespesaDAO;
+import dss.g22.data.FaturaDAO;
+import dss.g22.data.TransferenciaDAO;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;

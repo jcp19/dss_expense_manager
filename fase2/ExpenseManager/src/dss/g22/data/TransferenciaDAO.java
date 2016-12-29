@@ -1,4 +1,4 @@
-package data;
+package dss.g22.data;
 
 import java.sql.Connection;
 

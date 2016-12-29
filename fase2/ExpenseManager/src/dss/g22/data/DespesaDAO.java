@@ -1,8 +1,8 @@
-package data;
+package dss.g22.data;
 
 import java.sql.Connection;
 
-public class FaturaDAO {
+public class DespesaDAO {
 
 	private Connection conn;
 

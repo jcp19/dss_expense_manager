@@ -184,7 +184,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="labelAtiva">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ativa:"/>
+                <Property name="text" type="java.lang.String" value="Encerrada:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -194,7 +194,6 @@
             </Component>
             <Component class="javax.swing.JCheckBox" name="checkboxAtiva">
               <Properties>
-                <Property name="selected" type="boolean" value="true"/>
                 <Property name="enabled" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="2"/>
               </Properties>

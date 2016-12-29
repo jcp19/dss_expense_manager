@@ -1,15 +1,23 @@
-package dss.g22.business;
+package dss.g22.business.moradores;
 
-import data.MoradorDAO;
+import dss.g22.business.moradores.Morador;
+import dss.g22.business.despesas.Despesa;
+import dss.g22.business.despesas.Fatura;
+import dss.g22.business.despesas.Transferencia;
 import dss.g22.business.moradores.CredencialInvalidaException;
+import dss.g22.data.MoradorDAO;
 import java.util.List;
 import javax.swing.ImageIcon;
 
 public class Moradores {
 
-	MoradorDAO moradores;
-        Morador moradorAutenticado;
-
+	private MoradorDAO moradores;
+        private Morador moradorAutenticado;
+        
+        public Moradores() {
+            moradores = new MoradorDAO();
+            moradorAutenticado = null;
+        }
 	/**
 	 * 
 	 * @param avatar

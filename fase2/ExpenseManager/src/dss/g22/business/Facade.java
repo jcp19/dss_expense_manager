@@ -1,7 +1,10 @@
 package dss.g22.business;
 
 
-import dss.g22.business.Moradores;
+import dss.g22.business.despesas.Despesa;
+import dss.g22.business.despesas.Transferencia;
+import dss.g22.business.despesas.Fatura;
+import dss.g22.business.moradores.Moradores;
 import dss.g22.business.moradores.CredencialInvalidaException;
 import java.time.LocalDate;
 import java.util.List;
@@ -11,7 +14,11 @@ import javax.swing.ImageIcon;
 public class Facade {
 
 	private Moradores moradores;
-
+        
+        public Facade() {
+            moradores = new Moradores();
+        }
+        
 	/**
 	 * 
 	 * @param avatar
@@ -193,7 +200,7 @@ public class Facade {
 	}
 
         public void registaMorador(String nome, String email, String password) {
-		moradores.registaMorador(nome, email, password);
+            moradores.registaMorador(nome, email, password);
 	}
                 
 	/**

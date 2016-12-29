@@ -25,13 +25,12 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
     /**
      * Creates new form DialogRegisto
      */
-    ImageIcon avatar;
-    Facade facade;
+    private Facade facade;
     
     public DialogRegistarMorador(java.awt.Frame parent, boolean modal, Facade facade) {
         super(parent, modal);
         initComponents();
-        avatar = new ImageIcon(getClass().getResource("src/dss/g22/presentation/images"));
+        this.facade = facade;
     }
 
     /**
@@ -247,7 +246,7 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
                 } else {
                     iconImgMorador = new ImageIcon(imgMorador);
                 }
-                avatar = iconImgMorador;
+
                 labelImagemMorador.setIcon(iconImgMorador);
             } catch (IOException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);

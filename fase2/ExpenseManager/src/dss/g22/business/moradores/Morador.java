@@ -1,17 +1,36 @@
-package dss.g22.business;
+package dss.g22.business.moradores;
 
+import dss.g22.business.despesas.Fatura;
+import dss.g22.business.despesas.Transferencia;
 import java.util.List;
 import javax.swing.ImageIcon;
 
 public class Morador {
 
-	private int nome;
-	private int email;
-	private int password;
-	private ImageIcon avatar;
-	private double saldo;
-	private int idMorador;
-	private boolean foiEliminado;
+    private String nome;
+    private String email;
+    private String password;
+    private ImageIcon avatar;
+    private double saldo;
+    private int idMorador;
+    private boolean foiEliminado;
+    
+    public Morador(String nome, String email, String password) {
+        this.nome = nome;
+        this.email = email;
+        this.password = password;
+    }
+
+    public Morador(int idMorador, String nome, String email, String password) {
+        this.idMorador = idMorador;
+        this.nome = nome;
+        this.email = email;
+        this.password = password;
+    }
+
+    public Morador(int aInt, String string, int aInt0, String string0, boolean aBoolean) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 	/**
 	 * 
@@ -26,13 +45,11 @@ public class Morador {
 	 * @param nome
 	 */
 	private void setNome(String nome) {
-		// TODO - implement Morador.setNome
-		throw new UnsupportedOperationException();
+            this.nome = nome;
 	}
 
 	public String getPassword() {
-		// TODO - implement Morador.getPassword
-		throw new UnsupportedOperationException();
+            return this.password;
 	}
 
 	/**
@@ -57,13 +74,11 @@ public class Morador {
 	 * @param password
 	 */
 	public void setPassword(String password) {
-		// TODO - implement Morador.setPassword
-		throw new UnsupportedOperationException();
+            this.password = password;
 	}
 
 	public String getEmail() {
-		// TODO - implement Morador.getEmail
-		throw new UnsupportedOperationException();
+		return this.email;
 	}
 
 	/**
@@ -76,8 +91,7 @@ public class Morador {
 	}
 
 	public String getNome() {
-		// TODO - implement Morador.getNome
-		throw new UnsupportedOperationException();
+            return this.nome;
 	}
 
 	public double getSaldo() {
@@ -105,7 +119,7 @@ public class Morador {
 	 * 
 	 * @param idMorador
 	 */
-	private void setIdMorador(int idMorador) {
+	public void setIdMorador(int idMorador) {
 		this.idMorador = idMorador;
 	}
 

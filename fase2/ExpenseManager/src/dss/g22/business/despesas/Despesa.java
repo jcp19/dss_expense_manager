@@ -1,4 +1,4 @@
-package dss.g22.business;
+package dss.g22.business.despesas;
 
 
 import java.time.LocalDate;

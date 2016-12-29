@@ -1,4 +1,6 @@
-package dss.g22.business;
+package dss.g22.business.moradores;
+
+
 
 public class MoradorPagamento {
 
