@@ -49,6 +49,7 @@ public class Login extends javax.swing.JFrame {
         painelRegistar = new javax.swing.JPanel();
         labelNaoTemConta = new javax.swing.JLabel();
         botaoRegistar = new javax.swing.JButton();
+        labelCredenciaisInvalidas = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
@@ -109,7 +110,7 @@ public class Login extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
         getContentPane().add(butaoLogin, gridBagConstraints);
@@ -136,10 +137,21 @@ public class Login extends javax.swing.JFrame {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
         getContentPane().add(painelRegistar, gridBagConstraints);
+
+        labelCredenciaisInvalidas.setForeground(new java.awt.Color(255, 0, 0));
+        labelCredenciaisInvalidas.setText("Credenciais inválidas");
+        labelCredenciaisInvalidas.setVisible(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(0, 7, 0, 0);
+        getContentPane().add(labelCredenciaisInvalidas, gridBagConstraints);
 
         pack();
         setLocationRelativeTo(null);
@@ -153,8 +165,9 @@ public class Login extends javax.swing.JFrame {
 
     private void butaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoLoginActionPerformed
         String email, password;
-        email = butaoLogin.getText();
-        password = butaoLogin.getText();
+        
+        email = campoEmail.getText();
+        password = new String(campoPassword.getPassword());
         
         try {
           facade.login(email, password);
@@ -162,8 +175,7 @@ public class Login extends javax.swing.JFrame {
           dispose();
           dashboard.setVisible(true);
         } catch(CredencialInvalidaException e) {
-            //APRESENTAR LABEL
-            
+            labelCredenciaisInvalidas.setVisible(true);
         }
     }//GEN-LAST:event_butaoLoginActionPerformed
 
@@ -172,6 +184,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton butaoLogin;
     private javax.swing.JTextField campoEmail;
     private javax.swing.JPasswordField campoPassword;
+    private javax.swing.JLabel labelCredenciaisInvalidas;
     private javax.swing.JLabel labelEmail;
     private javax.swing.JLabel labelLogo;
     private javax.swing.JLabel labelNaoTemConta;
