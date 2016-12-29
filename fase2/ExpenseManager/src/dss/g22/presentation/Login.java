@@ -1,8 +1,8 @@
 package dss.g22.presentation;
 
-import dss.g22.business.Facade;
-import dss.g22.business.moradores.CredencialInvalidaException;
 
+import dss.g22.business.moradores.CredencialInvalidaException;
+import dss.g22.business.Facade;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -146,7 +146,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoRegistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRegistarActionPerformed
-        dialogRegisto = new DialogRegistarMorador(this, true);
+        dialogRegisto = new DialogRegistarMorador(this, true, facade);
         dialogRegisto.setLocationRelativeTo(this);
         dialogRegisto.setVisible(true);
     }//GEN-LAST:event_botaoRegistarActionPerformed

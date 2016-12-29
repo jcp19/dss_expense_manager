@@ -1,5 +1,7 @@
 package dss.g22.business;
 
+
+import dss.g22.business.Moradores;
 import dss.g22.business.moradores.CredencialInvalidaException;
 import java.time.LocalDate;
 import java.util.List;
@@ -24,7 +26,8 @@ public class Facade {
 	 * @param email
 	 * @param password
 	 */
-	public void login(String email, String password) throws CredencialInvalidaException {
+	public void login(String email, String password) throws CredencialInvalidaException{
+		// TODO - implement Facade.login
 		moradores.login(email, password);
 	}
 
@@ -189,6 +192,10 @@ public class Facade {
 		throw new UnsupportedOperationException();
 	}
 
+        public void registaMorador(String nome, String email, String password) {
+		moradores.registaMorador(nome, email, password);
+	}
+                
 	/**
 	 * 
 	 * @param idFatura

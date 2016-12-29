@@ -1,5 +1,6 @@
 package dss.g22.business;
 
+
 import java.time.LocalDate;
 
 public abstract class Despesa {

@@ -1,16 +1,14 @@
 package dss.g22.business;
 
 import data.MoradorDAO;
-import dss.g22.business.LinhaHistorico;
 import dss.g22.business.moradores.CredencialInvalidaException;
-import java.util.*;
+import java.util.List;
 import javax.swing.ImageIcon;
 
 public class Moradores {
 
 	MoradorDAO moradores;
-        Morador moradorLogado;
-	private Collection<LinhaHistorico> historicoOperacoes;
+        Morador moradorAutenticado;
 
 	/**
 	 * 
@@ -27,10 +25,9 @@ public class Moradores {
 	 * @param password
 	 */
 	public void login(String email, String password) throws CredencialInvalidaException {
-		// TODO - implement Moradores.login
-		moradorLogado = moradores.get(email, password);
-                if(moradorLogado == null){
-                    throw new CredencialInvalidaException("As credenciais introduzidas sao invalidas");
+		moradorAutenticado = moradores.get(email,password);
+                if(moradorAutenticado == null) {
+                    throw new CredencialInvalidaException("Uma das credenciais e invalida");
                 }
 	}
 
@@ -165,6 +162,12 @@ public class Moradores {
 		// TODO - implement Moradores.registaMorador
 		throw new UnsupportedOperationException();
 	}
+        
+        public void registaMorador(String nome, String email, String password) {
+		// TODO - implement Moradores.registaMorador
+		Morador novo = new Morador(nome, email, password);
+                moradores.put(0, novo);
+	}
 
 	/**
 	 * 
@@ -199,6 +202,20 @@ public class Moradores {
 	 */
 	public void notificaRemocaoTransferencia(Transferencia t) {
 		// TODO - implement Moradores.notificaRemocaoTransferencia
+		throw new UnsupportedOperationException();
+	}
+
+	public List<String> getNotificacoes() {
+		// TODO - implement Moradores.getNotificacoes
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * 
+	 * @param notificacoes
+	 */
+	public void setNotificacoes(List<String> notificacoes) {
+		// TODO - implement Moradores.setNotificacoes
 		throw new UnsupportedOperationException();
 	}
 

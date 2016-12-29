@@ -5,6 +5,7 @@
  */
 package dss.g22.presentation;
 
+import dss.g22.business.Facade;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -21,13 +22,16 @@ import static dss.g22.presentation.images.ConstantesImagens.LARGURA_IMG_NORMAL;
  * @author joao
  */
 public class DialogRegistarMorador extends javax.swing.JDialog {
-    
     /**
      * Creates new form DialogRegisto
      */
-    public DialogRegistarMorador(java.awt.Frame parent, boolean modal) {
+    ImageIcon avatar;
+    Facade facade;
+    
+    public DialogRegistarMorador(java.awt.Frame parent, boolean modal, Facade facade) {
         super(parent, modal);
         initComponents();
+        avatar = new ImageIcon(getClass().getResource("src/dss/g22/presentation/images"));
     }
 
     /**
@@ -171,6 +175,11 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
     painelCancelarREgistar.setLayout(new java.awt.GridBagLayout());
 
     butaoRegistar.setText("Registar");
+    butaoRegistar.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            butaoRegistarActionPerformed(evt);
+        }
+    });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 1;
     gridBagConstraints.gridy = 0;
@@ -238,13 +247,30 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
                 } else {
                     iconImgMorador = new ImageIcon(imgMorador);
                 }
-
+                avatar = iconImgMorador;
                 labelImagemMorador.setIcon(iconImgMorador);
             } catch (IOException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }//GEN-LAST:event_butaoProcurarImagemActionPerformed
+
+    private void butaoRegistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoRegistarActionPerformed
+        // TODO add your handling code here:
+        String nome = campoNome.getText();
+        String password = new String(campoPassword.getPassword());
+        String email = campoEmail.getText();
+        String confirmacaoPassword = new String(campoConfirmarPassword.getPassword());
+        
+        if(nome.length() == 0 || password.length() == 0 || confirmacaoPassword.length() == 0 || nome.length() == 0) {
+            // MOSTRA AVISO
+        } else if (!password.equals(confirmacaoPassword)){
+            //MOSTRA AVISO
+        } else {        
+            facade.registaMorador(nome, email, password);
+        }
+        
+    }//GEN-LAST:event_butaoRegistarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butaoCancelar;

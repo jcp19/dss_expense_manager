@@ -9,9 +9,9 @@ import java.util.Map;
 
 public class Despesas {
 
-	FaturaDAO faturas;
-	DespesaDAO despesas;
-	TransferenciaDAO transferencias;
+	private FaturaDAO faturas;
+	private DespesaDAO despesas;
+	private TransferenciaDAO transferencias;
 
 	/**
 	 * 
