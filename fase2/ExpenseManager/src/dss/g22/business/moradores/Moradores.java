@@ -188,6 +188,7 @@ public class Moradores {
                 if(m == null) {
                     throw new EmailEmUsoException();
                 }
+                notificacoes.registaNotificacao("O morador " + nome + " inscreveu-se no sistema.");
 	}
 
 	/**
