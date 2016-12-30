@@ -6,6 +6,10 @@
 package dss.g22.presentation;
 
 import dss.g22.business.Facade;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
+import javax.swing.DefaultListModel;
 import javax.swing.JList;
 
 /**
@@ -18,10 +22,21 @@ public class PainelGeral extends javax.swing.JPanel {
     /**
      * Creates new form painelHistorico
      */
-    public PainelGeral(Facade facade) {
-        this.facade = facade;
+    public PainelGeral(){
         initComponents();
-        listaHistorico.setModel((new JList<String>(facade.mensagensNotificacoes())).getModel());
+    }
+    
+    public PainelGeral(Facade facade) {
+        initComponents();
+        this.facade = facade;
+        //listaHistorico.
+        /*((DefaultListModel)listaHistorico.getModel()).addElement("ola");*/
+        String[] lista = facade.mensagensNotificacoes();
+        Vector<String> notificacoes = new Vector<String>();
+        for(int i = 0; i < lista.length; i++)
+            notificacoes.add(lista[i]);
+        listaHistorico.setListData(notificacoes);
+        /*listaHistorico.setListData(facade.mensagensNotificacoes());*/
     }
 
     /**

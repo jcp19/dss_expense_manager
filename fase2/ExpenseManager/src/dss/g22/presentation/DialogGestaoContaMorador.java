@@ -144,6 +144,11 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
 
     botaoEliminarConta.setForeground(new java.awt.Color(204, 0, 0));
     botaoEliminarConta.setText("Eliminar conta");
+    botaoEliminarConta.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            botaoEliminarContaActionPerformed(evt);
+        }
+    });
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
     gridBagConstraints.gridy = 2;
@@ -205,6 +210,13 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
         dialogAlterarPassword.setVisible(true);
         dispose();
     }//GEN-LAST:event_botaoAlterarPasswordActionPerformed
+
+    private void botaoEliminarContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEliminarContaActionPerformed
+        ConfirmarApagarConta dialog = new ConfirmarApagarConta(this, true, facade);
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_botaoEliminarContaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoAlterarEmail;

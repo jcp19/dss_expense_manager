@@ -93,7 +93,7 @@ public class MoradorDAO implements Map<Integer, Morador> {
         
         try {
             conn = Connect.connect();
-            PreparedStatement stm = conn.prepareStatement("SELECT * FROM Morador WHERE email = ? AND password = ?");
+            PreparedStatement stm = conn.prepareStatement("SELECT * FROM Morador WHERE email = ? AND password = ? AND foiEliminado = 0");
             stm.setString(1, email);
             stm.setString(2, password);
             ResultSet rs = stm.executeQuery();

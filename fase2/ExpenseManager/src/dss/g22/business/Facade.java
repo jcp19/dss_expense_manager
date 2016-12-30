@@ -242,5 +242,9 @@ public class Facade {
         return moradores.mensagensNotificacoes();
     }
 
+    public void eliminaContaMoradorAutenticado(String password) throws CampoInvalidoException {
+        moradores.eliminaContaMoradorAutenticado(password);
+    }
+
 
 }

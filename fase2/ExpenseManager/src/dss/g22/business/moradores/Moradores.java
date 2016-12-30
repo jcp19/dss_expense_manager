@@ -265,4 +265,15 @@ public class Moradores {
         return mensagens;
     }
 
+    public void eliminaContaMoradorAutenticado(String password) throws CampoInvalidoException {
+        if(moradorAutenticado.getPassword().equals(password)){
+            int id = moradorAutenticado.getIdMorador();
+            Morador m = moradores.remove(id);
+            moradorAutenticado = null;
+            notificacoes.registaNotificacao("O morador " + m.getNome() + " saiu sistema.");
+        } else throw new CampoInvalidoException("A password introduzida e invalida");
+        
+        
+    }
+
 }
