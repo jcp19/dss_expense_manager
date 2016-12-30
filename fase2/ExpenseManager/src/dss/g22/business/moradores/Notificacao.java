@@ -10,18 +10,19 @@ package dss.g22.business.moradores;
  * @author joao
  */
 public class Notificacao {
+
     private int idNotificacao;
     private String mensagem;
-    
+
     public Notificacao(int idNotificacao, String mensagem) {
         this.idNotificacao = idNotificacao;
         this.mensagem = mensagem;
     }
-    
+
     public int getIdNotificacao() {
         return idNotificacao;
     }
-    
+
     public String getMensagemNotificacao() {
         return mensagem;
     }

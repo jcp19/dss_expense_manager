@@ -19,18 +19,19 @@ public class DialogAlterarEmail extends javax.swing.JDialog {
      * Creates new form DialogAlterarEmail
      */
     private Facade facade;
-    
+
     public DialogAlterarEmail(java.awt.Frame parent, boolean modal, Facade facade) {
         super(parent, modal);
         initComponents();
         this.facade = facade;
     }
-    
+
     public DialogAlterarEmail(javax.swing.JDialog parent, boolean modal, Facade facade) {
         super(parent, modal);
         initComponents();
         this.facade = facade;
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -118,15 +119,15 @@ public class DialogAlterarEmail extends javax.swing.JDialog {
     }//GEN-LAST:event_botaoCancelarActionPerformed
 
     private void botaoConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConfirmarActionPerformed
-        try{
+        try {
             String novoMail = campoNovoEmail.getText().trim();
-            if(novoMail.length() == 0){
+            if (novoMail.length() == 0) {
                 throw new CampoInvalidoException("O email introduzido e invalido");
             }
             facade.alteraMailMoradorAutenticado(novoMail);
             dispose();
-            
-        }catch(CampoInvalidoException | EmailEmUsoException e){
+
+        } catch (CampoInvalidoException | EmailEmUsoException e) {
             labelEmailInvalido.setVisible(true);
         }
     }//GEN-LAST:event_botaoConfirmarActionPerformed

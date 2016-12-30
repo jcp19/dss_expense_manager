@@ -19,18 +19,19 @@ import java.util.List;
  * @author joao
  */
 public class NotificacaoDAO {
+
     private Connection conn;
-    
+
     public List<Notificacao> getNotificacoes() {
         List<Notificacao> l = new ArrayList();
-        
+
         try {
             conn = Connect.connect();
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery("SELECT * FROM Notificacao");
             while (rs.next()) {
                 l.add(new Notificacao(rs.getInt("idNotificacao"), rs.getString("mensagem")));
-            }  
+            }
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         } finally {
@@ -38,17 +39,17 @@ public class NotificacaoDAO {
         }
         return l;
     }
-    
+
     public List<String> getMensagensNotificacao() {
         List<String> l = new ArrayList<>();
-        
+
         try {
             conn = Connect.connect();
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery("SELECT * FROM Notificacao");
             while (rs.next()) {
                 l.add(rs.getString("mensagem"));
-            }  
+            }
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         } finally {
@@ -56,25 +57,25 @@ public class NotificacaoDAO {
         }
         return l;
     }
-    
+
     public Notificacao registaNotificacao(String mensagem) {
         Notificacao n = null;
-        
+
         try {
             conn = Connect.connect();
-            PreparedStatement stm = conn.prepareStatement("INSERT INTO Notificacao\n" +
-                    "(mensagem)\n" +
-                    "VALUES (?)",
+            PreparedStatement stm = conn.prepareStatement("INSERT INTO Notificacao\n"
+                    + "(mensagem)\n"
+                    + "VALUES (?)",
                     Statement.RETURN_GENERATED_KEYS);
-            
+
             stm.setString(1, mensagem);
             stm.executeUpdate();
             ResultSet rs = stm.getGeneratedKeys();
-            if(rs.next()) {
+            if (rs.next()) {
                 int novoId = rs.getInt(1);
                 n = new Notificacao(novoId, mensagem);
             }
-        } catch(ClassNotFoundException | SQLException e) {
+        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
         return n;

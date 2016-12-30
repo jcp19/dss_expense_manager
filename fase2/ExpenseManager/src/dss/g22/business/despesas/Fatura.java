@@ -1,6 +1,6 @@
 package dss.g22.business.despesas;
 
-import java.util.*;
+import java.time.LocalDate;
 
 public class Fatura {
 
@@ -8,6 +8,7 @@ public class Fatura {
 	private MetodoDivisao comoDeviaSerDividido;
 	private double valorTotal;
 	private int idFatura;
+	private LocalDate data;
 
 	public void getAttribute() {
 		// TODO - implement Fatura.getAttribute
@@ -45,6 +46,43 @@ public class Fatura {
 	 */
 	public void setIdFatura(int idFatura) {
 		this.idFatura = idFatura;
+	}
+
+	public LocalDate getData() {
+		return this.data;
+	}
+
+	/**
+	 * 
+	 * @param data
+	 */
+	public void setData(LocalDate data) {
+		this.data = data;
+	}
+
+	/**
+	 * 
+	 * @param valorTotal
+	 * @param data
+	 * @param comoFoiDividido
+	 * @param comoDeviaSerDividido
+	 */
+	public Fatura(double valorTotal, LocalDate data, MetodoDivisao comoFoiDividido, MetodoDivisao comoDeviaSerDividido) {
+		// TODO - implement Fatura.Fatura
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * 
+	 * @param idFatura
+	 * @param valorTotal
+	 * @param data
+	 * @param comoFoiDividido
+	 * @param comoDeviaSerDividido
+	 */
+	public Fatura(int idFatura, double valorTotal, LocalDate data, MetodoDivisao comoFoiDividido, MetodoDivisao comoDeviaSerDividido) {
+		// TODO - implement Fatura.Fatura
+		throw new UnsupportedOperationException();
 	}
 
 }

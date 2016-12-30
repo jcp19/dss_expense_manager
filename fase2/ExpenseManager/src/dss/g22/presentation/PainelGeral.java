@@ -19,13 +19,14 @@ import javax.swing.JList;
 public class PainelGeral extends javax.swing.JPanel {
 
     private Facade facade;
+
     /**
      * Creates new form painelHistorico
      */
-    public PainelGeral(){
+    public PainelGeral() {
         initComponents();
     }
-    
+
     public PainelGeral(Facade facade) {
         initComponents();
         this.facade = facade;
@@ -33,8 +34,9 @@ public class PainelGeral extends javax.swing.JPanel {
         /*((DefaultListModel)listaHistorico.getModel()).addElement("ola");*/
         String[] lista = facade.mensagensNotificacoes();
         Vector<String> notificacoes = new Vector<String>();
-        for(int i = 0; i < lista.length; i++)
+        for (int i = 0; i < lista.length; i++) {
             notificacoes.add(lista[i]);
+        }
         listaHistorico.setListData(notificacoes);
         /*listaHistorico.setListData(facade.mensagensNotificacoes());*/
     }
@@ -100,7 +102,6 @@ public class PainelGeral extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

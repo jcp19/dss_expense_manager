@@ -161,7 +161,6 @@ public class PainelContaCorrente extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butaoPesquisaCC;
     private javax.swing.JTextField campoTermoPesquisaCC;

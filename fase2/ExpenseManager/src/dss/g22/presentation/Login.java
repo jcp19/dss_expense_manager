@@ -1,30 +1,28 @@
 package dss.g22.presentation;
 
-
 import dss.g22.business.moradores.CampoInvalidoException;
 import dss.g22.business.Facade;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author joaop
  */
 public class Login extends javax.swing.JFrame {
-    
+
     private final Facade facade;
     private DialogRegistarMorador dialogRegisto;
-    
+
     /**
      * Creates new form Login
      */
     /*public Login() {
         this(null);
     }*/
-    
     public Login(Facade f) {
         facade = f;
         initComponents();
@@ -165,16 +163,16 @@ public class Login extends javax.swing.JFrame {
 
     private void butaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoLoginActionPerformed
         String email, password;
-        
+
         email = campoEmail.getText();
         password = new String(campoPassword.getPassword());
-        
+
         try {
             facade.login(email, password);
             Dashboard dashboard = new Dashboard(facade);
             dispose();
             dashboard.setVisible(true);
-        } catch(CampoInvalidoException e) {
+        } catch (CampoInvalidoException e) {
             labelCredenciaisInvalidas.setVisible(true);
         }
     }//GEN-LAST:event_butaoLoginActionPerformed

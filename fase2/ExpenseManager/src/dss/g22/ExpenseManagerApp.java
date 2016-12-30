@@ -13,11 +13,11 @@ import dss.g22.presentation.Login;
  * @author joao
  */
 public class ExpenseManagerApp {
-    
+
     public static void main(String[] args) {
         Facade f = new Facade();
         Login l = new Login(f);
-        
+
         l.setVisible(true);
     }
 }

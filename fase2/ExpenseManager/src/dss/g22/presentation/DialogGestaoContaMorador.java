@@ -22,10 +22,11 @@ import javax.swing.JFileChooser;
  * @author joao
  */
 public class DialogGestaoContaMorador extends javax.swing.JDialog {
+
     private Facade facade;
     private DialogAlterarEmail dialogAlterarEmail;
     private DialogAlterarPassword dialogAlterarPassword;
-    
+
     /**
      * Creates new form DialogGestaoContaMorador
      */

@@ -12,9 +12,10 @@ import java.awt.CardLayout;
  * @author joao
  */
 public class DialogRegistarDespesa extends javax.swing.JDialog {
+
     private String cartaoAnterior = null;
     private String cartaoAtual = "painelNomeDescPeriod";
-    
+
     /**
      * Creates new form DialogRegistarDespesa
      */
@@ -196,7 +197,7 @@ public class DialogRegistarDespesa extends javax.swing.JDialog {
 
     private void botaoAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAnteriorActionPerformed
         CardLayout cardLayout = (CardLayout) painelCartoes.getLayout();
-        
+
         cardLayout.show(painelCartoes, "painelNomeDescPeriod");
         botaoAnterior.setEnabled(false);
         botaoSeguinte.setText("Seguinte");
@@ -208,18 +209,18 @@ public class DialogRegistarDespesa extends javax.swing.JDialog {
 
     private void botaoSeguinteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSeguinteActionPerformed
         CardLayout cardLayout = (CardLayout) painelCartoes.getLayout();
-        
-        if(cartaoAtual.equals("painelNomeDescPeriod")) {
+
+        if (cartaoAtual.equals("painelNomeDescPeriod")) {
             String opcaoPeriodicidade = (String) opcoesPeriodicidade.getSelectedItem();
-            
+
             botaoAnterior.setEnabled(true);
             botaoSeguinte.setText("Registar");
-            if(opcaoPeriodicidade.equals("Pontualmente"))
+            if (opcaoPeriodicidade.equals("Pontualmente")) {
                 cardLayout.show(painelCartoes, "scrollDadosFatura");
-            else
+            } else {
                 cardLayout.show(painelCartoes, "painelMetodoDivisaoOmissao");
-            
-            
+            }
+
         } else { // MUDAR !!!
             dispose();
         }

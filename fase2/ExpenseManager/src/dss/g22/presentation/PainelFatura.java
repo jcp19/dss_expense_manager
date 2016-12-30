@@ -472,7 +472,7 @@ public class PainelFatura extends javax.swing.JPanel {
         String opcao = (String) metodosDivisao.getSelectedItem();
         CardLayout cardLayout = (CardLayout) painelMetodosDivisao.getLayout();
 
-        switch(opcao) {
+        switch (opcao) {
             case "Igualmente":
                 cardLayout.show(painelMetodosDivisao, "painelMetodoIgual");
                 break;
@@ -484,7 +484,6 @@ public class PainelFatura extends javax.swing.JPanel {
                 break;
         }
     }//GEN-LAST:event_metodosDivisaoActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel erroMontanteNaoNegativo;

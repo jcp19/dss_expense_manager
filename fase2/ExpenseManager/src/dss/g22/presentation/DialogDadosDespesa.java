@@ -313,7 +313,7 @@ public class DialogDadosDespesa extends javax.swing.JDialog {
     }//GEN-LAST:event_botaoDesfazerAlteracoesActionPerformed
 
     private void botaoAdicionarFaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAdicionarFaturaActionPerformed
-        if(botaoAdicionarFatura.getText().equals("Associar fatura")) {
+        if (botaoAdicionarFatura.getText().equals("Associar fatura")) {
             DialogDadosFatura dialogDadosFatura = new DialogDadosFatura(this, true);
 
             dialogDadosFatura.setLocationRelativeTo(this);

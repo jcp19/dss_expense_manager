@@ -12,13 +12,13 @@ import dss.g22.business.Facade;
  * @author joao
  */
 public class Dashboard extends javax.swing.JFrame {
-    
+
     private DialogRegistarDespesa dialogRegistarDespesa;
     private DialogGestaoContaMorador dialogGestaoContaMorador;
     private DialogPesquisarDespesa dialogPesquisarDespesa;
     private DialogRegistarTransferencia dialogRegistarTransferencia;
     private Facade facade;
-    
+
     /**
      * Creates new form DashboardV2
      */
@@ -265,7 +265,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoRegistarFaturaActionPerformed
 
     private void botaoRegistarDespesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRegistarDespesaActionPerformed
-        dialogRegistarDespesa = new DialogRegistarDespesa(this, true);   
+        dialogRegistarDespesa = new DialogRegistarDespesa(this, true);
         dialogRegistarDespesa.setLocationRelativeTo(this);
         dialogRegistarDespesa.setVisible(true);
     }//GEN-LAST:event_botaoRegistarDespesaActionPerformed

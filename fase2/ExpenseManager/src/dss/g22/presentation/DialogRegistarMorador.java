@@ -23,11 +23,12 @@ import static dss.g22.presentation.images.ConstantesImagens.LARGURA_IMG_NORMAL;
  * @author joao
  */
 public class DialogRegistarMorador extends javax.swing.JDialog {
+
     /**
      * Creates new form DialogRegisto
      */
     private Facade facade;
-    
+
     public DialogRegistarMorador(java.awt.Frame parent, boolean modal, Facade facade) {
         super(parent, modal);
         initComponents();
@@ -233,27 +234,27 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
         String password = new String(campoPassword.getPassword());
         String email = campoEmail.getText().trim();
         String confirmacaoPassword = new String(campoConfirmarPassword.getPassword());
-        
-        if(nome.length() == 0 || password.length() == 0 || confirmacaoPassword.length() == 0 || email.length() == 0) {
+
+        if (nome.length() == 0 || password.length() == 0 || confirmacaoPassword.length() == 0 || email.length() == 0) {
             labelCamposObrigatorios.setVisible(true);
             labelErroPassDiferentes.setVisible(false);
             labelErroEmailEmUso.setVisible(false);
-            
-        } else if (!password.equals(confirmacaoPassword)){
+
+        } else if (!password.equals(confirmacaoPassword)) {
             labelCamposObrigatorios.setVisible(false);
             labelErroPassDiferentes.setVisible(true);
             labelCamposObrigatorios.setVisible(false);
-        } else {   
+        } else {
             try {
                 facade.registaMorador(nome, email, password);
-                dispose(); 
+                dispose();
             } catch (EmailEmUsoException e) {
                 labelCamposObrigatorios.setVisible(false);
                 labelErroPassDiferentes.setVisible(false);
                 labelErroEmailEmUso.setVisible(true);
             }
         }
-               
+
     }//GEN-LAST:event_butaoRegistarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -9,8 +9,9 @@ package dss.g22.business.moradores;
  *
  * @author joaop
  */
-public class CampoInvalidoException extends Exception{
-    public CampoInvalidoException(String s){
+public class CampoInvalidoException extends Exception {
+
+    public CampoInvalidoException(String s) {
         super(s);
     }
 }

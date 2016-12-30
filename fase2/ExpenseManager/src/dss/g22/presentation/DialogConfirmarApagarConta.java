@@ -17,23 +17,25 @@ import javax.swing.JFrame;
  * @author joaop
  */
 public class DialogConfirmarApagarConta extends javax.swing.JDialog {
+
     Facade facade;
+
     /**
      * Creates new form ConfirmarApagarConta
      */
-    public DialogConfirmarApagarConta(java.awt.Frame parent, boolean modal) {     
+    public DialogConfirmarApagarConta(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.facade = facade;
         initComponents();
     }
-    
-    public DialogConfirmarApagarConta(java.awt.Frame parent, boolean modal, Facade facade) {     
+
+    public DialogConfirmarApagarConta(java.awt.Frame parent, boolean modal, Facade facade) {
         super(parent, modal);
         this.facade = facade;
         initComponents();
     }
-    
-    public DialogConfirmarApagarConta(javax.swing.JDialog parent, boolean modal, Facade facade) {     
+
+    public DialogConfirmarApagarConta(javax.swing.JDialog parent, boolean modal, Facade facade) {
         super(parent, modal);
         this.facade = facade;
         initComponents();
@@ -118,12 +120,12 @@ public class DialogConfirmarApagarConta extends javax.swing.JDialog {
 
     private void butaoConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoConfirmarActionPerformed
         String password = new String(campoPassword.getPassword());
-        
+
         try {
             facade.eliminaContaMoradorAutenticado(password);
             JDialog dialogGestaoContaMorador = (JDialog) getParent();
             JFrame dashboard = (JFrame) dialogGestaoContaMorador.getParent();
-            
+
             dispose();
             dialogGestaoContaMorador.dispose();
             dashboard.dispose();

@@ -4,20 +4,18 @@ import dss.g22.data.DespesaDAO;
 import dss.g22.data.FaturaDAO;
 import dss.g22.data.TransferenciaDAO;
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Map;
 
 public class Despesas {
 
 	private FaturaDAO faturas;
-	private DespesaDAO despesas;
 	private TransferenciaDAO transferencias;
+	private DespesaDAO despesas;
 
 	/**
 	 * 
 	 * @param idMorador
 	 */
-	public List<Fatura> getFaturasMorador(int idMorador) {
+	public Fatura[] getFaturasMorador(int idMorador) {
 		// TODO - implement Despesas.getFaturasMorador
 		throw new UnsupportedOperationException();
 	}
@@ -26,7 +24,7 @@ public class Despesas {
 	 * 
 	 * @param idMorador
 	 */
-	public List<Transferencia> getTransferenciasMorador(int idMorador) {
+	public Transferencia[] getTransferenciasMorador(int idMorador) {
 		// TODO - implement Despesas.getTransferenciasMorador
 		throw new UnsupportedOperationException();
 	}
@@ -51,15 +49,16 @@ public class Despesas {
 
 	/**
 	 * 
+	 * @param idDespesa
 	 * @param novaDesignacao
 	 * @param novaDescricao
 	 */
-	public void editaDespesa(String novaDesignacao, String novaDescricao) {
+	public void editaDespesa(int idDespesa, String novaDesignacao, String novaDescricao) {
 		// TODO - implement Despesas.editaDespesa
 		throw new UnsupportedOperationException();
 	}
 
-	public List<Despesa> getDespesas() {
+	public Despesa[] getDespesas() {
 		// TODO - implement Despesas.getDespesas
 		throw new UnsupportedOperationException();
 	}
@@ -82,7 +81,7 @@ public class Despesas {
 	 * @param dataPrimeiraPeriodicidade
 	 * @param metodoDivisaoOmissao
 	 */
-	public void registaDespesaRecorrente(String designacao, String descricao, LocalDate dataPrimeiraPeriodicidade, Map<Integer, Double> metodoDivisaoOmissao) {
+	public void registaDespesaRecorrente(String designacao, String descricao, LocalDate dataPrimeiraPeriodicidade, MetodoDivisao metodoDivisaoOmissao) {
 		// TODO - implement Despesas.registaDespesaRecorrente
 		throw new UnsupportedOperationException();
 	}
@@ -130,6 +129,25 @@ public class Despesas {
 	 */
 	public void removeTransferencia(int idTransferencia) {
 		// TODO - implement Despesas.removeTransferencia
+		throw new UnsupportedOperationException();
+	}
+
+	public Despesas() {
+		faturas = new FaturaDAO();
+		transferencias = new TransferenciaDAO();
+		despesas = new DespesaDAO();
+	}
+
+	/**
+	 * 
+	 * @param idMoradorOrigem
+	 * @param idMoradorDestino
+	 * @param montante
+	 * @param descricao
+	 * @param data
+	 */
+	public void registaTransferencia(int idMoradorOrigem, int idMoradorDestino, double montante, String descricao, LocalDate data) {
+		// TODO - implement Despesas.registaTransferencia
 		throw new UnsupportedOperationException();
 	}
 

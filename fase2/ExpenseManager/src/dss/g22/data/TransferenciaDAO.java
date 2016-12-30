@@ -15,17 +15,18 @@ import java.util.Map;
 import java.util.Set;
 
 public class TransferenciaDAO implements Map<Integer, Transferencia> {
+
     private Connection conn;
-    
+
     @Override
     public int size() {
         int i = 0;
-        
+
         try {
             conn = Connect.connect();
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery("SELECT count(*) FROM Transferencia");
-            if(rs.next()) {
+            if (rs.next()) {
                 i = rs.getInt(1);
             }
         } catch (ClassNotFoundException | SQLException e) {
@@ -44,7 +45,7 @@ public class TransferenciaDAO implements Map<Integer, Transferencia> {
     @Override
     public boolean containsKey(Object key) {
         boolean r = false;
-        
+
         try {
             conn = Connect.connect();
             Statement stm = conn.createStatement();
@@ -67,7 +68,7 @@ public class TransferenciaDAO implements Map<Integer, Transferencia> {
     @Override
     public Transferencia get(Object key) {
         Transferencia t = null;
-        
+
         try {
             conn = Connect.connect();
             PreparedStatement stm = conn.prepareStatement("SELECT * FROM Transferencia WHERE idTransferencia = ?");
@@ -75,8 +76,9 @@ public class TransferenciaDAO implements Map<Integer, Transferencia> {
             ResultSet rs = stm.executeQuery();
             if (rs.next()) {
                 t = new Transferencia(
-                    rs.getInt("idTransferencia"), rs.getDouble("quantia"),rs.getString("descricao"),
-                    rs.getInt("idQuemTransferiu"), rs.getInt("idQuemRecebeu")
+                        rs.getInt("idQuemTransferiu"), rs.getInt("idQuemRecebeu"),
+                        rs.getDouble("quantia"), rs.getString("descricao"), rs.getInt("idTransferencia")
+                        
                 );
             }
         } catch (ClassNotFoundException | SQLException e) {
@@ -90,22 +92,22 @@ public class TransferenciaDAO implements Map<Integer, Transferencia> {
     @Override
     public Transferencia put(Integer key, Transferencia value) {
         Transferencia t = null;
-        
+
         try {
             conn = Connect.connect();
-            PreparedStatement stm = conn.prepareStatement("INSERT INTO Transferencia\n" +
-                    "(quantia, descricao, idQuemTransferiu, idQuemRecebeu)\n" +
-                    "VALUES (?, ?, ?, ?)",
+            PreparedStatement stm = conn.prepareStatement("INSERT INTO Transferencia\n"
+                    + "(quantia, descricao, idQuemTransferiu, idQuemRecebeu)\n"
+                    + "VALUES (?, ?, ?, ?)",
                     Statement.RETURN_GENERATED_KEYS);
-            
+
             stm.setDouble(1, value.getQuantia());
             stm.setString(2, value.getDescricao());
             stm.setInt(3, value.getIdQuemTransferiu());
             stm.setInt(4, value.getIdQuemRecebeu());
             stm.executeUpdate();
-            
+
             ResultSet rs = stm.getGeneratedKeys();
-            if(rs.next()) {
+            if (rs.next()) {
                 int novoId = rs.getInt(1);
                 value.setIdTransferencia(novoId);
             }
@@ -121,7 +123,7 @@ public class TransferenciaDAO implements Map<Integer, Transferencia> {
     @Override
     public Transferencia remove(Object key) {
         Transferencia t = get(key);
-        
+
         try {
             conn = Connect.connect();
             PreparedStatement stm = conn.prepareStatement("DELETE FROM Transferencia WHERE idTransferencia = ?");
@@ -137,7 +139,7 @@ public class TransferenciaDAO implements Map<Integer, Transferencia> {
 
     @Override
     public void putAll(Map<? extends Integer, ? extends Transferencia> m) {
-        m.forEach((k,v) -> put(k,v));
+        m.forEach((k, v) -> put(k, v));
     }
 
     @Override
@@ -148,7 +150,7 @@ public class TransferenciaDAO implements Map<Integer, Transferencia> {
             stm.executeUpdate("DELETE FROM Transferencia");
         } catch (ClassNotFoundException | SQLException e) {
             // runtime exeption
-            throw new NullPointerException(e.getMessage()); 
+            throw new NullPointerException(e.getMessage());
         } finally {
             Connect.close(conn);
         }
@@ -162,17 +164,17 @@ public class TransferenciaDAO implements Map<Integer, Transferencia> {
     @Override
     public Collection<Transferencia> values() {
         Collection<Transferencia> col = new HashSet<Transferencia>();
-        
+
         try {
             conn = Connect.connect();
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery("SELECT * FROM Transferencia");
             while (rs.next()) {
                 col.add(new Transferencia(
-                        rs.getInt("idTransferencia"), rs.getInt("quantia"), rs.getString("descricao"),
-                        rs.getInt("idQuemTransferiu"), rs.getInt("idQuemRecebeu"))
+                        rs.getInt("idQuemTransferiu"), rs.getInt("idQuemRecebeu"),
+                        rs.getDouble("quantia"), rs.getString("descricao"), rs.getInt("idTransferencia"))
                 );
-            }  
+            }
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         } finally {

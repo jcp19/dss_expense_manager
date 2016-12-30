@@ -130,7 +130,6 @@ public class PainelDespesas extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butaoPesquisaDespesa;
     private javax.swing.JTextField campoTermoPesquisaDespesa;

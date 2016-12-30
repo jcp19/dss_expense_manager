@@ -1,15 +1,19 @@
 package dss.g22.business.despesas;
 
-
 import java.time.LocalDate;
+import java.util.*;
 
-public abstract class Despesa {
+public class Despesa {
 
+	private MetodoDivisao comoPagarOmissao;
+	private Collection<Fatura> faturas;
 	private Periodicidade periodicidade;
 	private String designacao;
 	private String descricao;
 	private LocalDate dataRegisto;
 	private int idDespesa;
+	private boolean encerrada;
+	private LocalDate dataProxPagamento;
 
 	public String getDesignacao() {
 		return this.designacao;
@@ -35,32 +39,8 @@ public abstract class Despesa {
 		this.descricao = descricao;
 	}
 
-	/**
-	 * 
-	 * @param dataRegisto
-	 */
-	public void setDataRegisto(LocalDate dataRegisto) {
-		this.dataRegisto = dataRegisto;
-	}
-
-	/**
-	 * 
-	 * @param idDespesa
-	 */
-	private void setIdDespesa(int idDespesa) {
-		this.idDespesa = idDespesa;
-	}
-
 	public int getIdDespesa() {
 		return this.idDespesa;
-	}
-
-	/**
-	 * 
-	 * @param periodicidade
-	 */
-	public void setPeriodicidade(Periodicidade periodicidade) {
-		this.periodicidade = periodicidade;
 	}
 
 	public Periodicidade getPeriodicidade() {
@@ -73,23 +53,82 @@ public abstract class Despesa {
 
 	/**
 	 * 
-	 * @param idMoradorOrigem
-	 * @param idMoradorDestino
-	 * @param montante
-	 * @param descricao
-	 * @param data
+	 * @param fatura
 	 */
-	public void registaTransferencia(int idMoradorOrigem, int idMoradorDestino, double montante, String descricao, LocalDate data) {
-		// TODO - implement Despesa.registaTransferencia
+	public void associaFatura(Fatura fatura) {
+		// TODO - implement Despesa.associaFatura
+		throw new UnsupportedOperationException();
+	}
+
+	public boolean getEncerrada() {
+		return this.encerrada;
+	}
+
+	/**
+	 * 
+	 * @param encerrada
+	 */
+	public void setEncerrada(boolean encerrada) {
+		this.encerrada = encerrada;
+	}
+
+	public LocalDate getDataProxPagamento() {
+		return this.dataProxPagamento;
+	}
+
+	/**
+	 * 
+	 * @param dataProxPagamento
+	 */
+	public void setDataProxPagamento(LocalDate dataProxPagamento) {
+		this.dataProxPagamento = dataProxPagamento;
+	}
+
+	/**
+	 * 
+	 * @param designacao
+	 * @param descricao
+	 * @param dataPrimeiraPeriodicidade
+	 * @param metodoDivisaoOmissao
+	 */
+	public Despesa(String designacao, String descricao, LocalDate dataPrimeiraPeriodicidade, MetodoDivisao metodoDivisaoOmissao) {
+		// TODO - implement Despesa.Despesa
 		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * 
+	 * @param idDespesa
+	 * @param designacao
+	 * @param descricao
+	 * @param dataPrimeiraPeriodicidade
+	 * @param metodoDivisaoOmissao
+	 */
+	public Despesa(int idDespesa, String designacao, String descricao, LocalDate dataPrimeiraPeriodicidade, MetodoDivisao metodoDivisaoOmissao) {
+		// TODO - implement Despesa.Despesa
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * 
+	 * @param designacao
+	 * @param descricao
 	 * @param fatura
 	 */
-	public void associaFatura(Fatura fatura) {
-		// TODO - implement Despesa.associaFatura
+	public Despesa(String designacao, String descricao, Fatura fatura) {
+		// TODO - implement Despesa.Despesa
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * 
+	 * @param idDespesa
+	 * @param designacao
+	 * @param descricao
+	 * @param fatura
+	 */
+	public Despesa(int idDespesa, String designacao, String descricao, Fatura fatura) {
+		// TODO - implement Despesa.Despesa
 		throw new UnsupportedOperationException();
 	}
 

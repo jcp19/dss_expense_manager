@@ -13,7 +13,9 @@ import dss.g22.business.moradores.CampoInvalidoException;
  * @author joao
  */
 public class DialogAlterarPassword extends javax.swing.JDialog {
+
     private Facade facade;
+
     /**
      * Creates new form DialogAlterarPassword
      */
@@ -22,7 +24,7 @@ public class DialogAlterarPassword extends javax.swing.JDialog {
         initComponents();
         this.facade = facade;
     }
-    
+
     public DialogAlterarPassword(javax.swing.JDialog parent, boolean modal, Facade facade) {
         super(parent, modal);
         initComponents();
@@ -171,17 +173,18 @@ public class DialogAlterarPassword extends javax.swing.JDialog {
         passwordAtual = new String(campoPasswordAtual.getPassword());
         passwordNova1 = new String(campoNovaPassword.getPassword());
         passwordNova2 = new String(campoConfirmarNovaPassword.getPassword());
-        
 
-        if(!passwordNova1.equals(passwordNova2)){
+        if (!passwordNova1.equals(passwordNova2)) {
             labelPasswordInvalida.setVisible(false);
             labelErroPassDiferentes.setVisible(true);
-        }else try{
-            facade.alteraPasswordMoradorAutenticado(passwordAtual, passwordNova1);
-            dispose();
-        }catch(CampoInvalidoException e){
-            labelPasswordInvalida.setVisible(true);
-            labelErroPassDiferentes.setVisible(false);
+        } else {
+            try {
+                facade.alteraPasswordMoradorAutenticado(passwordAtual, passwordNova1);
+                dispose();
+            } catch (CampoInvalidoException e) {
+                labelPasswordInvalida.setVisible(true);
+                labelErroPassDiferentes.setVisible(false);
+            }
         }
 
     }//GEN-LAST:event_botaoConfirmarActionPerformed

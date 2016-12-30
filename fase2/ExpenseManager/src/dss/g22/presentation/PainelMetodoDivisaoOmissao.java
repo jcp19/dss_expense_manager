@@ -246,7 +246,7 @@ public class PainelMetodoDivisaoOmissao extends javax.swing.JPanel {
         String opcao = (String) metodosDivisaoOmissao.getSelectedItem();
         CardLayout cardLayout = (CardLayout) painelMetodosDivisaoOmissao.getLayout();
 
-        switch(opcao) {
+        switch (opcao) {
             case "Igualmente":
                 cardLayout.show(painelMetodosDivisaoOmissao, "painelMetodoIgual");
                 break;
@@ -255,7 +255,6 @@ public class PainelMetodoDivisaoOmissao extends javax.swing.JPanel {
                 break;
         }
     }//GEN-LAST:event_metodosDivisaoOmissaoActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel erroPercentagemNegativaOmissao;

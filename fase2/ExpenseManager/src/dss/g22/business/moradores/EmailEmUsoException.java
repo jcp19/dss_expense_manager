@@ -10,11 +10,12 @@ package dss.g22.business.moradores;
  * @author joaop
  */
 public class EmailEmUsoException extends Exception {
-    public EmailEmUsoException(String str){
+
+    public EmailEmUsoException(String str) {
         super(str);
     }
-    
-    public EmailEmUsoException(){
+
+    public EmailEmUsoException() {
         super("O email introduzido ja se encontra em uso.");
     }
 }

@@ -14,17 +14,18 @@ import java.util.Map;
 import java.util.Set;
 
 public class MoradorDAO implements Map<Integer, Morador> {
+
     private Connection conn;
-    
+
     @Override
     public int size() {
         int i = 0;
-        
+
         try {
             conn = Connect.connect();
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery("SELECT count(*) FROM Morador");
-            if(rs.next()) {
+            if (rs.next()) {
                 i = rs.getInt(1);
             }
         } catch (ClassNotFoundException | SQLException e) {
@@ -43,7 +44,7 @@ public class MoradorDAO implements Map<Integer, Morador> {
     @Override
     public boolean containsKey(Object key) {
         boolean r = false;
-        
+
         try {
             conn = Connect.connect();
             Statement stm = conn.createStatement();
@@ -66,7 +67,7 @@ public class MoradorDAO implements Map<Integer, Morador> {
     @Override
     public Morador get(Object key) {
         Morador m = null;
-        
+
         try {
             conn = Connect.connect();
             PreparedStatement stm = conn.prepareStatement("SELECT * FROM Morador WHERE idMorador=?");
@@ -75,9 +76,9 @@ public class MoradorDAO implements Map<Integer, Morador> {
             if (rs.next()) {
                 /* Blob avatarBlob = rs.getBlob("avatar");
                 ImageIcon avatarIcon = new ImageIcon(avatarBlob.getBytes(1, (int) avatarBlob.length())); */
-                
+
                 m = new Morador(
-                    rs.getInt("idMorador"), rs.getString("nome"),rs.getString("email"), rs.getString("password")
+                        rs.getInt("idMorador"), rs.getString("nome"), rs.getString("email"), rs.getString("password")
                 );
             }
         } catch (ClassNotFoundException | SQLException e) {
@@ -90,7 +91,7 @@ public class MoradorDAO implements Map<Integer, Morador> {
 
     public Morador get(String email, String password) {
         Morador m = null;
-        
+
         try {
             conn = Connect.connect();
             PreparedStatement stm = conn.prepareStatement("SELECT * FROM Morador WHERE email = ? AND password = ? AND foiEliminado = 0");
@@ -100,9 +101,9 @@ public class MoradorDAO implements Map<Integer, Morador> {
             if (rs.next()) {
                 /* Blob avatarBlob = rs.getBlob("avatar");
                 ImageIcon avatarIcon = new ImageIcon(avatarBlob.getBytes(1, (int) avatarBlob.length())); */
-                
+
                 m = new Morador(
-                    rs.getInt("idMorador"), rs.getString("nome"),rs.getString("email"), rs.getString("password")
+                        rs.getInt("idMorador"), rs.getString("nome"), rs.getString("email"), rs.getString("password")
                 );
             }
         } catch (ClassNotFoundException | SQLException e) {
@@ -118,22 +119,22 @@ public class MoradorDAO implements Map<Integer, Morador> {
         Morador m = null;
         try {
             conn = Connect.connect();
-            PreparedStatement stm = conn.prepareStatement("INSERT INTO Morador\n" +
-                    "(nome, email, password)\n" +
-                    "VALUES (?, ?, ?)",
+            PreparedStatement stm = conn.prepareStatement("INSERT INTO Morador\n"
+                    + "(nome, email, password)\n"
+                    + "VALUES (?, ?, ?)",
                     Statement.RETURN_GENERATED_KEYS);
-            
+
             stm.setString(1, value.getNome());
             stm.setString(2, value.getEmail());
             stm.setString(3, value.getPassword());
             stm.executeUpdate();
-            
+
             ResultSet rs = stm.getGeneratedKeys();
-            if(rs.next()) {
+            if (rs.next()) {
                 int novoId = rs.getInt(1);
                 value.setIdMorador(novoId);
             }
-            
+
             m = value;
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -146,7 +147,7 @@ public class MoradorDAO implements Map<Integer, Morador> {
     @Override
     public Morador remove(Object key) {
         Morador m = get(key);
-        
+
         try {
             conn = Connect.connect();
             PreparedStatement stm = conn.prepareStatement("UPDATE Morador SET foiEliminado = 1 WHERE idMorador = ?");
@@ -162,7 +163,7 @@ public class MoradorDAO implements Map<Integer, Morador> {
 
     @Override
     public void putAll(Map<? extends Integer, ? extends Morador> m) {
-        m.forEach((k,v) -> put(k,v));
+        m.forEach((k, v) -> put(k, v));
     }
 
     @Override
@@ -173,7 +174,7 @@ public class MoradorDAO implements Map<Integer, Morador> {
             stm.executeUpdate("DELETE FROM Morador");
         } catch (ClassNotFoundException | SQLException e) {
             // runtime exeption
-            throw new NullPointerException(e.getMessage()); 
+            throw new NullPointerException(e.getMessage());
         } finally {
             Connect.close(conn);
         }
@@ -187,17 +188,17 @@ public class MoradorDAO implements Map<Integer, Morador> {
     @Override
     public Collection<Morador> values() {
         Collection<Morador> col = new HashSet<Morador>();
-        
+
         try {
             conn = Connect.connect();
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery("SELECT * FROM Morador");
             while (rs.next()) {
                 col.add(new Morador(
-                        rs.getInt("idMorador"), rs.getString("nome"), rs.getInt("email"),
+                        rs.getInt("idMorador"), rs.getString("nome"), rs.getString("email"),
                         rs.getString("password"), rs.getBoolean("foiEliminado"))
                 );
-            }  
+            }
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         } finally {
@@ -205,7 +206,7 @@ public class MoradorDAO implements Map<Integer, Morador> {
         }
         return col;
     }
-    
+
     public void alterarEmail(int idMorador, String novo) throws EmailEmUsoException {
         try {
             conn = Connect.connect();
@@ -213,7 +214,7 @@ public class MoradorDAO implements Map<Integer, Morador> {
             stm.setString(1, novo);
             stm.setInt(2, (Integer) idMorador);
             stm.executeUpdate();
-        } catch(SQLException e){
+        } catch (SQLException e) {
             throw new EmailEmUsoException();
         }/* catch(MySQLIntegrityConstraintViolationException e) {
             throw new EmailEmUsoException();
@@ -236,8 +237,8 @@ public class MoradorDAO implements Map<Integer, Morador> {
             stm.setString(1, passwordNova);
             stm.setInt(2, (Integer) idMorador);
             stm.executeUpdate();
-        } catch(SQLException e){
-            
+        } catch (SQLException e) {
+
         }/* catch(MySQLIntegrityConstraintViolationException e) {
             throw new EmailEmUsoException();
         }*/ catch (ClassNotFoundException e) {
