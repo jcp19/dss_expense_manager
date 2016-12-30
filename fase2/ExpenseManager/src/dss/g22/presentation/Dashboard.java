@@ -25,6 +25,8 @@ public class Dashboard extends javax.swing.JFrame {
     public Dashboard(Facade facade) {
         initComponents();
         this.facade = facade;
+        nomeMoradorAutenticado.setText(facade.getNomeMoradorAutenticado());
+        labelValorSaldo.setText(Double.toString(facade.getSaldoMoradorAutenticado()));
     }
 
     /**
@@ -269,7 +271,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoRegistarDespesaActionPerformed
 
     private void imagemMoradorAutenticadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imagemMoradorAutenticadoActionPerformed
-        dialogGestaoContaMorador = new DialogGestaoContaMorador(this, true);
+        dialogGestaoContaMorador = new DialogGestaoContaMorador(this, true, facade);
         dialogGestaoContaMorador.setLocationRelativeTo(null);
         dialogGestaoContaMorador.setVisible(true);
     }//GEN-LAST:event_imagemMoradorAutenticadoActionPerformed
@@ -283,7 +285,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void botaoTerminarSessaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoTerminarSessaoActionPerformed
         dispose();
         facade.terminarSessao();
-        new Login().setVisible(true);
+        (new Login(facade)).setVisible(true);
     }//GEN-LAST:event_botaoTerminarSessaoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

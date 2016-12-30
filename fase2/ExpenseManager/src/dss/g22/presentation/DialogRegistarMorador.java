@@ -268,12 +268,12 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
 
     private void butaoRegistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoRegistarActionPerformed
         // TODO add your handling code here:
-        String nome = campoNome.getText();
+        String nome = campoNome.getText().trim();
         String password = new String(campoPassword.getPassword());
-        String email = campoEmail.getText();
+        String email = campoEmail.getText().trim();
         String confirmacaoPassword = new String(campoConfirmarPassword.getPassword());
         
-        if(nome.length() == 0 || password.length() == 0 || confirmacaoPassword.length() == 0 || nome.length() == 0) {
+        if(nome.length() == 0 || password.length() == 0 || confirmacaoPassword.length() == 0 || email.length() == 0) {
             labelCamposObrigatorios.setVisible(true);
             labelErroPassDiferentes.setVisible(false);
             labelErroEmailEmUso.setVisible(false);
@@ -285,13 +285,14 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
         } else {   
             try {
                 facade.registaMorador(nome, email, password);
+                dispose(); 
             } catch (EmailEmUsoException e) {
                 labelCamposObrigatorios.setVisible(false);
                 labelErroPassDiferentes.setVisible(false);
                 labelErroEmailEmUso.setVisible(true);
             }
         }
-        
+               
     }//GEN-LAST:event_butaoRegistarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -5,6 +5,7 @@
  */
 package dss.g22.presentation;
 
+import dss.g22.business.Facade;
 import static dss.g22.presentation.images.ConstantesImagens.ALTURA_IMG_NORMAL;
 import static dss.g22.presentation.images.ConstantesImagens.LARGURA_IMG_NORMAL;
 import java.awt.Image;
@@ -21,16 +22,19 @@ import javax.swing.JFileChooser;
  * @author joao
  */
 public class DialogGestaoContaMorador extends javax.swing.JDialog {
-    
+    private Facade facade;
     private DialogAlterarEmail dialogAlterarEmail;
     private DialogAlterarPassword dialogAlterarPassword;
     
     /**
      * Creates new form DialogGestaoContaMorador
      */
-    public DialogGestaoContaMorador(java.awt.Frame parent, boolean modal) {
+    public DialogGestaoContaMorador(java.awt.Frame parent, boolean modal, Facade facade) {
         super(parent, modal);
         initComponents();
+        this.facade = facade;
+        emailGestaoConta.setText(facade.getMailMoradorAutenticado());
+        nomeMoradorGestaoConta.setText(facade.getNomeMoradorAutenticado());
     }
 
     /**
@@ -140,7 +144,6 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
 
     botaoEliminarConta.setForeground(new java.awt.Color(204, 0, 0));
     botaoEliminarConta.setText("Eliminar conta");
-    botaoEliminarConta.setOpaque(true);
     gridBagConstraints = new java.awt.GridBagConstraints();
     gridBagConstraints.gridx = 0;
     gridBagConstraints.gridy = 2;
@@ -165,9 +168,11 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoAlterarEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAlterarEmailActionPerformed
-        dialogAlterarEmail = new DialogAlterarEmail(this, true);
+        dialogAlterarEmail = new DialogAlterarEmail(this, true, facade);
         dialogAlterarEmail.setLocationRelativeTo(this);
         dialogAlterarEmail.setVisible(true);
+        dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_botaoAlterarEmailActionPerformed
 
     private void imagemMoradorGestaoContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imagemMoradorGestaoContaActionPerformed
@@ -195,9 +200,10 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
     }//GEN-LAST:event_imagemMoradorGestaoContaActionPerformed
 
     private void botaoAlterarPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAlterarPasswordActionPerformed
-        dialogAlterarPassword = new DialogAlterarPassword(this, true);
+        dialogAlterarPassword = new DialogAlterarPassword(this, true, facade);
         dialogAlterarPassword.setLocationRelativeTo(this);
         dialogAlterarPassword.setVisible(true);
+        dispose();
     }//GEN-LAST:event_botaoAlterarPasswordActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

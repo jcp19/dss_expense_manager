@@ -5,6 +5,10 @@
  */
 package dss.g22.presentation;
 
+import dss.g22.business.Facade;
+import dss.g22.business.moradores.CampoInvalidoException;
+import dss.g22.business.moradores.EmailEmUsoException;
+
 /**
  *
  * @author joao
@@ -14,14 +18,18 @@ public class DialogAlterarEmail extends javax.swing.JDialog {
     /**
      * Creates new form DialogAlterarEmail
      */
-    public DialogAlterarEmail(java.awt.Frame parent, boolean modal) {
+    private Facade facade;
+    
+    public DialogAlterarEmail(java.awt.Frame parent, boolean modal, Facade facade) {
         super(parent, modal);
         initComponents();
+        this.facade = facade;
     }
     
-    public DialogAlterarEmail(javax.swing.JDialog parent, boolean modal) {
+    public DialogAlterarEmail(javax.swing.JDialog parent, boolean modal, Facade facade) {
         super(parent, modal);
         initComponents();
+        this.facade = facade;
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,7 +43,7 @@ public class DialogAlterarEmail extends javax.swing.JDialog {
 
         labelNovoEmail = new javax.swing.JLabel();
         campoNovoEmail = new javax.swing.JTextField();
-        labelErroEmailExiste = new javax.swing.JLabel();
+        labelEmailInvalido = new javax.swing.JLabel();
         painelCancelarConfirmar = new javax.swing.JPanel();
         botaoCancelar = new javax.swing.JButton();
         botaoConfirmar = new javax.swing.JButton();
@@ -66,20 +74,20 @@ public class DialogAlterarEmail extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 4, 0, 0);
         getContentPane().add(campoNovoEmail, gridBagConstraints);
 
-        labelErroEmailExiste.setForeground(new java.awt.Color(255, 0, 0));
-        labelErroEmailExiste.setText("Já existe um morador com o e-mail introduzido.");
-        labelErroEmailExiste.setOpaque(true);
+        labelEmailInvalido.setForeground(new java.awt.Color(255, 0, 0));
+        labelEmailInvalido.setText("O e-mail introduzido é inválido.");
+        labelEmailInvalido.setOpaque(true);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(0, 8, 0, 0);
-        getContentPane().add(labelErroEmailExiste, gridBagConstraints);
+        getContentPane().add(labelEmailInvalido, gridBagConstraints);
 
         painelCancelarConfirmar.setLayout(new javax.swing.BoxLayout(painelCancelarConfirmar, javax.swing.BoxLayout.LINE_AXIS));
 
         botaoCancelar.setText("Cancelar");
-        labelErroEmailExiste.setVisible(false);
+        labelEmailInvalido.setVisible(false);
         botaoCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoCancelarActionPerformed(evt);
@@ -110,14 +118,24 @@ public class DialogAlterarEmail extends javax.swing.JDialog {
     }//GEN-LAST:event_botaoCancelarActionPerformed
 
     private void botaoConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConfirmarActionPerformed
-        labelErroEmailExiste.setVisible(true);
+        try{
+            String novoMail = campoNovoEmail.getText().trim();
+            if(novoMail.length() == 0){
+                throw new CampoInvalidoException("O email introduzido e invalido");
+            }
+            facade.alteraMailMoradorAutenticado(novoMail);
+            dispose();
+            
+        }catch(CampoInvalidoException | EmailEmUsoException e){
+            labelEmailInvalido.setVisible(true);
+        }
     }//GEN-LAST:event_botaoConfirmarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoCancelar;
     private javax.swing.JButton botaoConfirmar;
     private javax.swing.JTextField campoNovoEmail;
-    private javax.swing.JLabel labelErroEmailExiste;
+    private javax.swing.JLabel labelEmailInvalido;
     private javax.swing.JLabel labelNovoEmail;
     private javax.swing.JPanel painelCancelarConfirmar;
     // End of variables declaration//GEN-END:variables

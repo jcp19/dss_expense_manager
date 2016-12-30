@@ -5,7 +5,7 @@ import dss.g22.business.despesas.Despesa;
 import dss.g22.business.despesas.Transferencia;
 import dss.g22.business.despesas.Fatura;
 import dss.g22.business.moradores.Moradores;
-import dss.g22.business.moradores.CredencialInvalidaException;
+import dss.g22.business.moradores.CampoInvalidoException;
 import dss.g22.business.moradores.EmailEmUsoException;
 import java.time.LocalDate;
 import java.util.List;
@@ -34,14 +34,14 @@ public class Facade {
 	 * @param email
 	 * @param password
 	 */
-	public void login(String email, String password) throws CredencialInvalidaException{
+	public void login(String email, String password) throws CampoInvalidoException{
 		// TODO - implement Facade.login
 		moradores.login(email, password);
 	}
 
 	public double getSaldoMoradorAutenticado() {
 		// TODO - implement Facade.getSaldoMoradorAutenticado
-		throw new UnsupportedOperationException();
+		return moradores.getSaldoMoradorAutenticado();
 	}
 
 	public List<Transferencia> getTransferenciasMoradorAutenticado() {
@@ -76,9 +76,9 @@ public class Facade {
 	 * 
 	 * @param mail
 	 */
-	public void alteraMailMoradorAutenticado(String mail) {
+	public void alteraMailMoradorAutenticado(String mail) throws EmailEmUsoException {
 		// TODO - implement Facade.alteraMailMoradorAutenticado
-		throw new UnsupportedOperationException();
+		moradores.alteraMailMoradorAutenticado(mail);
 	}
 
 	/**
@@ -221,5 +221,19 @@ public class Facade {
 		// TODO - implement Facade.removeTransferencia
 		throw new UnsupportedOperationException();
 	}
+
+    public String getNomeMoradorAutenticado() {
+        return moradores.getNomeMoradorAutenticado();
+    }
+
+    public String getMailMoradorAutenticado() {
+        return moradores.getMailMoradorAutenticado();
+    }
+
+    public void alteraPasswordMoradorAutenticado(String passwordAtual, String passwordNova) throws CampoInvalidoException {
+        moradores.alteraPasswordMoradorAutenticado(passwordAtual, passwordNova);
+    }
+
+
 
 }

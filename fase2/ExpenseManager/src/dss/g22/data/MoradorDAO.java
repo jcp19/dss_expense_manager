@@ -1,5 +1,7 @@
 package dss.g22.data;
 
+import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
+import dss.g22.business.moradores.EmailEmUsoException;
 import dss.g22.business.moradores.Morador;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -147,7 +149,7 @@ public class MoradorDAO implements Map<Integer, Morador> {
         
         try {
             conn = Connect.connect();
-            PreparedStatement stm = conn.prepareStatement("UPDATE Morador SET foiEliminado = 1 WHERE id = ?");
+            PreparedStatement stm = conn.prepareStatement("UPDATE Morador SET foiEliminado = 1 WHERE idMorador = ?");
             stm.setInt(1, (Integer) key);
             stm.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
@@ -203,9 +205,45 @@ public class MoradorDAO implements Map<Integer, Morador> {
         }
         return col;
     }
+    
+    public void alterarEmail(int idMorador, String novo) throws EmailEmUsoException {
+        try {
+            conn = Connect.connect();
+            PreparedStatement stm = conn.prepareStatement("UPDATE Morador SET email=? WHERE idMorador=?");
+            stm.setString(1, novo);
+            stm.setInt(2, (Integer) idMorador);
+            stm.executeUpdate();
+        } catch(SQLException e){
+            throw new EmailEmUsoException();
+        }/* catch(MySQLIntegrityConstraintViolationException e) {
+            throw new EmailEmUsoException();
+        }*/ catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            Connect.close(conn);
+        }
+    }
 
     @Override
     public Set<Entry<Integer, Morador>> entrySet() {
         throw new UnsupportedOperationException("Não implementado.");
+    }
+
+    public void alterarPassword(int idMorador, String passwordNova) {
+        try {
+            conn = Connect.connect();
+            PreparedStatement stm = conn.prepareStatement("UPDATE Morador SET password=? WHERE idMorador=?");
+            stm.setString(1, passwordNova);
+            stm.setInt(2, (Integer) idMorador);
+            stm.executeUpdate();
+        } catch(SQLException e){
+            
+        }/* catch(MySQLIntegrityConstraintViolationException e) {
+            throw new EmailEmUsoException();
+        }*/ catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            Connect.close(conn);
+        }
     }
 }

@@ -1,7 +1,7 @@
 package dss.g22.presentation;
 
 
-import dss.g22.business.moradores.CredencialInvalidaException;
+import dss.g22.business.moradores.CampoInvalidoException;
 import dss.g22.business.Facade;
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,9 +21,9 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
-    public Login() {
+    /*public Login() {
         this(null);
-    }
+    }*/
     
     public Login(Facade f) {
         facade = f;
@@ -174,7 +174,7 @@ public class Login extends javax.swing.JFrame {
             Dashboard dashboard = new Dashboard(facade);
             dispose();
             dashboard.setVisible(true);
-        } catch(CredencialInvalidaException e) {
+        } catch(CampoInvalidoException e) {
             labelCredenciaisInvalidas.setVisible(true);
         }
     }//GEN-LAST:event_butaoLoginActionPerformed

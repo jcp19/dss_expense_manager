@@ -5,7 +5,7 @@ import dss.g22.business.moradores.Morador;
 import dss.g22.business.despesas.Despesa;
 import dss.g22.business.despesas.Fatura;
 import dss.g22.business.despesas.Transferencia;
-import dss.g22.business.moradores.CredencialInvalidaException;
+import dss.g22.business.moradores.CampoInvalidoException;
 import dss.g22.data.MoradorDAO;
 import java.util.List;
 import javax.swing.ImageIcon;
@@ -33,16 +33,16 @@ public class Moradores {
 	 * @param email
 	 * @param password
 	 */
-	public void login(String email, String password) throws CredencialInvalidaException {
+	public void login(String email, String password) throws CampoInvalidoException {
 		moradorAutenticado = moradores.get(email,password);
                 if(moradorAutenticado == null) {
-                    throw new CredencialInvalidaException("Uma das credenciais e invalida");
+                    throw new CampoInvalidoException("Uma das credenciais e invalida");
                 }
 	}
 
 	public double getSaldoMoradorAutenticado() {
 		// TODO - implement Moradores.getSaldoMoradorAutenticado
-		throw new UnsupportedOperationException();
+		return -69;
 	}
 
 	public List<Transferencia> getTransferenciasMoradorAutenticado() {
@@ -64,9 +64,15 @@ public class Moradores {
 	 * 
 	 * @param mail
 	 */
-	public void alteraMailMoradorAutenticado(String mail) {
+	public void alteraMailMoradorAutenticado(String mail) throws EmailEmUsoException {
 		// TODO - implement Moradores.alteraMailMoradorAutenticado
-		throw new UnsupportedOperationException();
+		int id = moradorAutenticado.getIdMorador();
+                try{
+                    moradores.alterarEmail(id, mail);
+                    moradorAutenticado.setEmail(mail);
+                } catch(EmailEmUsoException e){
+                    throw new EmailEmUsoException();
+                }             
 	}
 
 	/**
@@ -230,5 +236,20 @@ public class Moradores {
 		// TODO - implement Moradores.setNotificacoes
 		throw new UnsupportedOperationException();
 	}
+
+    public String getNomeMoradorAutenticado() {
+        return moradorAutenticado.getNome();
+    }
+
+    public String getMailMoradorAutenticado() {
+        return moradorAutenticado.getEmail();
+    }
+
+    public void alteraPasswordMoradorAutenticado(String passwordAtual, String passwordNova) throws CampoInvalidoException {
+        if(passwordAtual.equals(moradorAutenticado.getPassword())){
+            int idMorador = moradorAutenticado.getIdMorador();
+            moradores.alterarPassword(idMorador, passwordNova);
+        } else throw new CampoInvalidoException("A password fornecida e invalida");
+    }
 
 }

@@ -107,8 +107,7 @@ public class Morador {
 	 * @param email
 	 */
 	public void setEmail(String email) {
-		// TODO - implement Morador.setEmail
-		throw new UnsupportedOperationException();
+		this.email = email;
 	}
 
 	public int getIdMorador() {

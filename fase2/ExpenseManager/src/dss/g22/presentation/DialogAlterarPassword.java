@@ -5,23 +5,28 @@
  */
 package dss.g22.presentation;
 
+import dss.g22.business.Facade;
+import dss.g22.business.moradores.CampoInvalidoException;
+
 /**
  *
  * @author joao
  */
 public class DialogAlterarPassword extends javax.swing.JDialog {
-
+    private Facade facade;
     /**
      * Creates new form DialogAlterarPassword
      */
-    public DialogAlterarPassword(java.awt.Frame parent, boolean modal) {
+    public DialogAlterarPassword(java.awt.Frame parent, boolean modal, Facade facade) {
         super(parent, modal);
         initComponents();
+        this.facade = facade;
     }
     
-    public DialogAlterarPassword(javax.swing.JDialog parent, boolean modal) {
+    public DialogAlterarPassword(javax.swing.JDialog parent, boolean modal, Facade facade) {
         super(parent, modal);
         initComponents();
+        this.facade = facade;
     }
 
     /**
@@ -161,8 +166,22 @@ public class DialogAlterarPassword extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConfirmarActionPerformed
-        labelPasswordInvalida.setVisible(true);
-        labelErroPassDiferentes.setVisible(true);
+        String passwordAtual, passwordNova1, passwordNova2;
+        passwordAtual = new String(campoPasswordAtual.getPassword());
+        passwordNova1 = new String(campoNovaPassword.getPassword());
+        passwordNova2 = new String(campoConfirmarNovaPassword.getPassword());
+        
+        if(!passwordNova1.equals(passwordNova2)){
+            labelPasswordInvalida.setVisible(false);
+            labelErroPassDiferentes.setVisible(true);
+        }
+        try{
+            facade.alteraPasswordMoradorAutenticado(passwordAtual, passwordNova1);
+        }catch(CampoInvalidoException e){
+            labelPasswordInvalida.setVisible(true);
+            labelErroPassDiferentes.setVisible(false);
+        }
+
     }//GEN-LAST:event_botaoConfirmarActionPerformed
 
     private void butaoCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoCancelarActionPerformed
