@@ -138,7 +138,7 @@ public class Dashboard extends javax.swing.JFrame {
         labelMoradores.setText("Moradores:");
 
         listaLateralMoradores.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "<html><b>Morador 1<br>Saldo: 1000</b></html>", "<html><b>Morador 2<br>Saldo: 2000</b></html>", " " };
+            String[] strings = { "<html><b>José Manuel<br>Saldo: -1000</b></html>", "<html><b>Maria Josefina<br>Saldo: 0</b></html>", " " };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -198,7 +198,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         nomeMoradorAutenticado.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        nomeMoradorAutenticado.setText("João Luís Martins");
+        nomeMoradorAutenticado.setText("Arnaldo");
         nomeMoradorAutenticado.setMaximumSize(new java.awt.Dimension(140, 16));
         nomeMoradorAutenticado.setPreferredSize(new java.awt.Dimension(140, 16));
 

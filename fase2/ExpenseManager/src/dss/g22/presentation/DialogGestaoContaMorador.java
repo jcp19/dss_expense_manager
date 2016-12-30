@@ -57,7 +57,7 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
         botaoAlterarEmail = new javax.swing.JButton();
         botaoAlterarPassword = new javax.swing.JButton();
         botaoEliminarConta = new javax.swing.JButton();
-        imagemMoradorGestaoConta = new javax.swing.JButton();
+        labelImagemMorador = new javax.swing.JLabel();
 
         selecionadorImagem.setAcceptAllFileFilterUsed(false);
         selecionadorImagem.setCurrentDirectory(null);
@@ -155,19 +155,8 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
     gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 0);
     getContentPane().add(botaoEliminarConta, gridBagConstraints);
 
-    imagemMoradorGestaoConta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/NoImage.jpeg"))); // NOI18N
-    imagemMoradorGestaoConta.setBorder(null);
-    imagemMoradorGestaoConta.setToolTipText("Clique na imagem para a alterar");
-    imagemMoradorGestaoConta.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            imagemMoradorGestaoContaActionPerformed(evt);
-        }
-    });
-    gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 0;
-    gridBagConstraints.gridy = 0;
-    gridBagConstraints.insets = new java.awt.Insets(6, 6, 10, 0);
-    getContentPane().add(imagemMoradorGestaoConta, gridBagConstraints);
+    labelImagemMorador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dss/g22/presentation/images/NoImage.jpeg"))); // NOI18N
+    getContentPane().add(labelImagemMorador, new java.awt.GridBagConstraints());
 
     pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -180,30 +169,6 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
         this.setVisible(false);
     }//GEN-LAST:event_botaoAlterarEmailActionPerformed
 
-    private void imagemMoradorGestaoContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imagemMoradorGestaoContaActionPerformed
-        int r = selecionadorImagem.showOpenDialog(this);
-        
-        if(r == JFileChooser.APPROVE_OPTION) {
-            try {
-                BufferedImage imgMorador = ImageIO.read(selecionadorImagem.getSelectedFile());
-                final int l = imgMorador.getWidth(), h = imgMorador.getHeight();
-                ImageIcon iconImgMorador;
-
-                if(l != LARGURA_IMG_NORMAL || h != ALTURA_IMG_NORMAL) {
-                    iconImgMorador = new ImageIcon(
-                        imgMorador.getScaledInstance(LARGURA_IMG_NORMAL, ALTURA_IMG_NORMAL, Image.SCALE_SMOOTH)
-                    );
-                } else {
-                    iconImgMorador = new ImageIcon(imgMorador);
-                }
-
-                imagemMoradorGestaoConta.setIcon(iconImgMorador);
-            } catch (IOException ex) {
-                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }//GEN-LAST:event_imagemMoradorGestaoContaActionPerformed
-
     private void botaoAlterarPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAlterarPasswordActionPerformed
         dialogAlterarPassword = new DialogAlterarPassword(this, true, facade);
         dialogAlterarPassword.setLocationRelativeTo(this);
@@ -212,7 +177,7 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
     }//GEN-LAST:event_botaoAlterarPasswordActionPerformed
 
     private void botaoEliminarContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEliminarContaActionPerformed
-        ConfirmarApagarConta dialog = new ConfirmarApagarConta(this, true, facade);
+        DialogConfirmarApagarConta dialog = new DialogConfirmarApagarConta(this, true, facade);
         dialog.setLocationRelativeTo(this);
         dialog.setVisible(true);
         dispose();
@@ -223,8 +188,8 @@ public class DialogGestaoContaMorador extends javax.swing.JDialog {
     private javax.swing.JButton botaoAlterarPassword;
     private javax.swing.JButton botaoEliminarConta;
     private javax.swing.JLabel emailGestaoConta;
-    private javax.swing.JButton imagemMoradorGestaoConta;
     private javax.swing.JLabel labelEmailMorador;
+    private javax.swing.JLabel labelImagemMorador;
     private javax.swing.JLabel labelNomeMorador;
     private javax.swing.JLabel nomeMoradorGestaoConta;
     private javax.swing.JPanel painelAlteracoes;

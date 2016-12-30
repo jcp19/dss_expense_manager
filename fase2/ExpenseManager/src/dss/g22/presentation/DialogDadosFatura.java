@@ -36,10 +36,11 @@ public class DialogDadosFatura extends javax.swing.JDialog {
         java.awt.GridBagConstraints gridBagConstraints;
 
         painelBotoesCancelarConfirmar = new javax.swing.JPanel();
-        botaoCancelar = new javax.swing.JButton();
+        botaoAtivarEdicao = new javax.swing.JToggleButton();
+        botaoEliminarFatura = new javax.swing.JButton();
         botaoConfirmar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        painelFatura1 = new dss.g22.presentation.PainelFatura();
+        botaoCancelar = new javax.swing.JButton();
+        painelFatura = new dss.g22.presentation.PainelFatura();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(430, 480));
@@ -47,9 +48,21 @@ public class DialogDadosFatura extends javax.swing.JDialog {
         setResizable(false);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        painelBotoesCancelarConfirmar.setLayout(new javax.swing.BoxLayout(painelBotoesCancelarConfirmar, javax.swing.BoxLayout.LINE_AXIS));
+        painelBotoesCancelarConfirmar.setLayout(new java.awt.GridLayout(2, 2));
+
+        botaoAtivarEdicao.setText("Ativar edição");
+        painelBotoesCancelarConfirmar.add(botaoAtivarEdicao);
+
+        botaoEliminarFatura.setForeground(new java.awt.Color(205, 0, 0));
+        botaoEliminarFatura.setText("Eliminar fatura");
+        painelBotoesCancelarConfirmar.add(botaoEliminarFatura);
+
+        botaoConfirmar.setText("Guardar alterações");
+        botaoConfirmar.setEnabled(false);
+        painelBotoesCancelarConfirmar.add(botaoConfirmar);
 
         botaoCancelar.setText("Cancelar");
+        botaoCancelar.setEnabled(false);
         botaoCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoCancelarActionPerformed(evt);
@@ -57,20 +70,12 @@ public class DialogDadosFatura extends javax.swing.JDialog {
         });
         painelBotoesCancelarConfirmar.add(botaoCancelar);
 
-        botaoConfirmar.setText("Guardar alterações");
-        painelBotoesCancelarConfirmar.add(botaoConfirmar);
-
-        jButton1.setForeground(new java.awt.Color(205, 0, 0));
-        jButton1.setText("Eliminar fatura");
-        painelBotoesCancelarConfirmar.add(jButton1);
-
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 9;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.insets = new java.awt.Insets(6, 0, 0, 4);
         getContentPane().add(painelBotoesCancelarConfirmar, gridBagConstraints);
-        getContentPane().add(painelFatura1, new java.awt.GridBagConstraints());
+        getContentPane().add(painelFatura, new java.awt.GridBagConstraints());
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -80,10 +85,11 @@ public class DialogDadosFatura extends javax.swing.JDialog {
     }//GEN-LAST:event_botaoCancelarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton botaoAtivarEdicao;
     private javax.swing.JButton botaoCancelar;
     private javax.swing.JButton botaoConfirmar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton botaoEliminarFatura;
     private javax.swing.JPanel painelBotoesCancelarConfirmar;
-    private dss.g22.presentation.PainelFatura painelFatura1;
+    private dss.g22.presentation.PainelFatura painelFatura;
     // End of variables declaration//GEN-END:variables
 }

@@ -53,6 +53,7 @@ public class DialogAlterarPassword extends javax.swing.JDialog {
         botaoConfirmar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Alterar password");
         setMinimumSize(new java.awt.Dimension(315, 26));
         setPreferredSize(new java.awt.Dimension(315, 260));
         setResizable(false);

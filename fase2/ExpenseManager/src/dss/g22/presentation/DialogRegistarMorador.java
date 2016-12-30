@@ -54,7 +54,6 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
         labelConfirmarPassword = new javax.swing.JLabel();
         campoConfirmarPassword = new javax.swing.JPasswordField();
         labelImagemMorador = new javax.swing.JLabel();
-        butaoProcurarImagem = new javax.swing.JButton();
         painelCancelarREgistar = new javax.swing.JPanel();
         butaoRegistar = new javax.swing.JButton();
         butaoCancelar = new javax.swing.JButton();
@@ -159,20 +158,6 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
     gridBagConstraints.insets = new java.awt.Insets(0, 35, 0, 0);
     getContentPane().add(labelImagemMorador, gridBagConstraints);
 
-    butaoProcurarImagem.setText("Procurar...");
-    butaoProcurarImagem.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            butaoProcurarImagemActionPerformed(evt);
-        }
-    });
-    gridBagConstraints = new java.awt.GridBagConstraints();
-    gridBagConstraints.gridx = 1;
-    gridBagConstraints.gridy = 9;
-    gridBagConstraints.gridheight = 2;
-    gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_START;
-    gridBagConstraints.insets = new java.awt.Insets(0, 35, 0, 0);
-    getContentPane().add(butaoProcurarImagem, gridBagConstraints);
-
     painelCancelarREgistar.setLayout(new java.awt.GridBagLayout());
 
     butaoRegistar.setText("Registar");
@@ -242,30 +227,6 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_butaoCancelarActionPerformed
 
-    private void butaoProcurarImagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoProcurarImagemActionPerformed
-        int r = selecionadorImagem.showOpenDialog(this);
-
-        if(r == JFileChooser.APPROVE_OPTION) {
-            try {
-                BufferedImage imgMorador = ImageIO.read(selecionadorImagem.getSelectedFile());
-                final int l = imgMorador.getWidth(), h = imgMorador.getHeight();
-                ImageIcon iconImgMorador;
-
-                if(l != LARGURA_IMG_NORMAL || h != ALTURA_IMG_NORMAL) {
-                    iconImgMorador = new ImageIcon(
-                        imgMorador.getScaledInstance(LARGURA_IMG_NORMAL, ALTURA_IMG_NORMAL, Image.SCALE_SMOOTH)
-                    );
-                } else {
-                    iconImgMorador = new ImageIcon(imgMorador);
-                }
-
-                labelImagemMorador.setIcon(iconImgMorador);
-            } catch (IOException ex) {
-                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }//GEN-LAST:event_butaoProcurarImagemActionPerformed
-
     private void butaoRegistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoRegistarActionPerformed
         // TODO add your handling code here:
         String nome = campoNome.getText().trim();
@@ -297,7 +258,6 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butaoCancelar;
-    private javax.swing.JButton butaoProcurarImagem;
     private javax.swing.JButton butaoRegistar;
     private javax.swing.JPasswordField campoConfirmarPassword;
     private javax.swing.JTextField campoEmail;
