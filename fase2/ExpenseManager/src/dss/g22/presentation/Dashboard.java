@@ -23,8 +23,8 @@ public class Dashboard extends javax.swing.JFrame {
      * Creates new form DashboardV2
      */
     public Dashboard(Facade facade) {
-        initComponents();
         this.facade = facade;
+        initComponents();
         nomeMoradorAutenticado.setText(facade.getNomeMoradorAutenticado());
         labelValorSaldo.setText(Double.toString(facade.getSaldoMoradorAutenticado()));
     }
