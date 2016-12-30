@@ -44,7 +44,7 @@ public class Dashboard extends javax.swing.JFrame {
         botaoRegistarFatura = new javax.swing.JButton();
         botaoRegistarTransferencia = new javax.swing.JButton();
         painelTabs = new javax.swing.JTabbedPane();
-        tabGeral = new dss.g22.presentation.PainelGeral();
+        tabGeral = new PainelGeral(facade);
         tabContaCorrente = new dss.g22.presentation.PainelContaCorrente();
         painelDespesas = new dss.g22.presentation.PainelDespesas();
         painelMoradores = new javax.swing.JPanel();

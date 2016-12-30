@@ -234,6 +234,13 @@ public class Facade {
         moradores.alteraPasswordMoradorAutenticado(passwordAtual, passwordNova);
     }
 
+    public void notificaRegistoMorador(String nome) {
+        moradores.notificaRegistoMorador(nome);
+    }
+
+    public String[] mensagensNotificacoes(){
+        return moradores.mensagensNotificacoes();
+    }
 
 
 }

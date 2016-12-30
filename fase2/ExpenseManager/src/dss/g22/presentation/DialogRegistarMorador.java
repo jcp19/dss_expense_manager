@@ -285,6 +285,7 @@ public class DialogRegistarMorador extends javax.swing.JDialog {
         } else {   
             try {
                 facade.registaMorador(nome, email, password);
+                facade.notificaRegistoMorador(nome);
                 dispose(); 
             } catch (EmailEmUsoException e) {
                 labelCamposObrigatorios.setVisible(false);

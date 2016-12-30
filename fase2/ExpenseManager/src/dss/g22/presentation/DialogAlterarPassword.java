@@ -171,12 +171,13 @@ public class DialogAlterarPassword extends javax.swing.JDialog {
         passwordNova1 = new String(campoNovaPassword.getPassword());
         passwordNova2 = new String(campoConfirmarNovaPassword.getPassword());
         
+
         if(!passwordNova1.equals(passwordNova2)){
             labelPasswordInvalida.setVisible(false);
             labelErroPassDiferentes.setVisible(true);
-        }
-        try{
+        }else try{
             facade.alteraPasswordMoradorAutenticado(passwordAtual, passwordNova1);
+            dispose();
         }catch(CampoInvalidoException e){
             labelPasswordInvalida.setVisible(true);
             labelErroPassDiferentes.setVisible(false);

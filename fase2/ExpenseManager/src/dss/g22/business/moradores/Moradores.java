@@ -7,16 +7,19 @@ import dss.g22.business.despesas.Fatura;
 import dss.g22.business.despesas.Transferencia;
 import dss.g22.business.moradores.CampoInvalidoException;
 import dss.g22.data.MoradorDAO;
+import dss.g22.data.NotificacaoDAO;
 import java.util.List;
 import javax.swing.ImageIcon;
 
 public class Moradores {
 
 	private MoradorDAO moradores;
+        private NotificacaoDAO notificacoes;
         private Morador moradorAutenticado;
         
         public Moradores() {
             moradores = new MoradorDAO();
+            notificacoes = new NotificacaoDAO();
             moradorAutenticado = null;
         }
 	/**
@@ -250,6 +253,15 @@ public class Moradores {
             int idMorador = moradorAutenticado.getIdMorador();
             moradores.alterarPassword(idMorador, passwordNova);
         } else throw new CampoInvalidoException("A password fornecida e invalida");
+    }
+
+    public void notificaRegistoMorador(String nome) {
+        notificacoes.registaNotificacao("O morador " + nome + " registou-se no apartamento.");
+    }
+    
+    public String[] mensagensNotificacoes(){
+        String[] mensagens = notificacoes.getMensagensNotificacao().stream().toArray(String[]::new);
+        return mensagens;
     }
 
 }

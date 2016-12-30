@@ -5,17 +5,23 @@
  */
 package dss.g22.presentation;
 
+import dss.g22.business.Facade;
+import javax.swing.JList;
+
 /**
  *
  * @author joao
  */
 public class PainelGeral extends javax.swing.JPanel {
 
+    private Facade facade;
     /**
      * Creates new form painelHistorico
      */
-    public PainelGeral() {
+    public PainelGeral(Facade facade) {
+        this.facade = facade;
         initComponents();
+        listaHistorico.setModel((new JList<String>(facade.mensagensNotificacoes())).getModel());
     }
 
     /**
@@ -34,11 +40,6 @@ public class PainelGeral extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
 
-        listaHistorico.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         listaHistorico.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         scrollHistorico.setViewportView(listaHistorico);
 
